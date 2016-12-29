@@ -2,7 +2,7 @@
 
 const { expect } = require('chai');
 const depthFirst = require('../../src/trees/depth_first');
-const Node = require('../../src/trees/helper_files/node');
+const Node = require('../../helper_files/node');
 
 describe('depth first search', function() {
   describe('given a tree', function() {

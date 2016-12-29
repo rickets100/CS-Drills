@@ -82,7 +82,7 @@ function Graph() {
   this.print = function() {
     for (let i = 0; i < this.edges.length; i++) {
       let edge = this.edges[i];
-      console.log(edge.first.value, '->', edge.second.value, edge.weight, 'mi');
+      // console.log(edge.first.value, '->', edge.second.value, edge.weight, 'mi');
     }
   }
 

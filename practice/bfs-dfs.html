@@ -106,11 +106,22 @@
     <script type="text/javascript">
       'use strict'
 
-      function dfs(node) {
-        if(node.nodeType === Node.ELEMENT_NODE) console.log(node.nodeName);
+      function bfs(node) {
+        var queue = [node];
+        while(queue.length) {
+          let current = queue.shift()
+          if(current.nodeType === Node.ELEMENT_NODE) console.log(current.nodeName);
+          for(var i = 0; i<current.childNodes.length; i++) {
+            queue.push(current.childNodes[i])
+          }
+        }
       }
 
-      function bfs(node) {
+      function dfs(node) {
+        if(node.nodeType === Node.ELEMENT_NODE) console.log(node.nodeName);
+        for(var i = 0; i < node.childNodes.length; i++) {
+          dfs(node.childNodes[i])
+        }
       }
 
       console.log("-------- Breadth-first search ----------");

@@ -53,9 +53,9 @@ describe('Graph', function() {
     let neighbors = cityGraph.findNeighbors("Chicago");
 
     expect(neighbors.length).to.equal(3);
-    expect(neighbors).to.contain("Denver");
-    expect(neighbors).to.contain("Atlanta");
-    expect(neighbors).to.contain("Nashville");
+    expect(neighbors.contains("Denver")).to.equal(true);
+    expect(neighbors.contains("Atlanta")).to.equal(true);
+    expect(neighbors.contains("Nashville")).to.equal(true);
   });
 
   it('should find the shortest path', function () {
