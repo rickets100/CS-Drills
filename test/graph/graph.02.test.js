@@ -2,7 +2,7 @@
 const expect = require('chai').expect;
 
 describe("Graph", function() {
-  const Graph = require('../../src/graph/graph.02');
+  const Graph = require('../../src/graph/graph.02.js');
   var graph;
   const graphData = [
     [1,2],
