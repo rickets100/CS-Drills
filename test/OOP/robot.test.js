@@ -1,4 +1,4 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var Robot = require('../../src/OOP/robot');
 
 describe('Robot', ()=> {
@@ -30,7 +30,7 @@ describe('Robot', ()=> {
   });
 
   it("can record their history", function () {
-    robot = new Robot(8);
+    var robot = new Robot(8);
     expect(robot.history()).to.deep.equal([]);
 
     robot.moveLeft();

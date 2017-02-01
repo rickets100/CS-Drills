@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
 var DoublyLinkedList = require("../../src/linked-list/doubly_linked_list");
-var expect = require("chai").expect
+var expect = require("chai").expect;
 var list;
 
 describe("DoublyLinkedList", function() {
@@ -24,11 +24,11 @@ describe("DoublyLinkedList", function() {
     });
 
     it("stores the correct values", function() {
-      list.push(2).push(4)
+      list.push(2).push(4);
       expect(list.head.val).to.equal(2);
       expect(list.length).to.equal(2);
       expect(list.head.next.val).to.equal(4);
-    })
+    });
   });
 
   describe("pop", function() {
@@ -116,7 +116,7 @@ describe("DoublyLinkedList", function() {
       expect(list.get(2)).to.equal(7);
       expect(list.get(3)).to.equal(5);
     });
-  })
+  });
 
   describe("remove", function() {
     it("removes the first element in a list of size 1", function() {

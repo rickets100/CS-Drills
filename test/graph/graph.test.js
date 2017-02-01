@@ -1,6 +1,6 @@
 'use strict';
 
-let expect = require('chai').expect;
+let expect = require('chai').expect; // jshint ignore:line
 let Graph = require('../../src/graph/graph');
 let cityGraph;
 

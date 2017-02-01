@@ -1,7 +1,7 @@
 'use strict';
 
-const expect = require("chai").expect
-const lib = require('../../src/array-search/search-algorithms')
+const expect = require("chai").expect; // jshint ignore:line
+const lib = require('../../src/array-search/search-algorithms');
 const positiveArr = [1,2,3,4,5,6];
 const negativeArr = [-5,-4,-3,-2,-1];
 const decimalArr = [1.1,2.4,5.5,5.6,5.7];
@@ -51,46 +51,46 @@ describe("binarySearch", () => {
   function checkForLoops(methodName) {
     return () => {
       const definition = lib[methodName].toString();
-
       const loopMessage = "You appear to be using loops / builtin methods instead of recursion";
-      expect(definition, loopMessage).to.not.match(/for|indexOf|while|do|\.forEach|\.map/)
-    }
+      expect(definition, loopMessage).to.not.match(
+        /for|indexOf|while|do|\.forEach|\.map/);
+    };
   }
 
   it("returns the index of the element in the array via binary search", () => {
-    expect(lib.binarySearch([], 'a')).to.deep.equal(-1)
-    expect(lib.binarySearch(['a'], 'a')).to.deep.equal(0)
-    expect(lib.binarySearch(['a','b'], 'b')).to.deep.equal(1)
-    expect(lib.binarySearch(['a','b','c'], 'a')).to.deep.equal(0)
-    expect(lib.binarySearch(['a','b','c'], 'b')).to.deep.equal(1)
-    expect(lib.binarySearch(['a','b','c'], 'c')).to.deep.equal(2)
-    expect(lib.binarySearch(['a','b','c'], '0')).to.deep.equal(-1)
-    expect(lib.binarySearch(['a','b','c'], 'd')).to.deep.equal(-1)
-  })
+    expect(lib.binarySearch([], 'a')).to.deep.equal(-1);
+    expect(lib.binarySearch(['a'], 'a')).to.deep.equal(0);
+    expect(lib.binarySearch(['a','b'], 'b')).to.deep.equal(1);
+    expect(lib.binarySearch(['a','b','c'], 'a')).to.deep.equal(0);
+    expect(lib.binarySearch(['a','b','c'], 'b')).to.deep.equal(1);
+    expect(lib.binarySearch(['a','b','c'], 'c')).to.deep.equal(2);
+    expect(lib.binarySearch(['a','b','c'], '0')).to.deep.equal(-1);
+    expect(lib.binarySearch(['a','b','c'], 'd')).to.deep.equal(-1);
+  });
 
-  it("does not use loops", checkForLoops('binarySearch'))
+  it("does not use loops", checkForLoops('binarySearch'));
 
   it("runs faster than linearSearch in the worst case", () => {
-    const input = []
-    const max = 10000
-    for (var i = 0; i < max; i++) input.push(i)
+    const input = [];
+    const max = 10000;
+    for (var i = 0; i < max; i++) input.push(i);
 
     function benchmark(fn){
       const start = process.hrtime();
-      fn()
+      fn();
       const diff = process.hrtime(start);
       return diff[0] * 1e9 + diff[1]; // return total number of nanoseconds
     }
 
     function runLinearSearch(){
       for (var i = 0; i < max; i++) {
-        lib.linearSearch(input, max - 1)
+        lib.linearSearch(input, max - 1);
       }
     }
 
     function runBinarySearch(){
       for (var i = 0; i < input.length; i++) {
-        lib.binarySearch(input, max - 1)
+        lib.binarySearch(input, max - 1);
       }
     }
 
@@ -98,6 +98,6 @@ describe("binarySearch", () => {
     const binarySearchSpeed = benchmark(runBinarySearch);
 
     expect(linearSearchSpeed).to.be.gt(binarySearchSpeed * 1.5);
-  })
+  });
 
-})
+});

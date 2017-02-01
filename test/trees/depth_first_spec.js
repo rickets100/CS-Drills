@@ -1,8 +1,8 @@
 'use strict';
 
-const { expect } = require('chai');
+const { expect } = require('chai'); // jshint ignore:line
 const depthFirst = require('../../src/trees/depth_first');
-const Node = require('../../src/trees/helper_files/node');
+const Node = require('../../src/trees/helper_files/node'); // jshint ignore:line
 
 describe('depth first search', function() {
   describe('given a tree', function() {
@@ -12,7 +12,7 @@ describe('depth first search', function() {
       const b = new Node('B', d, e);
       const c = new Node('C');
       this.a = new Node('A', b, c);
-    })
+    });
 
     it('returns values ordered by depth first search, pre-order', function() {
       expect(depthFirst.preOrder(this.a)).to.deep.equal(

@@ -1,4 +1,4 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var ParkingLot = require('../../src/OOP/parking_lot');
 
 describe('ParkingLot', ()=> {
@@ -21,7 +21,7 @@ describe('ParkingLot', ()=> {
       "Position 4: (empty)",
     ]);
 
-    var parkingLot = new ParkingLot(3);
+    parkingLot = new ParkingLot(3);
 
     expect(parkingLot.summary()).to.deep.equal([
       "Position 1: (empty)",

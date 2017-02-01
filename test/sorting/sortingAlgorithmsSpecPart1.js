@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let expect = require('chai').expect
+let expect = require('chai').expect; // jshint ignore:line
 
 describe("Part 1", function() {
 

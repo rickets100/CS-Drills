@@ -1,4 +1,4 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var Song = require('../../src/OOP/song');
 var Playlist = require('../../src/OOP/playlist');
 
@@ -37,7 +37,7 @@ describe('Playlist', function() {
     playlist.addSong(itHadToBeYou);
     expect(playlist.songNames()).to.deep.equal(['It had to be you']);
 
-    playlist.addSong(butNotForMe)
+    playlist.addSong(butNotForMe);
     expect(playlist.songNames()).to.deep.equal([
       'It had to be you',
       'But Not for Me'

@@ -28,4 +28,4 @@ describe('ParensChecker', function() {
 		expect(parensChecker(true)).to.equal(false);
 		expect(parensChecker(undefined)).to.equal(false);
 	});
-})
+});

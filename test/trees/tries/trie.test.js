@@ -1,4 +1,4 @@
-const expect = require("chai").expect;
+const expect = require("chai").expect; // jshint ignore:line
 var Trie = require("../../../src/trees/tries/trie.js");
 
 describe("Trie", function() {
@@ -17,11 +17,11 @@ describe("Trie", function() {
       it("learns a word character by character", function(){
         t.learn("be");
         var b = t.characters.b;
-        expect(b).to.exist;
-        expect(b.isWord).to.not.exist;
+        expect(b).to.exist; // jshint ignore:line
+        expect(b.isWord).to.not.exist; // jshint ignore:line
         var e = b.characters.e;
-        expect(e).to.exist;
-        expect(e.isWord).to.exist;
+        expect(e).to.exist; // jshint ignore:line
+        expect(e.isWord).to.exist; // jshint ignore:line
         expect(e.characters).to.deep.equal({});
       });
 
@@ -29,24 +29,24 @@ describe("Trie", function() {
         t.learn("be");
         t.learn("begin");
         var e = t.characters.b.characters.e;
-        expect(e.isWord).to.exist;
+        expect(e.isWord).to.exist; // jshint ignore:line
         var n = e.characters.g.characters.i.characters.n;
-        expect(n.isWord).to.exist;
+        expect(n.isWord).to.exist; // jshint ignore:line
       });
 
       it("learns a prefix", function(){
         t.learn("begin");
         t.learn("be");
         var e = t.characters.b.characters.e;
-        expect(e.isWord).to.exist;
+        expect(e.isWord).to.exist; // jshint ignore:line
         var n = e.characters.g.characters.i.characters.n;
-        expect(n.isWord).to.exist;
+        expect(n.isWord).to.exist; // jshint ignore:line
       });
     });
 
     describe(".find", function(){
       it("returns to.existy for a nonexistent string", function(){
-        expect(t.find("nope")).to.not.exist;
+        expect(t.find("nope")).to.not.exist; // jshint ignore:line
       });
 
       it("returns the right node for a prefix", function(){

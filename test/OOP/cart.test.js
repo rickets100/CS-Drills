@@ -1,4 +1,4 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var Cart = require('../../src/OOP/cart');
 var Item = require('../../src/OOP/item');
 

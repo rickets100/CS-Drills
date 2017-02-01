@@ -1,4 +1,4 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var Directory = require('../../src/OOP/directory');
 
 describe('Directory', ()=> {

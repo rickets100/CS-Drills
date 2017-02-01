@@ -1,4 +1,4 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var Node = require('../../src/trees/node');
 
 describe('Node', function() {

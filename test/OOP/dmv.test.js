@@ -1,4 +1,4 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var DMV = require('../../src/OOP/dmv');
 
 describe('DMV', ()=> {

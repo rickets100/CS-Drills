@@ -1,4 +1,4 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var Passenger = require('../../src/OOP/passenger');
 var Bus = require('../../src/OOP/bus');
 
@@ -90,7 +90,7 @@ describe('Bus', function() {
     bus.board(sue, 3);
     expect(bus.paidFares()).to.deep.equal(7);
 
-    bus.board(sally, 3)
+    bus.board(sally, 3);
     expect(bus.paidFares()).to.deep.equal(10);
   });
 });

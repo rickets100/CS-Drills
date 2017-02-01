@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const expect = require("chai").expect
+const expect = require("chai").expect; // jshint ignore:line
 const data = require("../../../src/trees/binary-trees/binary_tree.js");
 
 describe("Node", function(){
@@ -212,7 +212,7 @@ describe("BinTree", function(){
         binTree = new data.BinTree();
         [7,3,9,8,5,1,99,44,33,66].forEach(function(v) {
           binTree.insertRecursively(v);
-        })
+        });
       });
       it("does not remove values not in the tree", function(){
         expect(binTree.remove(100)).to.equal("Value not in the tree!");
@@ -254,7 +254,7 @@ describe("BinTree", function(){
       it("removes the root node correctly when the root is a leaf", function(){
         binTree = new data.BinTree();
         binTree.insertRecursively(7);
-        binTree.remove(7)
+        binTree.remove(7);
         expect(binTree.DFSInOrder()).to.deep.eq([]);
       });
       it("removes the root node correctly when the root has a child", function(){
@@ -278,6 +278,6 @@ describe("BinTree", function(){
         expect(binTree.root.value).to.equal(27);
         expect(binTree.root.left.value).to.equal(10);
         expect(binTree.root.right.value).to.equal(28);
-      })
+      });
     });
 });

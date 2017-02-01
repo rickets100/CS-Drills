@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
-var expect = require('chai').expect;
-var arrayPairSum = require('../../src/hash-tables/array_pair');
+const expect = require('chai').expect; // jshint ignore:line
+const arrayPairSum = require('../../src/hash-tables/array_pair');
 
 describe('arrayPairSum()', () => {
   it('should return pairs that equal the value', () => {
