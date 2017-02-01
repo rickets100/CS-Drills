@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var DoublyLinkedList = require('./doubly_linked_list');
 

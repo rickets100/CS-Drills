@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var Node = require('./node');
 
@@ -20,7 +20,7 @@ class Bst {
             current = current.left;
           }
           else {
-            current.left = new Node(data)
+            current.left = new Node(data);
             break;
           }
         }

@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function swap(arr, idx1, idx2) {
 
@@ -16,4 +16,4 @@ module.exports = {
   swap,
   merge,
   partition
-}
+};

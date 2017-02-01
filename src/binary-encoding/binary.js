@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /*
 
@@ -14,4 +14,5 @@ built-in method in javascript that could aid in the conversion.
 
 */
 module.exports = function(str) {
-}
+
+};

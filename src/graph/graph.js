@@ -17,7 +17,7 @@ function Graph() {
       }
     }
     return null;
-  }
+  };
 
   // Add a node to the list of nodes
   this.addNode = function(value) {
@@ -25,7 +25,7 @@ function Graph() {
       return;
     }
     this.nodes.push(new GraphNode(value));
-  }
+  };
 
   // Add an edge between 2 nodes and give it a weight
   this.addEdge = function(source, destination, weight) {
@@ -35,7 +35,7 @@ function Graph() {
       return;
     }
     this.edges.push(new GraphEdge(first, second, weight));
-  }
+  };
 
   // Get the size of the graph by returning how many nodes are in the graph
   this.size = function() {
@@ -47,13 +47,13 @@ function Graph() {
   this.numEdges = function() {
     // TODO
     return -1;
-  }
+  };
 
   // Find the total weight of the graph by adding up the weights of each edge
   this.weight = function() {
     // TODO
     return -1;
-  }
+  };
 
   // Find all node values a node is connected to.
   // Return all node values at the other side of an edge of the target node
@@ -61,7 +61,7 @@ function Graph() {
   this.findNeighbors = function(value) {
     // TODO
     return [];
-  }
+  };
 
   // Stretch!
   // Find the optimal route from start to finish
@@ -70,21 +70,21 @@ function Graph() {
   this.findPath = function(start, finish) {
     // TODO
     return [];
-  }
+  };
 
   // Return a list of any nodes that are orphans.
   // An orphan is any node with no edges.
   this.findOrphans = function() {
     // TODO
     return [];
-  }
+  };
 
   this.print = function() {
     for (let i = 0; i < this.edges.length; i++) {
       let edge = this.edges[i];
       console.log(edge.first.value, '->', edge.second.value, edge.weight, 'mi');
     }
-  }
+  };
 
   this.pathWeight = function(path) {
     let sum = 0;
@@ -92,7 +92,7 @@ function Graph() {
       sum += path[i].weight;
     }
     return sum;
-  }
+  };
 }
 
 module.exports = Graph;

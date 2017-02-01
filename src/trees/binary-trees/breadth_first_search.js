@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /*
   Complete the breadth first search function to pass the tests.
@@ -22,7 +22,7 @@
   Your bfs function should return the node if found, or false if not.
 */
 function bfs (root, isMatch) {
-  
+
 }
 
 module.exports = bfs;

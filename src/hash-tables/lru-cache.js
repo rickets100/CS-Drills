@@ -24,7 +24,7 @@ function LRUCache(maxSize) {
 */
 LRUCache.prototype.put = function(key, value) {
 
-}
+};
 
 /*
   Check for and return the value associated with the provided key if it exists,
@@ -36,6 +36,6 @@ LRUCache.prototype.put = function(key, value) {
 */
 LRUCache.prototype.get = function(key) {
 
-}
+};
 
 module.exports = LRUCache;

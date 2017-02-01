@@ -37,4 +37,4 @@ function arrayDelete(array, index) {
 
 }
 
-module.exports = { arrayPush, arrayDelete }
+module.exports = { arrayPush, arrayDelete };

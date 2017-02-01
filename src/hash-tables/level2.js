@@ -19,7 +19,7 @@ output => {a: 3, b: 2, c: 1}
 
 const reverseMerge = (keyArr, valArr) => {
 
-}
+};
 
 /*
 
@@ -33,7 +33,7 @@ The value will the the number of occurances of that word in the string.
 
 const mostUsedWord = (sentence) => {
 
-}
+};
 
 
 /*
@@ -46,6 +46,6 @@ It returns TRUE if the words are anagrams of one another and FALSE if it is not.
 
 const isAnagram = (test, original) => {
 
-}
+};
 
 module.exports = { reverseMerge, mostUsedWord, isAnagram };

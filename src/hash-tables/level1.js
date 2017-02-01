@@ -27,11 +27,11 @@ const LANG_LIST = {
   lithuanian: 'Laukiamas',
   swedish: 'Valkommen',
   welsh: 'Croeso'
-}
+};
 
 const greet = (language) => {
 
-}
+};
 
 
 /*
@@ -47,7 +47,7 @@ i.e. [1, 'z', 'bob', true, 42, 'bob'] => { '1': 0, 'z': 1, 'bob': '5', 'true': 3
 
 const removeDupes = (numArr) => {
 
-}
+};
 
 
 /*

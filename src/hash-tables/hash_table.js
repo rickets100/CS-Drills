@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function HashTable(size, prime) {
   size = size || 59;
@@ -22,7 +22,7 @@ function HashTable(size, prime) {
 */
 HashTable.prototype.__hashFunction = function(key) {
 
-}
+};
 
 /*
   Given a key value pair, store it in the HashTable.

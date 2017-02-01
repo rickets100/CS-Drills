@@ -37,4 +37,4 @@ module.exports = {
   merge,
   map,
   filter
-}
+};

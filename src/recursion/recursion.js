@@ -34,4 +34,4 @@ module.exports = {
 
   factorial: function(n) {
   }
-}
+};
