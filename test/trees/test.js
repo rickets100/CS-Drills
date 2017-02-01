@@ -1,13 +1,13 @@
 'use strict';
 
-var expect = require("chai").expect;
+var expect = require('chai').expect;
 const level1 = require('../../src/trees/level1');
 const level2 = require('../../src/trees/level2');
 const level3 = require('../../src/trees/level3');
 
 describe('Trees', () => {
   describe('Level One', () => {
-    describe("#treeCount", () => {
+    describe('#treeCount', () => {
       it('Returns the count for an simple tree', () => {
         expect(level1.treeCount({
           value: 4,
@@ -32,7 +32,7 @@ describe('Trees', () => {
       });
     });
 
-    describe("#binTreeCount", () => {
+    describe('#binTreeCount', () => {
       it('Returns the count for an empty binary tree', () => {
         expect(level1.binTreeCount(null)).to.be.equal(0);
       });
@@ -62,7 +62,7 @@ describe('Trees', () => {
       });
     });
 
-    describe("#treeHeight", () => {
+    describe('#treeHeight', () => {
       it('Returns the height for an simple tree', () => {
         expect(level1.treeHeight({
           value: 4,
@@ -87,7 +87,7 @@ describe('Trees', () => {
       });
     });
 
-    describe("#binTreeHeight", () => {
+    describe('#binTreeHeight', () => {
       it('Returns the height for an empty binary tree', () => {
         expect(level1.binTreeHeight(null)).to.be.equal(0);
       });
@@ -113,7 +113,7 @@ describe('Trees', () => {
       });
     });
 
-    describe("#sumTree", () => {
+    describe('#sumTree', () => {
       it('Returns the sum for an simple tree', () => {
         expect(level1.sumTree({
           value: 4,
@@ -138,7 +138,7 @@ describe('Trees', () => {
       });
     });
 
-    describe("#sumBinTree", () => {
+    describe('#sumBinTree', () => {
       it('Returns the sum for an empty binary tree', () => {
         expect(level1.sumBinTree(null)).to.be.equal(0);
       });
@@ -166,7 +166,7 @@ describe('Trees', () => {
   });
 
   describe('Level Two', () => {
-    describe("#toArray", () => {
+    describe('#toArray', () => {
       it('Returns an empty array for an empty BST', () => {
         expect(level2.toArray(null)).to.be.eql([]);
       });
@@ -196,7 +196,7 @@ describe('Trees', () => {
       });
     });
 
-    describe("#findValueInTree", () => {
+    describe('#findValueInTree', () => {
       it('Returns true for a value in a tree', () => {
         expect(level2.findValueInTree({
           value: 4,
@@ -230,7 +230,7 @@ describe('Trees', () => {
       });
     });
 
-    describe("#findValueInBinTree", () => {
+    describe('#findValueInBinTree', () => {
       it('Returns true for a value in a tree', () => {
         expect(level2.findValueInBinTree({
           value: 4,
@@ -280,7 +280,7 @@ describe('Trees', () => {
       });
     });
 
-    describe("#findValueInBinSearchTree", () => {
+    describe('#findValueInBinSearchTree', () => {
       it('Returns true for a value in a tree', () => {
         expect(level2.findValueInBinSearchTree({
           value: 6,
@@ -330,7 +330,7 @@ describe('Trees', () => {
       });
     });
 
-    describe("#insertValueInBinSearchTree", () => {
+    describe('#insertValueInBinSearchTree', () => {
       it('Inserts value in an empty binary search tree', () => {
         expect(level2.insertValueInBinSearchTree(null,
            9)).to.be.eql({

@@ -3,7 +3,7 @@
 /*
 
 Create a function named reverseMerge.
-It takes two arguments "keyArr" and "valArr" both of type Array.
+It takes two arguments 'keyArr' and 'valArr' both of type Array.
 It will return a hash that is a merge between the two inputs where
 the values in keyArr will be the hashes key and
 the values in valArr will be the hashes value.
@@ -24,7 +24,7 @@ const reverseMerge = (keyArr, valArr) => {
 /*
 
 Create a function named mostUsedWord.
-It takes a single argument "sentence" of type string.
+It takes a single argument 'sentence' of type string.
 It will return an object with a single key-value pair.
 The key will be the word with the highest occurance in the string.
 The value will the the number of occurances of that word in the string.
@@ -39,7 +39,7 @@ const mostUsedWord = (sentence) => {
 /*
 
 Write a function, isAnagram.
-It takes a two arguments "test" and "original", both of type string.
+It takes a two arguments 'test' and 'original', both of type string.
 It returns TRUE if the words are anagrams of one another and FALSE if it is not.
 
 */

@@ -23,7 +23,7 @@ function DoublyLinkedList() {
 }
 
 DoublyLinkedList.prototype.__getNodeAt = function(index) {
-  if (typeof index !== "number" || index >= this.length || index < 0) return undefined;
+  if (typeof index !== 'number' || index >= this.length || index < 0) return undefined;
 
   var mid = this.length / 2;
   var goForward = true;
@@ -175,8 +175,8 @@ DoublyLinkedList.prototype.mostFrequent = function() {
   var index = 0;
 
   while (curNode !== null) {
-    if (typeof  curNode.val === "number") {
-      key = "" + curNode.val;
+    if (typeof  curNode.val === 'number') {
+      key = '' + curNode.val;
     } else {
       key = curNode.val.toString();
     }

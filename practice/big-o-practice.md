@@ -2,7 +2,7 @@
 
 We want you answer the following questions about a list of programs (provided separately).
 
-1. Define `n` for this program. `n` must represent the "size" of the input to the program. Your definition should give someone enough information to give a number to `n` if you provide some sample input to the program. Provide 3 such examples for each problem.
+1. Define `n` for this program. `n` must represent the 'size' of the input to the program. Your definition should give someone enough information to give a number to `n` if you provide some sample input to the program. Provide 3 such examples for each problem.
 
 1. Write a formula that estimates as accurately as possible the number of operations the provided program requires. (on the longer programs, it's okay for this to be off by a few).
 

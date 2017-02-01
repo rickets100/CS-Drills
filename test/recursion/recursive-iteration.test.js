@@ -1,21 +1,21 @@
 'use strict';
 
-const expect = require("chai").expect; // jshint ignore:line
+const expect = require('chai').expect; // jshint ignore:line
 const lib = require('../../src/recursion/recursive-iteration');
 
-describe("Looping and recursion", () => {
+describe('Looping and recursion', () => {
 
   function checkForLoops(methodName) {
     return () => {
       const definition = lib[methodName].toString();
 
-      const loopMessage = "You appear to be using loops instead of recursion";
+      const loopMessage = 'You appear to be using loops instead of recursion';
       expect(definition, loopMessage).to.not.match(/for|while|do|\.forEach|\.map|\.join|\.split/);
     };
   }
 
-  describe("max", () => {
-    it("returns the maximum value of the array", () => {
+  describe('max', () => {
+    it('returns the maximum value of the array', () => {
       const fn = (val) => val >= 10;
 
       expect(lib.max([1])).to.deep.equal(1);
@@ -25,11 +25,11 @@ describe("Looping and recursion", () => {
       expect(lib.max([])).to.deep.equal(undefined);
     });
 
-    it("does not use loops", checkForLoops('max'));
+    it('does not use loops', checkForLoops('max'));
   });
 
-  describe("min", () => {
-    it("returns the minimum value of the array", () => {
+  describe('min', () => {
+    it('returns the minimum value of the array', () => {
       const fn = (val) => val >= 10;
 
       expect(lib.min([1])).to.deep.equal(1);
@@ -39,11 +39,11 @@ describe("Looping and recursion", () => {
       expect(lib.min([])).to.deep.equal(undefined);
     });
 
-    it("does not use loops", checkForLoops('min'));
+    it('does not use loops', checkForLoops('min'));
   });
 
-  describe("filter", () => {
-    it("returns an array containing only the matching items", () => {
+  describe('filter', () => {
+    it('returns an array containing only the matching items', () => {
       const fn = (val) => val >= 10;
 
       expect(lib.filter([1,2,3], fn)).to.deep.equal([]);
@@ -52,11 +52,11 @@ describe("Looping and recursion", () => {
       expect(lib.filter([], fn)).to.deep.equal([]);
     });
 
-    it("does not use loops", checkForLoops('filter'));
+    it('does not use loops', checkForLoops('filter'));
   });
 
-  describe("reject", () => {
-    it("returns an array containing only the non-matching items", () => {
+  describe('reject', () => {
+    it('returns an array containing only the non-matching items', () => {
       const fn = (val) => val >= 10;
 
       expect(lib.reject([1,2,3], fn)).to.deep.equal([1,2,3]);
@@ -65,11 +65,11 @@ describe("Looping and recursion", () => {
       expect(lib.reject([], fn)).to.deep.equal([]);
     });
 
-    it("does not use loops", checkForLoops('reject'));
+    it('does not use loops', checkForLoops('reject'));
   });
 
-  describe("every", () => {
-    it("returns true if every item in the array matches", () => {
+  describe('every', () => {
+    it('returns true if every item in the array matches', () => {
       const fn = (val) => val >= 10;
 
       expect(lib.every([1,2,3], fn)).to.deep.equal(false);
@@ -78,11 +78,11 @@ describe("Looping and recursion", () => {
       expect(lib.every([], fn)).to.deep.equal(true);
     });
 
-    it("does not use loops", checkForLoops('every'));
+    it('does not use loops', checkForLoops('every'));
   });
 
-  describe("some", () => {
-    it("returns true if at least one item in the array matches", () => {
+  describe('some', () => {
+    it('returns true if at least one item in the array matches', () => {
       const fn = (val) => val >= 10;
 
       expect(lib.some([1,2,3], fn)).to.deep.equal(false);
@@ -91,11 +91,11 @@ describe("Looping and recursion", () => {
       expect(lib.some([], fn)).to.deep.equal(false);
     });
 
-    it("does not use loops", checkForLoops('some'));
+    it('does not use loops', checkForLoops('some'));
   });
 
-  describe("none", () => {
-    it("returns true if 0 items in the array match", () => {
+  describe('none', () => {
+    it('returns true if 0 items in the array match', () => {
       const fn = (val) => val >= 10;
 
       expect(lib.none([1,2,3], fn)).to.deep.equal(true);
@@ -104,11 +104,11 @@ describe("Looping and recursion", () => {
       expect(lib.none([], fn)).to.deep.equal(true);
     });
 
-    it("does not use loops", checkForLoops('none'));
+    it('does not use loops', checkForLoops('none'));
   });
 
-  describe("map", () => {
-    it("returns an array containing elements transformed by the function", () => {
+  describe('map', () => {
+    it('returns an array containing elements transformed by the function', () => {
       const fn = (x) => x + 1;
 
       expect(lib.map([1], fn)).to.deep.equal([2]);
@@ -118,33 +118,33 @@ describe("Looping and recursion", () => {
       expect(lib.map([], fn)).to.deep.equal([]);
     });
 
-    it("does not use loops", checkForLoops('map'));
+    it('does not use loops', checkForLoops('map'));
   });
 
-  describe("join", () => {
-    it("returns a string with the elements of the array joined by the delimiter", () => {
-      expect(lib.join([], ",")).to.eq("");
-      expect(lib.join(["a"], ",")).to.eq("a");
-      expect(lib.join(["a", "b"], ",")).to.eq("a,b");
-      expect(lib.join(["a", "b", "c"], "|")).to.eq("a|b|c");
-      expect(lib.join([1,2,3], "|")).to.eq("1|2|3");
+  describe('join', () => {
+    it('returns a string with the elements of the array joined by the delimiter', () => {
+      expect(lib.join([], ',')).to.eq('');
+      expect(lib.join(['a'], ',')).to.eq('a');
+      expect(lib.join(['a', 'b'], ',')).to.eq('a,b');
+      expect(lib.join(['a', 'b', 'c'], '|')).to.eq('a|b|c');
+      expect(lib.join([1,2,3], '|')).to.eq('1|2|3');
     });
 
-    it("does not use loops", checkForLoops('join'));
+    it('does not use loops', checkForLoops('join'));
   });
 
-  describe("split", () => {
-    it("returns an array of strings split on the delimiter", () => {
-      expect(lib.split("", '.')).to.deep.equal([]);
-      expect(lib.split("a", '.')).to.deep.equal(['a']);
-      expect(lib.split("a.b", '.')).to.deep.equal(['a', 'b']);
+  describe('split', () => {
+    it('returns an array of strings split on the delimiter', () => {
+      expect(lib.split('', '.')).to.deep.equal([]);
+      expect(lib.split('a', '.')).to.deep.equal(['a']);
+      expect(lib.split('a.b', '.')).to.deep.equal(['a', 'b']);
     });
 
-    it("does not use loops", checkForLoops('split'));
+    it('does not use loops', checkForLoops('split'));
   });
 
-  describe("reduce", () => {
-    it("returns the reduced value", () => {
+  describe('reduce', () => {
+    it('returns the reduced value', () => {
       const fn = (previous, current) => previous + current;
 
       expect(lib.reduce([], fn, 5)).to.deep.equal(5);
@@ -154,35 +154,35 @@ describe("Looping and recursion", () => {
       expect(lib.reduce([1,2,4,10], fn, 5)).to.deep.equal(22);
     });
 
-    it("does not use loops", checkForLoops('reduce'));
+    it('does not use loops', checkForLoops('reduce'));
   });
 
-  describe("indexOf", () => {
-    it("returns the index of the given value", () => {
+  describe('indexOf', () => {
+    it('returns the index of the given value', () => {
       expect(lib.indexOf([1,2,3], 1)).to.equal(0);
       expect(lib.indexOf([1,2,3], 2)).to.equal(1);
       expect(lib.indexOf([1,2,3], 3)).to.equal(2);
       expect(lib.indexOf([1,2,3], 4)).to.equal(-1);
     });
 
-    it("does not use loops", checkForLoops('indexOf'));
+    it('does not use loops', checkForLoops('indexOf'));
   });
 
-  describe("leftPad", () => {
-    it("returns a string padded by the given delimiter, the given number of times", () => {
-      expect(lib.leftPad('',      5, '-')).to.eq("-----");
-      expect(lib.leftPad('a',     4, '|')).to.eq("|||a");
-      expect(lib.leftPad('ab',    4, '|')).to.eq("||ab");
-      expect(lib.leftPad('abc',   4, '|')).to.eq("|abc");
-      expect(lib.leftPad('abcd',  4, '|')).to.eq("abcd");
-      expect(lib.leftPad('abcde', 4, '|')).to.eq("abcde");
+  describe('leftPad', () => {
+    it('returns a string padded by the given delimiter, the given number of times', () => {
+      expect(lib.leftPad('',      5, '-')).to.eq('-----');
+      expect(lib.leftPad('a',     4, '|')).to.eq('|||a');
+      expect(lib.leftPad('ab',    4, '|')).to.eq('||ab');
+      expect(lib.leftPad('abc',   4, '|')).to.eq('|abc');
+      expect(lib.leftPad('abcd',  4, '|')).to.eq('abcd');
+      expect(lib.leftPad('abcde', 4, '|')).to.eq('abcde');
     });
 
-    it("does not use loops", checkForLoops('leftPad'));
+    it('does not use loops', checkForLoops('leftPad'));
   });
 
-  describe("flatten", () => {
-    it("returns a single-dimensional array of all of the values", () => {
+  describe('flatten', () => {
+    it('returns a single-dimensional array of all of the values', () => {
       expect(lib.flatten([])).to.deep.equal([]);
       expect(lib.flatten([1])).to.deep.equal([1]);
       expect(lib.flatten([[1]])).to.deep.equal([1]);
@@ -191,6 +191,6 @@ describe("Looping and recursion", () => {
       expect(lib.flatten([1, [2], [3,4], [ 5, [6, [7]]]])).to.deep.equal([1, 2, 3, 4, 5, 6, 7]);
     });
 
-    it("does not use loops", checkForLoops('flatten'));
+    it('does not use loops', checkForLoops('flatten'));
   });
 });

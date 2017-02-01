@@ -4,7 +4,7 @@ var Node = require('../../src/trees/node');
 
 describe('objectToNode', function() {
 
-  it("turns a plain javascript object into a Node", function () {
+  it('turns a plain javascript object into a Node', function () {
     var input = {
       name: 'a',
       children: []
@@ -14,7 +14,7 @@ describe('objectToNode', function() {
     expect(rootNode).to.be.an.instanceof(Node);
   });
 
-  it("handles deeply nested objects", function () {
+  it('handles deeply nested objects', function () {
     var input = {
       name: 'a',
       children: [
@@ -45,7 +45,7 @@ describe('objectToNode', function() {
     expect(rootNode.children[0].children[0].children[0]).to.be.an.instanceof(Node);
   });
 
-  it("handles deeply nested objects with more than one child", function () {
+  it('handles deeply nested objects with more than one child', function () {
     var input = {
       name: 'a',
       children: [

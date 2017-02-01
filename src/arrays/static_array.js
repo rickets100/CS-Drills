@@ -1,6 +1,6 @@
 const FixedArray = require('./fixed_array');
 
-// When working with FixedArrays, do NOT edit the internal variable "_array".
+// When working with FixedArrays, do NOT edit the internal variable '_array'.
 
 // Write a function, named arrayPush that takes in the following as arguments
 //   * array - A Fixed Array

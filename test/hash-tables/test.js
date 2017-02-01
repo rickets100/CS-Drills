@@ -9,11 +9,11 @@ const level2 = require('../../src/hash-tables/level2.js');
 describe('Hash Table', () => {
   describe('Level One', () => {
     suite('#greet', () => {
-      it('should greet user in English if the provided lang is "English"', () => {
+      it('should greet user in English if the provided lang is \'English\'', () => {
         level1.greet('english').should.equal('Welcome a Miami.');
       });
 
-      it('should greet user in Dutch if the provided lang is "dutch"', () => {
+      it('should greet user in Dutch if the provided lang is \'dutch\'', () => {
         level1.greet('dutch').should.equal('Welkom a Miami.');
       });
 
@@ -93,7 +93,7 @@ describe('Hash Table', () => {
         level2.reverseMerge(keyArr, valArr).should.eql({'a': 42, 'b': 42, 'c': 4, 'd': 3, 'e': 2, 'f': 1});
       });
 
-      it('should use "foo" as value if keyArr is smaller than valArr', () => {
+      it('should use \'foo\' as value if keyArr is smaller than valArr', () => {
         const keyArr = ['a', 'b', 'c', 'd'];
         const valArr = [1, 2, 3, 4, 5, 6, 7, 8];
         const output = {'a': 8, 'b': 7, 'c': 6, 'd': 5, 'foo': [4, 3, 2, 1]};
@@ -104,7 +104,7 @@ describe('Hash Table', () => {
 
     suite('#mostUsedWord', () => {
       it('should return an {} with the most used character and its occurances as a key-value pair', () => {
-        level2.mostUsedWord("fox found fixing xylophones he found fun").should.be.eql({found: 2});
+        level2.mostUsedWord('fox found fixing xylophones he found fun').should.be.eql({found: 2});
       });
 
       it('should not care about case', () => {
@@ -113,11 +113,11 @@ describe('Hash Table', () => {
     });
 
     suite('#isAnagram', () => {
-      it('should return true for the strings "creative" & "reactive"', () => {
+      it('should return true for the strings \'creative\' & \'reactive\'', () => {
         level2.isAnagram('creative', 'reactive').should.be.true; // jshint ignore:line
       });
 
-      it('should return false for the strings "race" & "case"', () => {
+      it('should return false for the strings \'race\' & \'case\'', () => {
         level2.isAnagram('race', 'case').should.be.false; // jshint ignore:line
       });
     });

@@ -3,14 +3,14 @@
  /*
 
 Will Smith is back in the music game and his PR team is telling him he should  is make his former pop
-hit, "Miami", multi-lingual. Below is a list of languages his team want him to include. Will is a busy
+hit, 'Miami', multi-lingual. Below is a list of languages his team want him to include. Will is a busy
 guy so he has asked you to help him out.
 
 Create a funtion named greet()
-It takes a single argument "language"
-It will return "Welcome to Miami." where "Welcome" will be in the language specified.
+It takes a single argument 'language'
+It will return 'Welcome to Miami.' where 'Welcome' will be in the language specified.
 
-i.e  when the language is latvian, the fn will return "Gaidits to Miami."
+i.e  when the language is latvian, the fn will return 'Gaidits to Miami.'
 
 */
 
@@ -37,7 +37,7 @@ const greet = (language) => {
 /*
 
 Create a function named removeDupes.
-It takes a single argument "numArr" of type Array.
+It takes a single argument 'numArr' of type Array.
 It will return a hash who's keys are value of the item in the array.
 The hash's value will be the item value's index in the array.
 If there are more than one occurance, the index set to the hash should be of the last occurance.
@@ -67,11 +67,11 @@ const onlyOdds = (mixedHash) => {
 /*
 
 Create a function named charCount.
-It takes a single argument "word" of type String.
+It takes a single argument 'word' of type String.
 It will return a hash who's keys represent the characters in the word
 and values represent the occurances of that character.
 
-i.e. "hello" => { h: 1, e: 1, l: 2, o: 1 }
+i.e. 'hello' => { h: 1, e: 1, l: 2, o: 1 }
 */
 
 const charCount = (word) => {

@@ -1,7 +1,7 @@
-var expect = require("chai").expect;
+var expect = require('chai').expect;
 const Queue = require('../../src/queues/queue');
 
-describe("#enqueue", () => {
+describe('#enqueue', () => {
   it('Properly enqueues an item', () => {
     const queue = new Queue();
 
@@ -23,7 +23,7 @@ describe("#enqueue", () => {
   });
 });
 
-describe("#peek", () => {
+describe('#peek', () => {
   it('Properly peeks an item', () => {
     const queue = new Queue();
 
@@ -44,7 +44,7 @@ describe("#peek", () => {
   });
 });
 
-describe("#dequeue", () => {
+describe('#dequeue', () => {
   it('Properly dequeues an item', () => {
     const queue = new Queue();
 

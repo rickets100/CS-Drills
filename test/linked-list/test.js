@@ -1,6 +1,6 @@
 'use strict';
 
-var expect = require("chai").expect;
+var expect = require('chai').expect;
 const level1 = require('../../src/linked-list/level1');
 const level2 = require('../../src/linked-list/level2');
 const level3 = require('../../src/linked-list/level3');
@@ -17,7 +17,7 @@ const buildList = function(num, fcn = (num) => num) {
 };
 describe('LinkedList', () => {
   describe('Level One', () => {
-    describe("#Count", () => {
+    describe('#Count', () => {
       it('Returns the count for an empty linked list', () => {
         expect(level1.count(buildList(0))).to.be.equal(0);
       });
@@ -27,7 +27,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe("#insertInFront", () => {
+    describe('#insertInFront', () => {
       it('Inserts a node on an empty linked list', () => {
         expect(level1.insertInFront(4, buildList(0))).to.be.eql({
           value: 4,
@@ -43,7 +43,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe("#Sum", () => {
+    describe('#Sum', () => {
       it('Returns the sum for an empty linked list', () => {
         expect(level1.sum(buildList(0))).to.be.equal(0);
       });
@@ -53,7 +53,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe("#GetValueAtIndex", () => {
+    describe('#GetValueAtIndex', () => {
       it('Returns the value for a linked list at a certain index', () => {
         expect(level1.getValueAtIndex(buildList(3), 2)).to.be.equal(1);
         expect(level1.getValueAtIndex(buildList(3), 0)).to.be.equal(3);
@@ -65,7 +65,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe("#ToArray", () => {
+    describe('#ToArray', () => {
       it('Returns the an empty array for an empty linked list', () => {
         expect(level1.toArray(buildList(0))).to.be.eql([]);
       });
@@ -77,7 +77,7 @@ describe('LinkedList', () => {
   });
 
   describe('Level Two', () => {
-    describe("#InsertInBack", () => {
+    describe('#InsertInBack', () => {
       it('Inserts an item to the end of an empty linked list', () => {
         expect(level2.insertInBack(4, buildList(0))).to.be.eql({
           value: 4,
@@ -102,7 +102,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe("#RemoveNodeAtIndex", () => {
+    describe('#RemoveNodeAtIndex', () => {
       it('Removes a node at a certain index for an empty linked list', () => {
         expect(level2.removeNodeAtIndex(buildList(0), 1)).to.be.equal(null);
       });
@@ -118,7 +118,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe("#Reverse", () => {
+    describe('#Reverse', () => {
       it('Returns the reverse of an empty linked list', () => {
         expect(level2.reverse(buildList(0))).to.be.equal(null);
       });
@@ -139,7 +139,7 @@ describe('LinkedList', () => {
   });
 
   describe('Level Three', () => {
-    describe("#Merge", () => {
+    describe('#Merge', () => {
       it('Merges two empty linked lists', () => {
         expect(level3.merge(null, null)).to.be.equal(null);
       });
@@ -173,7 +173,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe("#Map", () => {
+    describe('#Map', () => {
       it('Maps over an empty linked lists (double)', () => {
         expect(level3.map(null, (num) => num * 2)).to.be.equal(null);
       });
@@ -184,7 +184,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe("#Filter", () => {
+    describe('#Filter', () => {
       it('Filters over an empty linked lists (only evens)', () => {
         expect(level3.filter(null, (num) => num * 2)).to.be.equal(null);
       });

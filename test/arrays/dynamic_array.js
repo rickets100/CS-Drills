@@ -1,9 +1,9 @@
 'use strict';
 
-const expect = require("chai").expect; // jshint ignore:line
+const expect = require('chai').expect; // jshint ignore:line
 const DynamicArray = require('../../src/arrays/dynamic_array');
 
-describe("DynamicArray#Push", () => {
+describe('DynamicArray#Push', () => {
   it('Returns an array that initializes a fixed array with double the length', () => {
     const da = new DynamicArray(3);
 
@@ -36,7 +36,7 @@ describe("DynamicArray#Push", () => {
   });
 });
 
-describe("DynamicArray#Pop", () => {
+describe('DynamicArray#Pop', () => {
   it('Updates the array with length - 1', () => {
     const da = new DynamicArray(3);
 
@@ -63,7 +63,7 @@ describe("DynamicArray#Pop", () => {
   });
 });
 
-describe("DynamicArray#Del", () => {
+describe('DynamicArray#Del', () => {
   it('Updates the array with length - 1', () => {
     const da = new DynamicArray(3);
 

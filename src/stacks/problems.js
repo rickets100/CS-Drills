@@ -23,19 +23,19 @@ function checkParens(str) {
 // representing some code filled with parentheses (), brackets [], and
 // curly braces {}.
 //
-// (, {, [ are called "openers."
-// ), }, ] are called "closers."
+// (, {, [ are called 'openers.'
+// ), }, ] are called 'closers.'
 //
 // The function returns true if the input strings openers are matched in
 // properly nested with the closers.
 //
 // Examples:
 //
-// "{ [ ] ( ) }" should return true (properly nested and matched)
-// "{ [ ( ] ) }" should return false (closing bracket before closing
+// '{ [ ] ( ) }' should return true (properly nested and matched)
+// '{ [ ( ] ) }' should return false (closing bracket before closing
 // parentheses)
-// "{ [ }" should return false (no closing bracket)
-// "}" should return false (no opening curly brace)
+// '{ [ }' should return false (no closing bracket)
+// '}' should return false (no opening curly brace)
 
 function validate(str) {
 
@@ -54,7 +54,7 @@ function validate(str) {
 //   { command: 'write', text: 'World' }
 // ]
 //
-// The function would produce 'HelloWorld'. This because we first wrote "Hello", and then we wrote "World" (no spaces or newlines in between)
+// The function would produce 'HelloWorld'. This because we first wrote 'Hello', and then we wrote 'World' (no spaces or newlines in between)
 //
 // The undo command undoes the last write command. For example, given:
 //

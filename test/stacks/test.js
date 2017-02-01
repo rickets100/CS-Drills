@@ -1,6 +1,6 @@
 'use strict';
 
-var expect = require("chai").expect;
+var expect = require('chai').expect;
 
 const {
   checkParens,
@@ -9,7 +9,7 @@ const {
   finalText2
 } = require('../../src/stacks/problems');
 
-describe("#checkParens", () => {
+describe('#checkParens', () => {
   it('Returns true for correct nesting', () => {
     expect(checkParens('')).to.be.equal(true);
     expect(checkParens('()')).to.be.equal(true);
@@ -24,7 +24,7 @@ describe("#checkParens", () => {
   });
 });
 
-describe("#validate", () => {
+describe('#validate', () => {
   it('Returns true for correct nesting', () => {
     expect(validate('')).to.be.equal(true);
     expect(validate('{ [ ] ( ) }')).to.be.equal(true);
@@ -37,7 +37,7 @@ describe("#validate", () => {
   });
 });
 
-describe("#finalText", () => {
+describe('#finalText', () => {
   it('Returns correct string for correct set of commands', () => {
     expect(finalText([])).to.be.equal('');
 
@@ -66,7 +66,7 @@ describe("#finalText", () => {
   });
 });
 
-describe("#finalText2", () => {
+describe('#finalText2', () => {
   it('Satisifies the original tests', () => {
     expect(finalText2([])).to.be.equal('');
 

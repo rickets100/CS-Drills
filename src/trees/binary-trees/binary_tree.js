@@ -42,7 +42,7 @@ BinTree.prototype.breadthFirstSearch = function() {
 // take a look at this code for an example
 
 // function sayHi(){
-//   return "hey!"
+//   return 'hey!'
 // }
 
 // what does true && sayHi() return?

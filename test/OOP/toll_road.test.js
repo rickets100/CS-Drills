@@ -1,9 +1,9 @@
 const expect = require('chai').expect; // jshint ignore:line
 var TollRoad = require('../../src/OOP/toll_road');
 
-describe("TollRoad", ()=>{
+describe('TollRoad', ()=>{
 
-  it("has a price", ()=> {
+  it('has a price', ()=> {
     var tollRoad = new TollRoad(4);
     expect(tollRoad.price).to.deep.equal(4);
 
@@ -11,7 +11,7 @@ describe("TollRoad", ()=>{
     expect(moneyBags.price).to.deep.equal(100000);
   });
 
-  it("charges cars that pass through the toll", ()=> {
+  it('charges cars that pass through the toll', ()=> {
     var tollRoad = new TollRoad(7);
     expect(tollRoad.balance('aaa-bbb')).to.deep.equal(0);
 
@@ -25,7 +25,7 @@ describe("TollRoad", ()=>{
     expect(tollRoad.balance('ccc-ddd')).to.deep.equal(7);
   });
 
-  it("returns the dates that a given car was charged (most recent first)", ()=> {
+  it('returns the dates that a given car was charged (most recent first)', ()=> {
     var tollRoad = new TollRoad(6);
 
     tollRoad.charge('aaa-bbb', '2015-01-05-10-34');
@@ -45,7 +45,7 @@ describe("TollRoad", ()=>{
     ]);
   });
 
-  it("allows customers to pay", ()=> {
+  it('allows customers to pay', ()=> {
     var tollRoad = new TollRoad(5);
 
     tollRoad.charge('aaa-bbb', '2015-12-12-08-22');
