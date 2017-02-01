@@ -39,7 +39,7 @@ DoublyLinkedList.prototype.__getNodeAt = function(index) {
     curNode = this.tail;
   }
 
-  while (i != index) {
+  while (i !== index) {
     if (goForward) {
       curNode = curNode.next;
       i++;

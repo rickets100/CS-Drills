@@ -12,7 +12,7 @@ function Graph() {
   // Helper function to find a node in nodes
   this.findNode = function (value) {
     for (let i = 0; i < this.nodes.length; i++) {
-      if (this.nodes[i].value == value) {
+      if (this.nodes[i].value === value) {
         return this.nodes[i];
       }
     }
@@ -21,7 +21,7 @@ function Graph() {
 
   // Add a node to the list of nodes
   this.addNode = function(value) {
-    if (this.findNode(value) != null) {
+    if (this.findNode(value) !== null) {
       return;
     }
     this.nodes.push(new GraphNode(value));
@@ -31,7 +31,7 @@ function Graph() {
   this.addEdge = function(source, destination, weight) {
     let first = this.findNode(source);
     let second = this.findNode(destination);
-    if (first == null || second == null) {
+    if (first === null || second === null) {
       return;
     }
     this.edges.push(new GraphEdge(first, second, weight));
