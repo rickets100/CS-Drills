@@ -6,6 +6,9 @@
 1. add style checker to tests - DONE
 1. update README - DONE
 1. update solutions branch
+  - add src folders - DONE
+  - add code from cs-exercises
+  - lint
 1. standardize code
 1. add prototypal examples
 1. create pr

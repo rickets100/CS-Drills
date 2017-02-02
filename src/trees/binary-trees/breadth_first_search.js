@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /*
   Complete the breadth first search function to pass the tests.
@@ -22,7 +22,20 @@
   Your bfs function should return the node if found, or false if not.
 */
 function bfs (root, isMatch) {
+  let nodes = [];
 
+  nodes.push(root);
+
+  while(nodes.length > 0){
+    let current = nodes.shift();
+
+    if(isMatch(current.data)) return current;
+
+    if(current.left) nodes.push(current.left);
+    if(current.right) nodes.push(current.right);
+  }
+
+  return false;
 }
 
 module.exports = bfs;

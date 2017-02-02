@@ -1,41 +1,45 @@
-/*
-  A least recently used cache. Given a max-size, we create space for
-  maxSize items. Each new 'put' adds something to the cache. If the
-  request to put something puts the cache over max size, then the least
-  recently accessed element is evicted from the cache.
+// Implement a LRU cache
+// Every time you `get` a key, it marks it as most-recently used
+// Every time you `put` an item, it expires the least-used item
 
-  @constructor
-  @param {number} maxSize - an integer that determines the size of the cache
-*/
-function LRUCache(maxSize) {
+module.exports = function (maxSize) {
+  let head, tail, length = 0, cache = {};
 
+  return {get, put};
+
+  function get(key) {
+    current = cache[key];
+    if (!current) return;
+    if (current.previous && current.next) {
+      current.previous.next = current.next
+      current.next.previous = current.previous
+    } else if (current.previous) {
+      tail = current.previous
+      delete current.previous.next
+    }
+    head.previous = current;
+    current.next = head
+    delete current.previous
+    head = current
+    return head.value;
+  }
+
+  function put(key, value) {
+    if (!head) {
+      head = {key, value}
+      tail = head
+    } else {
+      let node = {key, value, next: head}
+      head.previous = node
+      head = node;
+    }
+    cache[key] = head
+    if (length === maxSize) {
+      delete cache[tail.key]
+      tail.previous.next = null;
+      tail = tail.previous;
+    } else {
+      length++;
+    }
+  }
 }
-
-/*
-  Add an item to the cache. If adding this item puts the cache over maxSize then
-  the least recently used item must be evicted. If this key collides with another key
-  then the new value should replace the old value (meaning eviction would never occur
-  in this case).
-
-  @param key - a key to be used for the cache
-  @param value - the value to be associated with the provided key
-
-  @returns undefined
-*/
-LRUCache.prototype.put = function(key, value) {
-
-};
-
-/*
-  Check for and return the value associated with the provided key if it exists,
-  return undefined if there is no value associated with the provided key.
-
-  @param key - a key for our LRUCache
-
-  @returns the value associated with the provided key, or undefined
-*/
-LRUCache.prototype.get = function(key) {
-
-};
-
-module.exports = LRUCache;
