@@ -2,7 +2,7 @@
 
 const swap = require('./sort-helpers').swap;
 
-function bubbleSort(arr){
+function bubbleSort(arr) {
 
 }
 

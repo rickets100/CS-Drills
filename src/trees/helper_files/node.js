@@ -6,7 +6,7 @@ class Node {
     this.left = left;
     this.right = right;
   }
-  show(){
+  show() {
     return this.data;
   }
 }

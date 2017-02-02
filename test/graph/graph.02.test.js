@@ -22,8 +22,8 @@ describe('Graph', function() {
     graph.createGraph();
   });
 
-  describe('#createGraph', function(){
-    it('sets graph.vertices to an object', function(){
+  describe('#createGraph', function() {
+    it('sets graph.vertices to an object', function() {
       let isAnObject = graph.vertices.hasOwnProperty(0);
       expect(isAnObject).to.equal(true);
     });
@@ -39,27 +39,27 @@ describe('Graph', function() {
     });
   });
 
-  describe('#addVertexWithEdges', function(){
+  describe('#addVertexWithEdges', function() {
 
     describe('when adding a vertex with one edge', function() {
-      it('adds a new vertex with the edge', function(){
+      it('adds a new vertex with the edge', function() {
         graph.addVertexWithEdges([1]);
 
         expect(graph.vertices[9].edges).to.deep.equal([1]);
       });
-      it('adds the new vertex as an edge to existing vertices it may be connected to', function(){
+      it('adds the new vertex as an edge to existing vertices it may be connected to', function() {
         graph.addVertexWithEdges([1]);
         expect(graph.vertices[1].edges).to.deep.equal([0,2,9]);
       });
     });
 
-    describe('when adding a vertex with more than one edge', function(){
-      it('adds a new vertex with the edges', function(){
+    describe('when adding a vertex with more than one edge', function() {
+      it('adds a new vertex with the edges', function() {
         graph.addVertexWithEdges([1,2,3]);
 
         expect(graph.vertices[9].edges).to.deep.equal([1,2,3]);
       });
-      it('adds the new vertex as an edge to existing vertices it may be connected to', function(){
+      it('adds the new vertex as an edge to existing vertices it may be connected to', function() {
         graph.addVertexWithEdges([1,2,3]);
 
         expect(graph.vertices[1].edges).to.deep.equal([0,2,9]);
@@ -69,13 +69,13 @@ describe('Graph', function() {
     });
   });
 
-  describe('#deleteVertex',function(){
-    it('should remove that vertex from vertices',function(){
+  describe('#deleteVertex',function() {
+    it('should remove that vertex from vertices',function() {
       graph.deleteVertex(2);
 
       expect(graph.vertices[2]).to.deep.equal(undefined);
     });
-    it('should remove that vertex from all the edges',function(){
+    it('should remove that vertex from all the edges',function() {
       graph.deleteVertex(1);
 
       expect(graph.vertices[0].edges).to.deep.equal([2]);
@@ -86,15 +86,15 @@ describe('Graph', function() {
   describe('Measuring distances', function() {
 
     describe('#initializeDistances', function() {
-        it('adds a distance property to each vertex and makes it equal to \'-1\'', function(){
+        it('adds a distance property to each vertex and makes it equal to \'-1\'', function() {
           let firstVertex = graph.initializeDistances(graph.vertices)[0];
 
           expect(firstVertex.distance).to.equal(-1);
         });
     });
 
-    describe('#getDistances',function(){
-      it('shows distances from vertex 0', function(){
+    describe('#getDistances',function() {
+      it('shows distances from vertex 0', function() {
         let thirdVertex = graph.getDistances(0)[3];
 
         expect(thirdVertex.distance).to.equal(2);
@@ -102,23 +102,23 @@ describe('Graph', function() {
     });
   });
 
-  describe('#shortestPath',function(){
-    it('finds the shortest path between 0 to 4',function(){
+  describe('#shortestPath',function() {
+    it('finds the shortest path between 0 to 4',function() {
       expect(graph.shortestPath(0,4)).to.equal(4);
     });
-    it('finds the shortest path between 0 to 1', function(){
+    it('finds the shortest path between 0 to 1', function() {
       expect(graph.shortestPath(0,1)).to.equal(1);
     });
-    it('finds the shortest path between 1 to 4',function(){
+    it('finds the shortest path between 1 to 4',function() {
       expect(graph.shortestPath(1,4)).to.equal(4);
     });
-    it('finds the shortest path between 5 to 4',function(){
+    it('finds the shortest path between 5 to 4',function() {
       expect(graph.shortestPath(5,4)).to.equal(1);
     });
-    it('finds the shortest path between 3 to 5',function(){
+    it('finds the shortest path between 3 to 5',function() {
       expect(graph.shortestPath(3,5)).to.equal(1);
     });
-    it('finds the shortest path between 3 to 4',function(){
+    it('finds the shortest path between 3 to 4',function() {
       expect(graph.shortestPath(3,4)).to.equal(2);
     });
   });

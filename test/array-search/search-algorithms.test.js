@@ -6,25 +6,25 @@ const positiveArr = [1,2,3,4,5,6];
 const negativeArr = [-5,-4,-3,-2,-1];
 const decimalArr = [1.1,2.4,5.5,5.6,5.7];
 
-describe('#linearSearch', function(){
+describe('#linearSearch', function() {
 
   it('does not use indexOf', function() {
     expect(lib.linearSearch.toString()).to.not.contain('indexOf');
   });
 
-  it('finds items in an array of positive numbers', function(){
+  it('finds items in an array of positive numbers', function() {
     expect(lib.linearSearch(positiveArr, 3)).to.equal(2);
   });
 
-  it('finds items in an array of negative numbers', function(){
+  it('finds items in an array of negative numbers', function() {
     expect(lib.linearSearch(negativeArr, -2)).to.equal(3);
   });
 
-  it('finds items in an array of non-integers', function(){
+  it('finds items in an array of non-integers', function() {
     expect(lib.linearSearch(decimalArr, 1.1)).to.equal(0);
   });
 
-  it('returns -1 when the item is not found', function(){
+  it('returns -1 when the item is not found', function() {
     expect(lib.linearSearch(decimalArr, 0)).to.equal(-1);
   });
 
@@ -32,19 +32,19 @@ describe('#linearSearch', function(){
 
 describe('binarySearch', () => {
 
-  it('finds items in an array of positive numbers', function(){
+  it('finds items in an array of positive numbers', function() {
     expect(lib.binarySearch(positiveArr,3)).to.equal(2);
   });
 
-  it('finds items in an array of negative numbers', function(){
+  it('finds items in an array of negative numbers', function() {
     expect(lib.binarySearch(negativeArr, -2)).to.equal(3);
   });
 
-  it('finds items in an array of non-integers', function(){
+  it('finds items in an array of non-integers', function() {
     expect(lib.binarySearch(decimalArr, 1.1)).to.equal(0);
   });
 
-  it('returns -1 when the item is not found', function(){
+  it('returns -1 when the item is not found', function() {
     expect(lib.binarySearch(decimalArr, 0)).to.equal(-1);
   });
 
@@ -75,20 +75,20 @@ describe('binarySearch', () => {
     const max = 10000;
     for (var i = 0; i < max; i++) input.push(i);
 
-    function benchmark(fn){
+    function benchmark(fn) {
       const start = process.hrtime();
       fn();
       const diff = process.hrtime(start);
       return diff[0] * 1e9 + diff[1]; // return total number of nanoseconds
     }
 
-    function runLinearSearch(){
+    function runLinearSearch() {
       for (var i = 0; i < max; i++) {
         lib.linearSearch(input, max - 1);
       }
     }
 
-    function runBinarySearch(){
+    function runBinarySearch() {
       for (var i = 0; i < input.length; i++) {
         lib.binarySearch(input, max - 1);
       }

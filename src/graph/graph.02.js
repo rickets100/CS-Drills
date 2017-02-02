@@ -14,7 +14,7 @@ function Graph(data) {
   this.vertices = {};
 }
 
-Graph.prototype.createGraph = function(){
+Graph.prototype.createGraph = function() {
 };
 
 Graph.prototype.addVertexWithEdges = function(edges) {

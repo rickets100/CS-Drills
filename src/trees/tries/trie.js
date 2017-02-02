@@ -8,7 +8,7 @@
   @param {boolean} isWord - a boolean which should only be true if this node is a word.
   @param {string} character - the character this node represents
 */
-function Trie (isWord, character){
+function Trie (isWord, character) {
   this.characters = {};
   this.isWord = isWord || null;
   this.character = character || '';
@@ -25,7 +25,7 @@ function Trie (isWord, character){
                            is undefined it is set to 0.
   @return undefined
 */
-Trie.prototype.learn = function(word, index){
+Trie.prototype.learn = function(word, index) {
   // This function should add the given word,
   // starting from the given index,
   // to this Trie.
@@ -57,7 +57,7 @@ Trie.prototype.learn = function(word, index){
   @returns {Array} - an array of strings. Each string represents a valid word in the
                      Trie.
 */
-Trie.prototype.getWords = function(words, currentWord){
+Trie.prototype.getWords = function(words, currentWord) {
   // This function will return all the words which are
   // contained in this Trie.
   // it will use currentWord as a prefix,
@@ -76,7 +76,7 @@ Trie.prototype.getWords = function(words, currentWord){
   @return {Trie} - the Trie representing the passed in word, or undefined if
                    the word passed in is not a member of this Trie.
 */
-Trie.prototype.find = function(word, index){
+Trie.prototype.find = function(word, index) {
   // This function will return the node in the trie
   // which corresponds to the end of the passed in word.
 
@@ -96,7 +96,7 @@ Trie.prototype.find = function(word, index){
                      the passed in prefix. All of these words must start with
                      the passed in prefix.
 */
-Trie.prototype.autoComplete = function(prefix){
+Trie.prototype.autoComplete = function(prefix) {
   // This function will return all completions
   // for a given prefix.
   // It should use find and getWords.

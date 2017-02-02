@@ -6,8 +6,8 @@ describe('ParensChecker', function() {
 		expect(parensChecker('[]')).to.equal(true);
 		expect(parensChecker('()')).to.equal(true);
 		expect(parensChecker('{}')).to.equal(true);
-		expect(parensChecker('([([[{(){}[()]}]])])')).to.equal(true);
-		expect(parensChecker('[][][]{}(){[]}({})')).to.equal(true);
+		expect(parensChecker('([([[{() {}[()]}]])])')).to.equal(true);
+		expect(parensChecker('[][][]{}() {[]}({})')).to.equal(true);
 	});
 
 	it('should return false for invalid nested parens', function() {

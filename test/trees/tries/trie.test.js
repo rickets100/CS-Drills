@@ -6,15 +6,15 @@ describe('Trie', function() {
     var t = new Trie();
   });
 
-  describe('with a trie', function(){
+  describe('with a trie', function() {
     var t;
 
     beforeEach(function() {
       t = new Trie();
     });
 
-    describe('.learn', function(){
-      it('learns a word character by character', function(){
+    describe('.learn', function() {
+      it('learns a word character by character', function() {
         t.learn('be');
         var b = t.characters.b;
         expect(b).to.exist; // jshint ignore:line
@@ -25,7 +25,7 @@ describe('Trie', function() {
         expect(e.characters).to.deep.equal({});
       });
 
-      it('learns an extension', function(){
+      it('learns an extension', function() {
         t.learn('be');
         t.learn('begin');
         var e = t.characters.b.characters.e;
@@ -34,7 +34,7 @@ describe('Trie', function() {
         expect(n.isWord).to.exist; // jshint ignore:line
       });
 
-      it('learns a prefix', function(){
+      it('learns a prefix', function() {
         t.learn('begin');
         t.learn('be');
         var e = t.characters.b.characters.e;
@@ -44,17 +44,17 @@ describe('Trie', function() {
       });
     });
 
-    describe('.find', function(){
-      it('returns to.existy for a nonexistent string', function(){
+    describe('.find', function() {
+      it('returns to.existy for a nonexistent string', function() {
         expect(t.find('nope')).to.not.exist; // jshint ignore:line
       });
 
-      it('returns the right node for a prefix', function(){
+      it('returns the right node for a prefix', function() {
         t.learn('begin');
         expect(t.find('b')).to.deep.equal(t.characters.b);
       });
 
-      it('returns the last node for a prefix', function(){
+      it('returns the last node for a prefix', function() {
         // Thanks to Nikki Anderson and Stephanie Daffara
         t.learn('begin');
         t.learn('began');
@@ -63,29 +63,29 @@ describe('Trie', function() {
       });
     });
 
-    describe('.getWords', function(){
-      it('gets a child word', function(){
+    describe('.getWords', function() {
+      it('gets a child word', function() {
         t.learn('beast');
         expect(t.getWords()).to.deep.equal(['beast']);
       });
 
-      it('gets multiple child words', function(){
+      it('gets multiple child words', function() {
         t.learn('begin');
         t.learn('beginner');
         expect(t.getWords()
           ).to.deep.equal(['begin', 'beginner']);
       });
 
-      it('gets its own node if it is a word', function(){
+      it('gets its own node if it is a word', function() {
         t.learn('a');
         expect(t.characters.a.getWords()).to.deep.equal(['a']);
       });
 
-      it('returns an empty array if there are no words', function(){
+      it('returns an empty array if there are no words', function() {
         expect(t.getWords()).to.deep.equal([]);
       });
 
-      it('returns multiple children on different branches', function(){
+      it('returns multiple children on different branches', function() {
         // Thanks to Stu Stein.
         t.learn('begin');
         t.learn('best');
@@ -94,30 +94,30 @@ describe('Trie', function() {
       });
     });
 
-    describe('.autoComplete', function(){
-      beforeEach(function(){
+    describe('.autoComplete', function() {
+      beforeEach(function() {
         t.learn('be');
         t.learn('begin');
         t.learn('beginner');
         t.learn('beast');
       });
 
-      it('can recover multiple completions for a prefix', function(){
+      it('can recover multiple completions for a prefix', function() {
         expect(t.autoComplete('beg')).to.deep.equal(['begin', 'beginner']);
       });
 
-      it('can recover a single completion', function(){
+      it('can recover a single completion', function() {
         expect(t.autoComplete('bea')).to.deep.equal(['beast']);
       });
 
-      it('can recover a completion for the whole word', function(){
+      it('can recover a completion for the whole word', function() {
         expect(t.autoComplete('beast')).to.deep.equal(['beast']);
       });
 
-      it('can recover many completions', function(){
+      it('can recover many completions', function() {
         expect(t.autoComplete('be')).to.deep.equal(['be', 'begin', 'beginner', 'beast']);
       });
-      it('returns an empty array when there are no completions', function(){
+      it('returns an empty array when there are no completions', function() {
         expect(t.autoComplete('a')).to.deep.equal([]);
       });
     });

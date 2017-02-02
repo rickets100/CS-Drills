@@ -35,7 +35,6 @@ const mostUsedWord = (sentence) => {
 
 };
 
-
 /*
 
 Write a function, isAnagram.

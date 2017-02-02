@@ -1,6 +1,6 @@
 'use strict';
 
- /*
+/*
 
 Will Smith is back in the music game and his PR team is telling him he should  is make his former pop
 hit, 'Miami', multi-lingual. Below is a list of languages his team want him to include. Will is a busy
@@ -33,7 +33,6 @@ const greet = (language) => {
 
 };
 
-
 /*
 
 Create a function named removeDupes.
@@ -48,7 +47,6 @@ i.e. [1, 'z', 'bob', true, 42, 'bob'] => { '1': 0, 'z': 1, 'bob': '5', 'true': 3
 const removeDupes = (numArr) => {
 
 };
-
 
 /*
 

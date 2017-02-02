@@ -98,7 +98,7 @@ describe('Singly Linked List', function() {
       expect(list.pop()).to.not.exist; // jshint ignore:line
     });
 
-    it('Updates the tail with each call', function(){
+    it('Updates the tail with each call', function() {
       list.push(4).push(5).push(6).push(7);
 
       list.pop();

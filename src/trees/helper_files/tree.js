@@ -7,8 +7,8 @@ class Bst {
     this.root = null;
   }
 
-  insert(data){
-    if(!this.root){
+  insert(data) {
+    if(!this.root) {
       this.root = new Node(data);
     }
     else {

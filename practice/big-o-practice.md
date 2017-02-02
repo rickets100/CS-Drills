@@ -110,11 +110,11 @@ In practice these constants matter, and in practice the asymptotes also matter. 
 2. Counting all the characters in a string:
 
   ```js
-  function countCharacters(input){
+  function countCharacters(input) {
 
   	var characterCounts = {};
 
-  	for(var i = 0; i < input.length; i++){
+  	for(var i = 0; i < input.length; i++) {
   		var c = input[i];
 
   		if(characterCounts[c] === undefined) {
@@ -138,8 +138,8 @@ In practice these constants matter, and in practice the asymptotes also matter. 
   function allUnique(input) {
   	var characterCounts = countCharacters(input);
 
-  	for(character in characterCounts){
-  		if(characterCounts[character] !== 1){
+  	for(character in characterCounts) {
+  		if(characterCounts[character] !== 1) {
   			return false;
   		}
   	}
