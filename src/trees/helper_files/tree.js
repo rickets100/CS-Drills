@@ -8,15 +8,15 @@ class Bst {
   }
 
   insert(data) {
-    if(!this.root) {
+    if (!this.root) {
       this.root = new Node(data);
     }
     else {
       var current = this.root;
 
-      while(true) {
-        if(data < current.show()) {
-          if(current.left) {
+      while (true) {
+        if (data < current.show()) {
+          if (current.left) {
             current = current.left;
           }
           else {
@@ -25,7 +25,7 @@ class Bst {
           }
         }
         else {
-          if(current.right) {
+          if (current.right) {
             current = current.right;
           }
           else {

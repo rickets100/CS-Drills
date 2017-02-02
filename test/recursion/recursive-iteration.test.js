@@ -20,7 +20,7 @@ describe('Looping and recursion', () => {
 
       expect(lib.max([1])).to.deep.equal(1);
       expect(lib.max([1,2,3])).to.deep.equal(3);
-      expect(lib.max([20, 10 ,30])).to.deep.equal(30);
+      expect(lib.max([20, 10, 30])).to.deep.equal(30);
       expect(lib.max([5, 10, 15, 2, -1, 4])).to.deep.equal(15);
       expect(lib.max([])).to.deep.equal(undefined);
     });
@@ -34,7 +34,7 @@ describe('Looping and recursion', () => {
 
       expect(lib.min([1])).to.deep.equal(1);
       expect(lib.min([1,2,3])).to.deep.equal(1);
-      expect(lib.min([20, 10 ,30])).to.deep.equal(10);
+      expect(lib.min([20, 10, 30])).to.deep.equal(10);
       expect(lib.min([5, 10, 15, 2, -1, 4])).to.deep.equal(-1);
       expect(lib.min([])).to.deep.equal(undefined);
     });
@@ -113,7 +113,7 @@ describe('Looping and recursion', () => {
 
       expect(lib.map([1], fn)).to.deep.equal([2]);
       expect(lib.map([1,2,3], fn)).to.deep.equal([2,3,4]);
-      expect(lib.map([20, 10 ,30], fn)).to.deep.equal([21,11,31]);
+      expect(lib.map([20, 10, 30], fn)).to.deep.equal([21,11,31]);
       expect(lib.map([5, 10, 15, 2, -1, 4], fn)).to.deep.equal([6,11,16,3,0,5]);
       expect(lib.map([], fn)).to.deep.equal([]);
     });
@@ -188,7 +188,7 @@ describe('Looping and recursion', () => {
       expect(lib.flatten([[1]])).to.deep.equal([1]);
       expect(lib.flatten([[[1]]])).to.deep.equal([1]);
       expect(lib.flatten([[[[1]]]])).to.deep.equal([1]);
-      expect(lib.flatten([1, [2], [3,4], [ 5, [6, [7]]]])).to.deep.equal([1, 2, 3, 4, 5, 6, 7]);
+      expect(lib.flatten([1, [2], [3,4], [5, [6, [7]]]])).to.deep.equal([1, 2, 3, 4, 5, 6, 7]);
     });
 
     it('does not use loops', checkForLoops('flatten'));

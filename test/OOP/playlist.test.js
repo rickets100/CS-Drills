@@ -61,7 +61,6 @@ describe('Playlist', function() {
     expect(playlist.totalDuration()).to.deep.equal(175);
   });
 
-
   it('allows you to swap songs', function() {
     var playlist = new Playlist('jazz');
 

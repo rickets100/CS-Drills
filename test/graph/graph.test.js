@@ -69,7 +69,7 @@ describe('Graph', function() {
     expect(Graph.pathWeight(path)).to.equal(2474);
   });
 
- it('should find orphans', function () {
+  it('should find orphans', function () {
     let graph = new Graph();
     // A <-> B   C
     graph.addNode('A');

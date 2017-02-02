@@ -28,7 +28,6 @@ BinTree.prototype.containsRecursively = function(value,current) {
 
 };
 
-
 BinTree.prototype.breadthFirstSearch = function() {
 
 };
@@ -78,7 +77,6 @@ BinTree.prototype.findHighest = function() {
 BinTree.prototype._countChildren = function(node) {
 
 };
-
 
 BinTree.prototype.remove = function(value) {
 

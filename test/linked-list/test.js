@@ -157,18 +157,18 @@ describe('LinkedList', () => {
          buildList(3, (num) => 4 - num))).to.be.eql({
           value: 1,
           next: {
-           value: 1,
-           next: {
-            value: 2,
+            value: 1,
             next: {
-             value: 2,
-             next: {
-              value: 3,
-              next: null
+              value: 2,
+              next: {
+                value: 2,
+                next: {
+                  value: 3,
+                  next: null
+                }
+              }
             }
-           }
           }
-         }
         });
       });
     });

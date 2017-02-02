@@ -1,3 +1,5 @@
+// jscs:disable validateIndentation
+
 var parensChecker = require('../../src/linked-list/parens_checker');
 var expect = require('chai').expect;
 
@@ -28,4 +30,7 @@ describe('ParensChecker', function() {
 		expect(parensChecker(true)).to.equal(false);
 		expect(parensChecker(undefined)).to.equal(false);
 	});
+
 });
+
+// jscs:enable validateIndentation

@@ -1,9 +1,9 @@
 const expect = require('chai').expect; // jshint ignore:line
 var TollRoad = require('../../src/OOP/toll_road');
 
-describe('TollRoad', ()=>{
+describe('TollRoad', () => {
 
-  it('has a price', ()=> {
+  it('has a price', () => {
     var tollRoad = new TollRoad(4);
     expect(tollRoad.price).to.deep.equal(4);
 

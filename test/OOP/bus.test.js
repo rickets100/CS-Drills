@@ -44,7 +44,7 @@ describe('Bus', function() {
     expect(bus.passengerNames()).to.deep.equal(['Joe Jones (1)']);
 
     bus.board(sue);
-    expect(bus.passengerNames()).to.deep.equal([ 'Joe Jones (1)', 'Sue Summers (2)' ]);
+    expect(bus.passengerNames()).to.deep.equal(['Joe Jones (1)', 'Sue Summers (2)']);
   });
 
   it('allows passengers to switch seats', function() {

@@ -175,7 +175,7 @@ DoublyLinkedList.prototype.mostFrequent = function() {
   var index = 0;
 
   while (curNode !== null) {
-    if (typeof  curNode.val === 'number') {
+    if (typeof curNode.val === 'number') {
       key = '' + curNode.val;
     } else {
       key = curNode.val.toString();

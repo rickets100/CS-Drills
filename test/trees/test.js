@@ -332,12 +332,11 @@ describe('Trees', () => {
 
     describe('#insertValueInBinSearchTree', () => {
       it('Inserts value in an empty binary search tree', () => {
-        expect(level2.insertValueInBinSearchTree(null,
-           9)).to.be.eql({
-             value: 9,
-             left: null,
-             right: null
-           });
+        expect(level2.insertValueInBinSearchTree(null, 9)).to.be.eql({
+          value: 9,
+          left: null,
+          right: null
+        });
       });
 
       it('Inserts value in binary search tree', () => {

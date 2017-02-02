@@ -30,12 +30,12 @@ describe('Graph', function() {
     it('can show the first vertex', function() {
       let firstVertex = graph.vertices[0];
 
-      expect(firstVertex).to.deep.equal({ edges: [ 1, 2 ] });
+      expect(firstVertex).to.deep.equal({ edges: [1, 2] });
     });
     it('can show the last vertex', function() {
       let lastVertex = graph.vertices[8];
 
-      expect(lastVertex).to.deep.equal({ edges: [ 4, 7 ] });
+      expect(lastVertex).to.deep.equal({ edges: [4, 7] });
     });
   });
 
@@ -86,11 +86,11 @@ describe('Graph', function() {
   describe('Measuring distances', function() {
 
     describe('#initializeDistances', function() {
-        it('adds a distance property to each vertex and makes it equal to \'-1\'', function() {
-          let firstVertex = graph.initializeDistances(graph.vertices)[0];
+      it('adds a distance property to each vertex and makes it equal to \'-1\'', function() {
+        let firstVertex = graph.initializeDistances(graph.vertices)[0];
 
-          expect(firstVertex.distance).to.equal(-1);
-        });
+        expect(firstVertex.distance).to.equal(-1);
+      });
     });
 
     describe('#getDistances',function() {

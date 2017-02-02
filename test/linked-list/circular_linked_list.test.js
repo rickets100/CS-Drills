@@ -1,7 +1,6 @@
 var CircularLinkedList = require('../../src/linked-list/circular_linked_list');
 const expect = require('chai').expect; // jshint ignore:line
 
-
 describe('circular linked list', function() {
   var linkedList;
 

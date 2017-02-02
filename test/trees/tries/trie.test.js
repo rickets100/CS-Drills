@@ -124,5 +124,4 @@ describe('Trie', function() {
 
   });
 
-
 });

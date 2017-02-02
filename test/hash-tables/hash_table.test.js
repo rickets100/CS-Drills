@@ -44,13 +44,16 @@ describe('Hash Table', function() {
     });
 
     it('hashes a string', function() {
-      expect(table.__hashFunction('aB=')).to.deep.equal(strToCharCode('aB=')%size);
-      expect(table.__hashFunction('zzzzzzzzz')).to.deep.equal(strToCharCode('zzzzzzzzz')%size);
+      expect(table.__hashFunction('aB=')).to.deep.equal(strToCharCode('aB=') % size);
+      expect(table.__hashFunction('zzzzzzzzz')).to.deep.equal(strToCharCode('zzzzzzzzz') % size);
       expect(table.__hashFunction('')).to.deep.equal(0);
     });
 
     it('hashes a function', function() {
-      var f = function() {var i = 0; console.log(i);};
+      var f = function() {
+        var i = 0;
+        console.log(i);
+      };
       var total = strToCharCode(f.toString());
       expect(table.__hashFunction(f)).to.deep.equal(total % size);
     });
@@ -71,14 +74,14 @@ describe('Hash Table', function() {
   describe('get, set and exists', function() {
     it('sets and gets a simple key', function() {
       var key = 1, value = 'value';
-      expect(table.set(key, value)).to.be.undefined; // jshint ignore:line // jshint ignore:line
+      expect(table.set(key, value)).to.be.undefined; // jshint ignore:line
       expect(table.get(key)).to.deep.equal(value);
     });
 
     it('exists returns true if a key exists in the hash, false otherwise', function() {
       var key = 1;
       expect(table.exists(key)).to.be.false; // jshint ignore:line
-      expect(table.set(key, key)).to.be.undefined; // jshint ignore:line // jshint ignore:line
+      expect(table.set(key, key)).to.be.undefined; // jshint ignore:line
       expect(table.exists(key)).to.be.true; // jshint ignore:line
     });
 

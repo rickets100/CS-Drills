@@ -32,11 +32,11 @@ describe('Hash Table', () => {
       });
 
       it('should return an object with keys for each item in an array', () => {
-        level1.removeDupes([true, 8, 'hi']).should.eql({'true': 0, '8': 1, 'hi': 2});
+        level1.removeDupes([true, 8, 'hi']).should.eql({true: 0, 8: 1, hi: 2});
       });
 
       it('should return the index of the last instance of duplicate items in the array', () => {
-        level1.removeDupes(['foo', 'foo', 'bar']).should.eql({'foo': 1, 'bar': 2});
+        level1.removeDupes(['foo', 'foo', 'bar']).should.eql({foo: 1, bar: 2});
       });
     });
 
@@ -46,7 +46,7 @@ describe('Hash Table', () => {
       });
 
       it('should return an copy of input less key-value pairs who\'s value is not odd', () => {
-        level1.onlyOdds({'foo': 6, 'bar': 3, 'baz': 'bob', 13: 13}).should.eql({'bar': 3, '13': 13});
+        level1.onlyOdds({foo: 6, bar: 3, baz: 'bob', 13: 13}).should.eql({bar: 3, 13: 13});
       });
     });
 
@@ -76,27 +76,27 @@ describe('Hash Table', () => {
       });
 
       it('should be able to merge if both inputs have only a single value', () => {
-        level2.reverseMerge(['one'], [1]).should.eql({'one': 1});
+        level2.reverseMerge(['one'], [1]).should.eql({one: 1});
       });
 
       it('should be able to handle merges for larger arrays of the same size', () => {
         const keyArr = ['a', 'b', 'c', 'd'];
         const valArr = [1, 2, 3, 4];
 
-        level2.reverseMerge(keyArr, valArr).should.eql({'a': 4, 'b': 3, 'c': 2, 'd': 1});
+        level2.reverseMerge(keyArr, valArr).should.eql({a: 4, b: 3, c: 2, d: 1});
       });
 
       it('should use int 42 as value if valArr is smaller than keyArr', () => {
         const keyArr = ['a', 'b', 'c', 'd', 'e', 'f'];
         const valArr = [1, 2, 3, 4];
 
-        level2.reverseMerge(keyArr, valArr).should.eql({'a': 42, 'b': 42, 'c': 4, 'd': 3, 'e': 2, 'f': 1});
+        level2.reverseMerge(keyArr, valArr).should.eql({a: 42, b: 42, c: 4, d: 3, e: 2, f: 1});
       });
 
       it('should use \'foo\' as value if keyArr is smaller than valArr', () => {
         const keyArr = ['a', 'b', 'c', 'd'];
         const valArr = [1, 2, 3, 4, 5, 6, 7, 8];
-        const output = {'a': 8, 'b': 7, 'c': 6, 'd': 5, 'foo': [4, 3, 2, 1]};
+        const output = {a: 8, b: 7, c: 6, d: 5, foo: [4, 3, 2, 1]};
 
         level2.reverseMerge(keyArr, valArr).should.eql(output);
       });
