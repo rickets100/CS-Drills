@@ -65,7 +65,7 @@ describe('circular linked list', function() {
       expect(linkedList.tail).to.equal(null);
     });
 
-    it ('should set the next value on the last remaining node to itself', function() {
+    xit ('should set the next value on the last remaining node to itself', function() {
       linkedList.add('Last!');
       expect(node.next.value).to.equal('Last!');
       linkedList.removeLast();
