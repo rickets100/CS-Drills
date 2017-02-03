@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const swap = require('./sort-helpers').swap;
 const merge = require('./sort-helpers').merge;

@@ -1,4 +1,4 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var Robot = require('../../src/OOP/robot');
 
 describe('Robot', ()=> {
@@ -11,7 +11,7 @@ describe('Robot', ()=> {
     expect(robot.battery()).to.deep.equal(17);
   });
 
-  it("can move up", function () {
+  it('can move up', function () {
     var robot = new Robot(8);
     robot.moveUp();
     expect(robot.position()).to.deep.equal([0, 1]);
@@ -20,7 +20,7 @@ describe('Robot', ()=> {
     expect(robot.position()).to.deep.equal([0, 2]);
   });
 
-  it("can move left", function () {
+  it('can move left', function () {
     var robot = new Robot(8);
     robot.moveLeft();
     expect(robot.position()).to.deep.equal([-1, 0]);
@@ -29,15 +29,15 @@ describe('Robot', ()=> {
     expect(robot.position()).to.deep.equal([-2, 0]);
   });
 
-  it("can record their history", function () {
-    robot = new Robot(8);
+  it('can record their history', function () {
+    var robot = new Robot(8);
     expect(robot.history()).to.deep.equal([]);
 
     robot.moveLeft();
-    expect(robot.history()).to.deep.equal(["left"]);
+    expect(robot.history()).to.deep.equal(['left']);
 
     robot.moveUp();
-    expect(robot.history()).to.deep.equal(["left", "up"]);
+    expect(robot.history()).to.deep.equal(['left', 'up']);
   });
 
 });

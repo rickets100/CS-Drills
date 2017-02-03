@@ -1,9 +1,9 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var arrayToNode = require('../../src/trees/array_to_node');
 
 describe('arrayToNode', function() {
 
-  it("returns nodes with a name property containing the first value of the input array", function () {
+  it('returns nodes with a name property containing the first value of the input array', function () {
     var input = [
       'a',
       []
@@ -12,7 +12,7 @@ describe('arrayToNode', function() {
     expect(rootNode).to.have.property('name');
   });
 
-  it("returns nodes with a children property, which is an array", function () {
+  it('returns nodes with a children property, which is an array', function () {
     var input = [
       'a',
       []
@@ -20,9 +20,9 @@ describe('arrayToNode', function() {
     var rootNode = arrayToNode(input);
     expect(rootNode).to.have.property('children');
     expect(rootNode.children).to.be.a('array');
-  })
+  });
 
-  it("turns a two-element array into a node", function () {
+  it('turns a two-element array into a node', function () {
     var input = [
       'a',
       []
@@ -32,7 +32,7 @@ describe('arrayToNode', function() {
     expect(rootNode.children).to.deep.equal([]);
   });
 
-  it("turns nested arrays into child nodes with references to their parents", function () {
+  it('turns nested arrays into child nodes with references to their parents', function () {
     var input = [
       'a',
       [
@@ -54,7 +54,7 @@ describe('arrayToNode', function() {
     expect(rootNode.children[1].parent).to.deep.equal(rootNode);
   });
 
-  it("handles deeply nested nodes", function () {
+  it('handles deeply nested nodes', function () {
     var input = [
       'a',
       [

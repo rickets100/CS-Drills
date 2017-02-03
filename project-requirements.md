@@ -7,10 +7,10 @@ Because Computer Science is a very broad topic, the requirements for this projec
 ### Requirements
 
 1. Your project must have a focus on a data-structure or an algorithm.
-2. Your project should focus on an "application" rather than an "implementation" of the algorithm. For example:
+2. Your project should focus on an 'application' rather than an 'implementation' of the algorithm. For example:
 	* Using Best First Search algorithms to generate perfect pangrams
 	* Using the AC-3 algorithm to solve crossword puzzles
-	* Using "Edge Detection" to create black-and-white line drawings from full color images.
+	* Using 'Edge Detection' to create black-and-white line drawings from full color images.
 3. Your project must be sufficiently challenging for a week of work.
   * Meaning an instructor must approve your proposal.
 4. Your project must be presentable, meaning:
@@ -44,4 +44,4 @@ Because Computer Science is a very broad topic, the requirements for this projec
 	* Example: Can you tell what genre a movie is based on the synopsis?
 * Do something clever with algorithms you already know
 	* Can you compute the shortest path distance between any two wikipedia articles?
-	* Can you compute the "Bacon score" of any two actors/actresses using IMDB data?
+	* Can you compute the 'Bacon score' of any two actors/actresses using IMDB data?

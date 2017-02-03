@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
-const expect = require("chai").expect
-const lib = require('../../src/recursion/recursion')
+const expect = require('chai').expect; // jshint ignore:line
+const lib = require('../../src/recursion/recursion');
 
 describe('factorial', function() {
 

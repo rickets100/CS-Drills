@@ -1,6 +1,6 @@
 /*
   A least recently used cache. Given a max-size, we create space for
-  maxSize items. Each new "put" adds something to the cache. If the
+  maxSize items. Each new 'put' adds something to the cache. If the
   request to put something puts the cache over max size, then the least
   recently accessed element is evicted from the cache.
 
@@ -24,7 +24,7 @@ function LRUCache(maxSize) {
 */
 LRUCache.prototype.put = function(key, value) {
 
-}
+};
 
 /*
   Check for and return the value associated with the provided key if it exists,
@@ -36,6 +36,6 @@ LRUCache.prototype.put = function(key, value) {
 */
 LRUCache.prototype.get = function(key) {
 
-}
+};
 
 module.exports = LRUCache;

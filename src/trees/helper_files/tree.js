@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var Node = require('./node');
 
@@ -7,25 +7,25 @@ class Bst {
     this.root = null;
   }
 
-  insert(data){
-    if(!this.root){
+  insert(data) {
+    if (!this.root) {
       this.root = new Node(data);
     }
     else {
       var current = this.root;
 
-      while(true) {
-        if(data < current.show()) {
-          if(current.left) {
+      while (true) {
+        if (data < current.show()) {
+          if (current.left) {
             current = current.left;
           }
           else {
-            current.left = new Node(data)
+            current.left = new Node(data);
             break;
           }
         }
         else {
-          if(current.right) {
+          if (current.right) {
             current = current.right;
           }
           else {

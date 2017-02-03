@@ -1,33 +1,32 @@
-'use strict'
+'use strict';
 
 // http://visualgo.net/bst.html
 
-function BinTree(){
+function BinTree() {
 
 }
 
-function Node(value,left,right){
+function Node(value,left,right) {
 
 }
 
 // NOTE - Duplicates are excluded in our tree!
 
-BinTree.prototype.insertIteratively = function(value){
+BinTree.prototype.insertIteratively = function(value) {
 
 };
 
-BinTree.prototype.insertRecursively = function(value,current){
+BinTree.prototype.insertRecursively = function(value,current) {
 
 };
 
-BinTree.prototype.containsIteratively = function(value){
+BinTree.prototype.containsIteratively = function(value) {
 
 };
 
-BinTree.prototype.containsRecursively = function(value,current){
+BinTree.prototype.containsRecursively = function(value,current) {
 
 };
-
 
 BinTree.prototype.breadthFirstSearch = function() {
 
@@ -41,8 +40,8 @@ BinTree.prototype.breadthFirstSearch = function() {
 
 // take a look at this code for an example
 
-// function sayHi(){
-//   return "hey!"
+// function sayHi() {
+//   return 'hey!'
 // }
 
 // what does true && sayHi() return?
@@ -75,12 +74,11 @@ BinTree.prototype.findHighest = function() {
 };
 
 // private helper method for remove
-BinTree.prototype._countChildren = function(node){
+BinTree.prototype._countChildren = function(node) {
 
 };
 
-
-BinTree.prototype.remove = function(value){
+BinTree.prototype.remove = function(value) {
 
 };
 

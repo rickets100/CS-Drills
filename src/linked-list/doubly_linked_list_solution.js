@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function Node(val, next, prev) {
   this.val = val;
@@ -23,7 +23,7 @@ function DoublyLinkedList() {
 }
 
 DoublyLinkedList.prototype.__getNodeAt = function(index) {
-  if (typeof index !== "number" || index >= this.length || index < 0) return undefined;
+  if (typeof index !== 'number' || index >= this.length || index < 0) return undefined;
 
   var mid = this.length / 2;
   var goForward = true;
@@ -39,7 +39,7 @@ DoublyLinkedList.prototype.__getNodeAt = function(index) {
     curNode = this.tail;
   }
 
-  while (i != index) {
+  while (i !== index) {
     if (goForward) {
       curNode = curNode.next;
       i++;
@@ -74,14 +74,13 @@ DoublyLinkedList.prototype.clear = function() {
 };
 
 DoublyLinkedList.prototype.pop = function() {
+  var value = this.tail.val;
   if (!this.head) return undefined;
   if (this.length === 1) {
-    var value = this.head.val;
+    value = this.head.val;
     this.clear();
     return value;
   }
-
-  var value = this.tail.val
   var prevNode = this.tail.prev;
   prevNode.next = null;
   this.tail.prev = undefined;
@@ -108,7 +107,7 @@ DoublyLinkedList.prototype.unshift = function(val) {
 DoublyLinkedList.prototype.shift = function() {
   if (this.length <= 1) return this.pop();
 
-  var value = this.head.val
+  var value = this.head.val;
   var nextNode = this.head.next;
   nextNode.prev = null;
   this.head.next = undefined;
@@ -144,7 +143,7 @@ DoublyLinkedList.prototype.insert = function(index, val) {
 };
 
 DoublyLinkedList.prototype.forEach = function(callback) {
-  curNode = this.head;
+  var curNode = this.head;
   while (curNode) {
     callback(curNode.val);
     curNode = curNode.next;
@@ -176,8 +175,8 @@ DoublyLinkedList.prototype.mostFrequent = function() {
   var index = 0;
 
   while (curNode !== null) {
-    if (typeof  curNode.val === "number") {
-      key = "" + curNode.val;
+    if (typeof curNode.val === 'number') {
+      key = '' + curNode.val;
     } else {
       key = curNode.val.toString();
     }
@@ -208,12 +207,13 @@ DoublyLinkedList.prototype.mostFrequent = function() {
 
 DoublyLinkedList.prototype.rotate = function(positions, forward) {
   if (positions <= 0) return;
+  var val;
   for (var i = 0; i < positions; i++) {
     if (forward) {
-      var val = this.pop();
+      val = this.pop();
       this.unshift(val);
     } else {
-      var val = this.shift();
+      val = this.shift();
       this.push(val);
     }
   }

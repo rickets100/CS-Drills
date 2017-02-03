@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /*
 
@@ -23,7 +23,7 @@ object if there is a child in that direction, otherwise it will be undefined.
 }
 */
 function dfs (node, isMatch) {
-  
+
 }
 
 module.exports = dfs;

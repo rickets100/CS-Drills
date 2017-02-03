@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /*
   A Circular Linked List is a list where head.prev points to tail and

@@ -1,16 +1,16 @@
-'use strict'
-var SinglyLinkedList = require("../../src/linked-list/singly_linked_list");
-var expect = require("chai").expect
+'use strict';
+var SinglyLinkedList = require('../../src/linked-list/singly_linked_list');
+var expect = require('chai').expect;
 
-describe("Singly Linked List", function() {
+describe('Singly Linked List', function() {
   var list;
 
   beforeEach(function() {
     list = new SinglyLinkedList();
   });
 
-  describe("push", function() {
-    it("Updates the length with each call", function() {
+  describe('push', function() {
+    it('Updates the length with each call', function() {
       list.push(2);
       expect(list.length).to.equal(1);
 
@@ -21,10 +21,10 @@ describe("Singly Linked List", function() {
       expect(list.length).to.equal(3);
     });
 
-    it("Properly updates the head pointer", function() {
+    it('Properly updates the head pointer', function() {
       list.push(2);
       expect(list.head.val).to.equal(2);
-      expect(list.head.next).to.not.exist;
+      expect(list.head.next).to.not.exist; // jshint ignore:line
 
       list.push(4);
       expect(list.head.val).to.equal(2);
@@ -35,41 +35,41 @@ describe("Singly Linked List", function() {
       expect(list.head.next.val).to.equal(4);
     });
 
-    it("Always points the tail to the most recently pushed item", function() {
+    it('Always points the tail to the most recently pushed item', function() {
       list.push(2);
       expect(list.tail.val).to.equal(2);
-      expect(list.tail.next).to.not.exist;
+      expect(list.tail.next).to.not.exist; // jshint ignore:line
 
       list.push(4);
       expect(list.tail.val).to.equal(4);
-      expect(list.tail.next).to.not.exist;
+      expect(list.tail.next).to.not.exist; // jshint ignore:line
 
       list.push(10);
       expect(list.tail.val).to.equal(10);
-      expect(list.tail.next).to.not.exist;
+      expect(list.tail.next).to.not.exist; // jshint ignore:line
     });
 
-    it("Properly updates head.next on lists of size 1", function() {
+    it('Properly updates head.next on lists of size 1', function() {
       list.push(2);
-      expect(list.head.next).to.not.exist;
+      expect(list.head.next).to.not.exist; // jshint ignore:line
 
       list.push(4);
       expect(list.head.next.val).to.equal(4);
     });
 
-    it("returns self so chaining works", function() {
+    it('returns self so chaining works', function() {
       expect(list.length).to.equal(0);
       list.push(1).push(2);
       expect(list.length).to.equal(2);
     });
   });
 
-  describe("pop", function() {
-    it("returns undefined or null when called on an empty list", function() {
-      expect(list.pop()).to.not.exist;
+  describe('pop', function() {
+    it('returns undefined or null when called on an empty list', function() {
+      expect(list.pop()).to.not.exist; // jshint ignore:line
     });
 
-    it("Updates the length properly when called", function() {
+    it('Updates the length properly when called', function() {
       list.push(4).push(5).push(6).push(7);
 
       list.pop();
@@ -89,16 +89,16 @@ describe("Singly Linked List", function() {
       expect(list.length).to.equal(0);
     });
 
-    it("returns the value at the end of the list", function() {
+    it('returns the value at the end of the list', function() {
       list.push(4).push(5).push(6).push(7);
       expect(list.pop()).to.equal(7);
       expect(list.pop()).to.equal(6);
       expect(list.pop()).to.equal(5);
       expect(list.pop()).to.equal(4);
-      expect(list.pop()).to.not.exist;
+      expect(list.pop()).to.not.exist; // jshint ignore:line
     });
 
-    it("Updates the tail with each call", function(){
+    it('Updates the tail with each call', function() {
       list.push(4).push(5).push(6).push(7);
 
       list.pop();
@@ -111,22 +111,22 @@ describe("Singly Linked List", function() {
       expect(list.tail.val).to.equal(4);
 
       list.pop();
-      expect(list.tail).to.not.exist;
+      expect(list.tail).to.not.exist; // jshint ignore:line
 
       // Popping on an empty list doesn't change the tail
       list.pop();
-      expect(list.tail).to.not.exist;
+      expect(list.tail).to.not.exist; // jshint ignore:line
     });
 
-    it("Updates the head when the only node in the list is popped", function() {
+    it('Updates the head when the only node in the list is popped', function() {
       list.push(4);
       expect(list.head.val).to.equal(4);
 
       list.pop();
-      expect(list.head).to.not.exist;
+      expect(list.head).to.not.exist; // jshint ignore:line
     });
 
-    it("Using push and pop, we can store and remove values in order and the length will update properly", function() {
+    it('Using push and pop, we can store and remove values in order and the length will update properly', function() {
       list.push(2).push(4).push(6);
       expect(list.length).to.equal(3);
       expect(list.head.val).to.equal(2);
@@ -154,13 +154,13 @@ describe("Singly Linked List", function() {
 
       expect(list.pop()).to.equal(2);
       expect(list.length).to.equal(0);
-      expect(list.head).to.not.exist;
-      expect(list.tail).to.not.exist;
+      expect(list.head).to.not.exist; // jshint ignore:line
+      expect(list.tail).to.not.exist; // jshint ignore:line
     });
   });
 
-  describe("unshift", function() {
-    it("Updates length with each call", function() {
+  describe('unshift', function() {
+    it('Updates length with each call', function() {
       list.unshift(2);
       expect(list.length).to.equal(1);
 
@@ -171,10 +171,10 @@ describe("Singly Linked List", function() {
       expect(list.length).to.equal(3);
     });
 
-    it("Updates the head properly each time", function() {
+    it('Updates the head properly each time', function() {
       list.unshift(2);
       expect(list.head.val).to.equal(2);
-      expect(list.head.next).to.not.exist;
+      expect(list.head.next).to.not.exist; // jshint ignore:line
 
       list.unshift(4);
       expect(list.head.val).to.equal(4);
@@ -185,23 +185,23 @@ describe("Singly Linked List", function() {
       expect(list.head.next.val).to.equal(4);
     });
 
-    it("Updates the tail on an empty list, but not otherwise", function() {
+    it('Updates the tail on an empty list, but not otherwise', function() {
       list.unshift(2);
       expect(list.tail.val).to.equal(2);
-      expect(list.tail.next).to.not.exist;
+      expect(list.tail.next).to.not.exist; // jshint ignore:line
 
       list.unshift(4);
       expect(list.tail.val).to.equal(2);
-      expect(list.tail.next).to.not.exist;;
+      expect(list.tail.next).to.not.exist; // jshint ignore:line
 
       list.unshift(6);
       expect(list.tail.val).to.equal(2);
-      expect(list.tail.next).to.not.exist;
+      expect(list.tail.next).to.not.exist; // jshint ignore:line
     });
   });
 
-  describe("shift", function() {
-    it("removes a value from the front of the list", function() {
+  describe('shift', function() {
+    it('removes a value from the front of the list', function() {
       list.push(4).push(2);
       expect(list.length).to.equal(2);
       expect(list.shift()).to.equal(4);
@@ -211,20 +211,20 @@ describe("Singly Linked List", function() {
     });
   });
 
-  describe("get", function() {
-    it("get a value from the list given an index", function() {
+  describe('get', function() {
+    it('get a value from the list given an index', function() {
       list.push(0).push(1).push(2).push(3).push(4);
       expect(list.length).to.equal(5);
       expect(list.get(2)).to.equal(2);
       expect(list.get(0)).to.equal(0);
-      expect(list.get(5)).to.not.exist;
+      expect(list.get(5)).to.not.exist; // jshint ignore:line
       expect(list.get(4)).to.equal(4);
       expect(list.get(3)).to.equal(3);
     });
   });
 
-  describe("set", function() {
-    it("set a value in the list given an index", function() {
+  describe('set', function() {
+    it('set a value in the list given an index', function() {
       list.push(0).push(1).push(2).push(3).push(4);
       expect(list.length).to.equal(5);
       list.set(4,99);
@@ -236,29 +236,29 @@ describe("Singly Linked List", function() {
     });
   });
 
-  describe("remove", function() {
-    it("removes the first element in a list of size 1", function() {
+  describe('remove', function() {
+    it('removes the first element in a list of size 1', function() {
       list.push(1);
       expect(list.length).to.equal(1);
       expect(list.remove(0)).to.equal(1);
       expect(list.length).to.equal(0);
     });
 
-    it("removes the last element in a list of size 5", function() {
+    it('removes the last element in a list of size 5', function() {
       list.push(1).push(2).push(3).push(4).push(5);
       expect(list.length).to.equal(5);
       expect(list.remove(4)).to.equal(5);
       expect(list.length).to.equal(4);
     });
 
-    it("removes the second element in a list of size 5", function() {
+    it('removes the second element in a list of size 5', function() {
       list.push(1).push(2).push(3).push(4).push(5);
       expect(list.length).to.equal(5);
       expect(list.remove(1)).to.equal(2);
       expect(list.length).to.equal(4);
     });
 
-    it("removes the second to last element in a list of size 5", function() {
+    it('removes the second to last element in a list of size 5', function() {
       list.push(1).push(2).push(3).push(4).push(5);
       expect(list.length).to.equal(5);
       expect(list.remove(3)).to.equal(4);
@@ -267,10 +267,10 @@ describe("Singly Linked List", function() {
       expect(list.get(1)).to.equal(2);
       expect(list.get(2)).to.equal(3);
       expect(list.get(3)).to.equal(5);
-      expect(list.get(4)).to.not.exist;
+      expect(list.get(4)).to.not.exist; // jshint ignore:line
     });
 
-    it("should reverse the list", function() {
+    it('should reverse the list', function() {
       list.push(1).push(2).push(3).push(4).push(5);
       expect(list.head.val).to.equal(1);
       list.reverse();

@@ -26,7 +26,7 @@ describe('Depth first search', () => {
     isMatch = sinon.spy(isMatch);
     dfs(bst.root, isMatch).data.should.be.equal(10);
 
-    isMatch.calledWith(10).should.be.true;
+    isMatch.calledWith(10).should.be.true; // jshint ignore:line
     isMatch.callCount.should.be.equal(1);
   });
 
@@ -36,13 +36,13 @@ describe('Depth first search', () => {
     dfs(bst.root, isMatch).data.should.be.equal(6);
 
     isMatch.callCount.should.be.equal(4);
-    isMatch.calledWith(10).should.be.true;
-    isMatch.calledWith(5).should.be.true;
-    isMatch.calledWith(1).should.be.true;
-    isMatch.calledWith(6).should.be.true;
-    isMatch.neverCalledWith(15).should.be.true;
-    isMatch.neverCalledWith(11).should.be.true;
-    isMatch.neverCalledWith(16).should.be.true;
+    isMatch.calledWith(10).should.be.true; // jshint ignore:line
+    isMatch.calledWith(5).should.be.true; // jshint ignore:line
+    isMatch.calledWith(1).should.be.true; // jshint ignore:line
+    isMatch.calledWith(6).should.be.true; // jshint ignore:line
+    isMatch.neverCalledWith(15).should.be.true; // jshint ignore:line
+    isMatch.neverCalledWith(11).should.be.true; // jshint ignore:line
+    isMatch.neverCalledWith(16).should.be.true; // jshint ignore:line
   });
 
   it('should find the number 16', () => {
@@ -51,27 +51,27 @@ describe('Depth first search', () => {
     dfs(bst.root, isMatch).data.should.be.equal(16);
 
     isMatch.callCount.should.be.equal(7);
-    isMatch.calledWith(10).should.be.true;
-    isMatch.calledWith(5).should.be.true;
-    isMatch.calledWith(1).should.be.true;
-    isMatch.calledWith(6).should.be.true;
-    isMatch.calledWith(15).should.be.true;
-    isMatch.calledWith(11).should.be.true;
-    isMatch.calledWith(16).should.be.true;
+    isMatch.calledWith(10).should.be.true; // jshint ignore:line
+    isMatch.calledWith(5).should.be.true; // jshint ignore:line
+    isMatch.calledWith(1).should.be.true; // jshint ignore:line
+    isMatch.calledWith(6).should.be.true; // jshint ignore:line
+    isMatch.calledWith(15).should.be.true; // jshint ignore:line
+    isMatch.calledWith(11).should.be.true; // jshint ignore:line
+    isMatch.calledWith(16).should.be.true; // jshint ignore:line
   });
 
   it('should not find the number 155', () => {
     var isMatch = (data) => {return data === 155;};
     isMatch = sinon.spy(isMatch);
-    dfs(bst.root, isMatch).should.be.false;
+    dfs(bst.root, isMatch).should.be.false; // jshint ignore:line
 
     isMatch.callCount.should.be.equal(7);
-    isMatch.calledWith(10).should.be.true;
-    isMatch.calledWith(5).should.be.true;
-    isMatch.calledWith(1).should.be.true;
-    isMatch.calledWith(6).should.be.true;
-    isMatch.calledWith(15).should.be.true;
-    isMatch.calledWith(11).should.be.true;
-    isMatch.calledWith(16).should.be.true;
+    isMatch.calledWith(10).should.be.true; // jshint ignore:line
+    isMatch.calledWith(5).should.be.true; // jshint ignore:line
+    isMatch.calledWith(1).should.be.true; // jshint ignore:line
+    isMatch.calledWith(6).should.be.true; // jshint ignore:line
+    isMatch.calledWith(15).should.be.true; // jshint ignore:line
+    isMatch.calledWith(11).should.be.true; // jshint ignore:line
+    isMatch.calledWith(16).should.be.true; // jshint ignore:line
   });
-})
+});

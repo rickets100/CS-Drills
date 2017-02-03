@@ -2,4 +2,4 @@ class TagBuilder {
 
 }
 
-module.exports = TagBuilder
+module.exports = TagBuilder;

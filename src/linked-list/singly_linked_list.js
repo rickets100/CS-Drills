@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function Node(val, next=null) {
   this.val = val;

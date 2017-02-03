@@ -46,7 +46,6 @@ var Node = require('./node');
 //It has properties already set up for you, such as 'name' and 'children'.
 //It also has a method, addChild(), which is essential.
 
-
 //Make sure that this function calls new Node()
 var arrayToNode = function(input) {
 
