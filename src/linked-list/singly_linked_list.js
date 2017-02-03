@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function Node(val, next=null) {
   this.val = val;
@@ -45,9 +45,10 @@ SinglyLinkedList.prototype.clear = function() {
 };
 
 SinglyLinkedList.prototype.pop = function() {
+  var value;
   if (!this.head) return undefined;
   if (this.length === 1) {
-    var value = this.head.val;
+    value = this.head.val;
     this.clear();
     return value;
   }
@@ -55,7 +56,7 @@ SinglyLinkedList.prototype.pop = function() {
   // O(n) operation to do a pop
   var curNode = this.__getNodeAt(this.length - 2);
 
-  var value = this.tail.val;
+  value = this.tail.val;
   this.tail = curNode;
   curNode.next = null;
   this.length--;
@@ -79,7 +80,7 @@ SinglyLinkedList.prototype.unshift = function(val) {
 SinglyLinkedList.prototype.shift = function() {
   if (this.length <= 1) return this.pop();
 
-  var value = this.head.val
+  var value = this.head.val;
   this.head = this.head.next;
   this.length--;
   return value;
