@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var largestElement = require('../src/kth_largest_element');
+var largestElement = require('../../src/hash-tables/kth_largest_element');
 
 describe('largestElement()', () => {
   it('should return the kth largest element', () => {

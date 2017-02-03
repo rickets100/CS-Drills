@@ -13,7 +13,7 @@ describe('cache', () => {
     const cache = new LRUCache(1);
     cache.put('a', 'hello');
     cache.put('b', 'still here');
-    expect(cache.get('a')).to.be.undefined; // jshint ignore:line
+    expect(cache.get('a')).to.be.undefined; // jshint ignore:line // jshint ignore:line
     expect(cache.get('b')).to.equal('still here');
   });
 
@@ -25,7 +25,7 @@ describe('cache', () => {
     cache.put('c', 'killer c');
     expect(cache.get('c')).to.equal('killer c');
     expect(cache.get('a')).to.equal('hello');
-    expect(cache.get('b')).to.be.undefined; // jshint ignore:line
+    expect(cache.get('b')).to.be.undefined; // jshint ignore:line // jshint ignore:line
   });
 
   it('works with a more complex example', () => {
@@ -36,7 +36,7 @@ describe('cache', () => {
     cache.put('d', 'dance');
     cache.put('e', 'everywhere');
     cache.put('f', 'fast');
-    expect(cache.get('a')).to.be.undefined; // jshint ignore:line
+    expect(cache.get('a')).to.be.undefined; // jshint ignore:line // jshint ignore:line
     expect(cache.get('b')).to.equal('bees');
     expect(cache.get('c')).to.equal('can');
     expect(cache.get('d')).to.equal('dance');
@@ -44,11 +44,11 @@ describe('cache', () => {
     expect(cache.get('f')).to.equal('fast');
 
     cache.put('g', 'gladly');
-    expect(cache.get('b')).to.be.undefined; // jshint ignore:line
+    expect(cache.get('b')).to.be.undefined; // jshint ignore:line // jshint ignore:line
     expect(cache.get('c')).to.equal('can');
 
     cache.put('h', 'humbly');
-    expect(cache.get('d')).to.be.undefined; // jshint ignore:line
+    expect(cache.get('d')).to.be.undefined; // jshint ignore:line // jshint ignore:line
     expect(cache.get('c')).to.equal('can');
   });
 

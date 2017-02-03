@@ -36,7 +36,6 @@ class Playlist {
     let tmp = this.songs[idx1];
     this.songs[idx1] = this.songs[idx2];
     this.songs[idx2] = tmp;
->>>>>>> adding-cs-exercises
   }
 
 }

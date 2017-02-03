@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const expect = require('chai').expect; // jshint ignore:line
 const binaryToDecimal = require('../../src/binary-encoding/binary');

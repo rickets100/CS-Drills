@@ -51,6 +51,7 @@ describe('Graph', function() {
 
   it('should find node neighbors', function () {
     let neighbors = cityGraph.findNeighbors('Chicago');
+
     expect(neighbors.length).to.equal(3);
     expect(neighbors).to.contain('Denver');
     expect(neighbors).to.contain('Atlanta');

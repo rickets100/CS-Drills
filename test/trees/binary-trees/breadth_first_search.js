@@ -1,8 +1,8 @@
 var chai = require('chai');
 var sinon = require('sinon');
 
-var bfs = require('../src/breadth_first_search.js');
-var Bst = require('../helper_files/tree.js');
+var bfs = require('../../../src/trees/binary-trees/breadth_first_search.js');
+var Bst = require('../../../src/trees/helper_files/tree.js');
 
 var should = chai.should();
 

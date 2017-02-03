@@ -7,6 +7,7 @@ describe('queue', () => {
 
   it('starts off empty', () => {
     const queue = new Queue();
+
     expect(queue.size()).to.eq(0);
     expect(queue.dequeue()).to.be.undefined; // jshint ignore:line
   });
@@ -25,7 +26,7 @@ describe('queue', () => {
 
   it('can enqueue and dequeue multiple items', () => {
     const queue = new Queue();
-    
+
     queue.enqueue('Hello');
     queue.enqueue('and');
     queue.enqueue('Goodbye');

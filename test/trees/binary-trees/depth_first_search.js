@@ -1,8 +1,8 @@
 var chai = require('chai');
 var sinon = require('sinon');
 
-var Bst = require('../helper_files/tree.js');
-var dfs = require('../src/depth_first_search.js');
+var Bst = require('../../../src/trees/helper_files/tree.js');
+var dfs = require('../../../src/trees/binary-trees/depth_first_search.js');
 
 var should = chai.should();
 
