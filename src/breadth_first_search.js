@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /*
   Complete the breadth first search function to pass the tests.
@@ -26,13 +26,13 @@ function bfs (root, isMatch) {
 
   nodes.push(root);
 
-  while(nodes.length > 0){
+  while (nodes.length > 0) {
     let current = nodes.shift();
 
-    if(isMatch(current.data)) return current;
+    if (isMatch(current.data)) return current;
 
-    if(current.left) nodes.push(current.left);
-    if(current.right) nodes.push(current.right);
+    if (current.left) nodes.push(current.left);
+    if (current.right) nodes.push(current.right);
   }
 
   return false;

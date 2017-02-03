@@ -1,17 +1,17 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var Passenger = require('../../src/OOP/passenger');
 var Bus = require('../../src/OOP/bus');
 
 describe('Bus', function() {
 
-  it("gets initialized with a capacity", function() {
+  it('gets initialized with a capacity', function() {
     var bus = new Bus(12);
     expect(bus.capacity).to.deep.equal(12);
 
     expect((new Bus(20)).capacity).to.deep.equal(20);
   });
 
-  it("starts out with vacancies equal to the capacity", function() {
+  it('starts out with vacancies equal to the capacity', function() {
     var bus1 = new Bus(12);
     expect(bus1.vacancies()).to.deep.equal(12);
 
@@ -19,7 +19,7 @@ describe('Bus', function() {
     expect(bus2.vacancies()).to.deep.equal(20);
   });
 
-  it("allows you to board a passenger with a paid fare", function() {
+  it('allows you to board a passenger with a paid fare', function() {
     var bus = new Bus(10);
     var joe = new Passenger(1, 'Joe Jones');
     var sue = new Passenger(2, 'Sue Summers');
@@ -33,7 +33,7 @@ describe('Bus', function() {
     expect(bus.capacity).to.deep.equal(10);
   });
 
-  it("allows you to see full names of passenger names/ids (in the order they were added)", function() {
+  it('allows you to see full names of passenger names/ids (in the order they were added)', function() {
     var bus = new Bus(5);
     var joe = new Passenger(1, 'Joe Jones');
     var sue = new Passenger(2, 'Sue Summers');
@@ -44,10 +44,10 @@ describe('Bus', function() {
     expect(bus.passengerNames()).to.deep.equal(['Joe Jones (1)']);
 
     bus.board(sue);
-    expect(bus.passengerNames()).to.deep.equal([ 'Joe Jones (1)', 'Sue Summers (2)' ]);
+    expect(bus.passengerNames()).to.deep.equal(['Joe Jones (1)', 'Sue Summers (2)']);
   });
 
-  it("allows passengers to switch seats", function() {
+  it('allows passengers to switch seats', function() {
     var bus = new Bus(4);
 
     var joe = new Passenger(1, 'Joe Jones');
@@ -77,7 +77,7 @@ describe('Bus', function() {
     ]);
   });
 
-  it("allows you to get the total of all paid fares", function() {
+  it('allows you to get the total of all paid fares', function() {
     var bus = new Bus(10);
 
     var joe = new Passenger(1, 'Joe Jones');
@@ -90,7 +90,7 @@ describe('Bus', function() {
     bus.board(sue, 3);
     expect(bus.paidFares()).to.deep.equal(7);
 
-    bus.board(sally, 3)
+    bus.board(sally, 3);
     expect(bus.paidFares()).to.deep.equal(10);
   });
 });

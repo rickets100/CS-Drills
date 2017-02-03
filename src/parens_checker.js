@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /* Using your implementation of a Linked List.
    Using only push and pop to add and remove things from the List

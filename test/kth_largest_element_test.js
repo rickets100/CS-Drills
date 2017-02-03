@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var expect = require('chai').expect;
 var largestElement = require('../src/kth_largest_element');

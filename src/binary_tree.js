@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // http://visualgo.net/bst.html
 
@@ -305,7 +305,7 @@ BinTree.prototype.remove = function(value){
     while (temp.left !== null) { temp = temp.left; }
     temp.left = current.left;
     if(parent && current.value > parent.value){
-      parent.right = current.right
+      parent.right = current.right;
     }
     else if(parent && current.value < parent.value) {
       parent.left = current.right;

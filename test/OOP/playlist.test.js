@@ -1,4 +1,4 @@
-const expect = require('chai').expect
+const expect = require('chai').expect; // jshint ignore:line
 var Song = require('../../src/OOP/song');
 var Playlist = require('../../src/OOP/playlist');
 
@@ -8,7 +8,7 @@ describe('Playlist', function() {
   var butNotForMe = new Song('But Not for Me', 50);
   var autumnInNewYork = new Song('Autumn In New York', 25);
 
-  it("is empty by default", function() {
+  it('is empty by default', function() {
     var playlist = new Playlist('jazz');
     expect(playlist.name).to.deep.equal('jazz');
     expect(playlist.isEmpty()).to.deep.equal(true);
@@ -18,7 +18,7 @@ describe('Playlist', function() {
     expect(playlist2.isEmpty()).to.deep.equal(true);
   });
 
-  it("allows you to add a song", function() {
+  it('allows you to add a song', function() {
     var playlist = new Playlist('jazz');
 
     playlist.addSong(itHadToBeYou);
@@ -29,7 +29,7 @@ describe('Playlist', function() {
     expect(playlist2.isEmpty()).to.deep.equal(true);
   });
 
-  it("allows you to see all song names in the order they were added", function() {
+  it('allows you to see all song names in the order they were added', function() {
     var playlist = new Playlist('jazz');
 
     expect(playlist.songNames()).to.deep.equal([]);
@@ -37,14 +37,14 @@ describe('Playlist', function() {
     playlist.addSong(itHadToBeYou);
     expect(playlist.songNames()).to.deep.equal(['It had to be you']);
 
-    playlist.addSong(butNotForMe)
+    playlist.addSong(butNotForMe);
     expect(playlist.songNames()).to.deep.equal([
       'It had to be you',
       'But Not for Me'
     ]);
   });
 
-  it("tells you the total duration of the playlist", function() {
+  it('tells you the total duration of the playlist', function() {
     var itHadToBeYou = new Song('It had to be you', 100);
     var butNotForMe = new Song('But Not for Me', 50);
     var autumnInNewYork = new Song('Autumn In New York', 25);
@@ -61,8 +61,7 @@ describe('Playlist', function() {
     expect(playlist.totalDuration()).to.deep.equal(175);
   });
 
-
-  it("allows you to swap songs", function() {
+  it('allows you to swap songs', function() {
     var playlist = new Playlist('jazz');
 
     playlist.addSong(itHadToBeYou);
@@ -84,7 +83,7 @@ describe('Playlist', function() {
     ]);
   });
 
-  it("allows you remove a song from the playlist", function() {
+  it('allows you remove a song from the playlist', function() {
     var playlist = new Playlist('jazz');
 
     playlist.addSong(itHadToBeYou);

@@ -25,7 +25,7 @@
     	<div>
         <ul>
           <li>Write a depth-first-search function that logs the nodename</li>
-          <li>Find the element with the id "starting-point" and call your function.</li>
+          <li>Find the element with the id 'starting-point' and call your function.</li>
           <li>The result should be:
             <ul>
               <li>ARTICLE</li>
@@ -51,7 +51,7 @@
     	<div>
         <ul>
           <li>Write a breadth-first-search function that logs the nodename</li>
-          <li>Find the element with the id "starting-point" and call your function</li>
+          <li>Find the element with the id 'starting-point' and call your function</li>
           <li>The results should be:
             <ul>
               <li>ARTICLE</li>
@@ -105,7 +105,6 @@
     </article>
     <script type="text/javascript">
       'use strict'
-
       function bfs(node) {
         var queue = [node];
         while(queue.length) {
@@ -116,20 +115,18 @@
           }
         }
       }
-
       function dfs(node) {
         if(node.nodeType === Node.ELEMENT_NODE) console.log(node.nodeName);
         for(var i = 0; i < node.childNodes.length; i++) {
           dfs(node.childNodes[i])
         }
       }
+      console.log('-------- Breadth-first search ----------');
+      bfs(document.getElementById('starting-point'))
 
-      console.log("-------- Breadth-first search ----------");
-      bfs(document.getElementById("starting-point"))
-
-      console.log("\n---------- Depth-first search ----------");
-      console.log("\n");
-      dfs(document.getElementById("starting-point"))
+      console.log('\n---------- Depth-first search ----------');
+      console.log('\n');
+      dfs(document.getElementById('starting-point'))
     </script>
   </body>
 </html>

@@ -12,56 +12,65 @@ function Graph() {
   // Helper function to find a node in nodes
   this.findNode = function (value) {
     for (let i = 0; i < this.nodes.length; i++) {
-      if (this.nodes[i].value == value) {
+      if (this.nodes[i].value === value) {
         return this.nodes[i];
       }
     }
     return null;
-  }
+  };
 
   // Add a node to the list of nodes
   this.addNode = function(value) {
-    if (this.findNode(value) != null) {
+    if (this.findNode(value) !== null) {
       return;
     }
     this.nodes.push(new GraphNode(value));
-  }
+  };
 
   // Add an edge between 2 nodes and give it a weight
   this.addEdge = function(source, destination, weight) {
     let first = this.findNode(source);
     let second = this.findNode(destination);
-    if (first == null || second == null) {
+    if (first === null || second === null) {
       return;
     }
     this.edges.push(new GraphEdge(first, second, weight));
-  }
+  };
 
   // Get the size of the graph by returning how many nodes are in the graph
   this.size = function() {
-    // TODO
-    return -1;
-  }
+    return this.nodes.length;
+  };
 
   // Find the total number of edges in the graph
   this.numEdges = function() {
-    // TODO
-    return -1;
-  }
+    return this.edges.length;
+  };
 
   // Find the total weight of the graph by adding up the weights of each edge
   this.weight = function() {
-    // TODO
-    return -1;
-  }
+    let weight = 0;
+    this.edges.forEach(function(el) {
+      weight += parseInt(el.weight);
+    });
+    return weight;
+  };
 
   // Find all node values a node is connected to.
   // Return all node values at the other side of an edge of the target node
   // Remember that edges are not directional: A -> B also implies B -> A
   this.findNeighbors = function(value) {
-    // TODO
-    return [];
-  }
+    var data = [];
+    this.edges.forEach(function(el, index) {
+      if (el.first.value === value) {
+        data.push(el.second.value);
+      }
+      if (el.second.value === value) {
+        data.push(el.first.value);
+      }
+    });
+    return data;
+  };
 
   // Stretch!
   // Find the optimal route from start to finish
@@ -70,21 +79,31 @@ function Graph() {
   this.findPath = function(start, finish) {
     // TODO
     return [];
-  }
+  };
 
   // Return a list of any nodes that are orphans.
   // An orphan is any node with no edges.
   this.findOrphans = function() {
-    // TODO
-    return [];
-  }
+    let container = [];
+    for (let node of this.nodes) {
+      for (let edge of this.edges) {
+        if (
+          node.value !== edge.first.value &&
+          node.value !== edge.second.value
+        ) {
+          container.push(node.value);
+        }
+      }
+    }
+    return container;
+  };
 
   this.print = function() {
     for (let i = 0; i < this.edges.length; i++) {
       let edge = this.edges[i];
       // console.log(edge.first.value, '->', edge.second.value, edge.weight, 'mi');
     }
-  }
+  };
 
   this.pathWeight = function(path) {
     let sum = 0;
@@ -92,7 +111,7 @@ function Graph() {
       sum += path[i].weight;
     }
     return sum;
-  }
+  };
 }
 
 module.exports = Graph;

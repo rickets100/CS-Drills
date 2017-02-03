@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function Node(val, next=null, prev=null) {
   this.val = val;
@@ -65,14 +65,15 @@ DoublyLinkedList.prototype.clear = function() {
 };
 
 DoublyLinkedList.prototype.pop = function() {
+  var value;
   if (!this.head) return undefined;
   if (this.length === 1) {
-    var value = this.head.val;
+    value = this.head.val;
     this.clear();
     return value;
   }
 
-  var value = this.tail.val
+  value = this.tail.val;
   var prevNode = this.tail.prev;
   prevNode.next = null;
   this.tail.prev = undefined;
@@ -99,7 +100,7 @@ DoublyLinkedList.prototype.unshift = function(val) {
 DoublyLinkedList.prototype.shift = function() {
   if (this.length <= 1) return this.pop();
 
-  var value = this.head.val
+  var value = this.head.val;
   var nextNode = this.head.next;
   nextNode.prev = null;
   this.head.next = undefined;
@@ -160,13 +161,13 @@ DoublyLinkedList.prototype.reverse = function(){
     current.next = current.prev;
     current.prev = temp;
     if(!temp){
-      this.tail = this.head
-      this.head = current
+      this.tail = this.head;
+      this.head = current;
     }
     current = temp;
   }
   return this;
-}
+};
 
 DoublyLinkedList.prototype.mostFrequent = function() {
 
