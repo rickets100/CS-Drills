@@ -37,7 +37,7 @@
 
   Your job is to turn an object with the format above into a tree of nodes.
 
-  Imlement this depth-first, using recursion.
+  Implement this depth-first, using recursion.
 
 */
 
@@ -48,11 +48,6 @@ var Node = require('./node');
 
 //Make sure that this function calls new Node()
 var objectToNode = function(object) {
-  var node = new Node(object.name);
-  object.children.forEach(function (child) {
-    node.addChild(objectToNode(child));
-  });
-  return node;
 };
 
 module.exports = objectToNode;

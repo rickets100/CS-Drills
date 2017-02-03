@@ -16,72 +16,29 @@ const Stack = require('./stack');
 //   checkParens('(adfa(dvb)') -> false
 
 function checkParens(str) {
-  let parenStack = new Stack();
 
-  for (let char of str) {
-    if (char === '(') {
-      parenStack.push(char);
-    }
-    if (char === ')') {
-      if (parenStack.length() === 0) {
-        return false;
-      }
-
-      parenStack.pop();
-    }
-  }
-
-  if (parenStack.length() === 0) {
-    return true;
-  }
-
-  return false;
 }
 
 // Write a function named validate that takes in a string of text
 // representing some code filled with parentheses (), brackets [], and
 // curly braces {}.
 //
-// (, {, [ are called "openers."
-// ), }, ] are called "closers."
+// (, {, [ are called 'openers.'
+// ), }, ] are called 'closers.'
 //
 // The function returns true if the input strings openers are matched in
 // properly nested with the closers.
 //
 // Examples:
 //
-// "{ [ ] ( ) }" should return true (properly nested and matched)
-// "{ [ ( ] ) }" should return false (closing bracket before closing
+// '{ [ ] ( ) }' should return true (properly nested and matched)
+// '{ [ ( ] ) }' should return false (closing bracket before closing
 // parentheses)
-// "{ [ }" should return false (no closing bracket)
-// "}" should return false (no opening curly brace)
+// '{ [ }' should return false (no closing bracket)
+// '}' should return false (no opening curly brace)
 
 function validate(str) {
-  let parenStack = new Stack();
 
-  for (let char of str) {
-    if (char === '(' || char === '[' || char === '{') {
-      parenStack.push(char);
-    } else if (char === ')' || char === ']' || char === '}') {
-      if (parenStack.length() === 0) {
-        return false;
-      } else if (char === ')' && parenStack.peek() !== '(') {
-        return false;
-      } else if (char === ']' && parenStack.peek() !== '[') {
-        return false;
-      } else if (char === '}' && parenStack.peek() !== '{') {
-        return false;
-      } else {
-        parenStack.pop();
-      }
-    }
-  }
-
-  if (parenStack.length() === 0) {
-    return true;
-  }
-
-  return false;
 }
 
 // Write a function called finalText that takes in an array of commands. A
@@ -97,7 +54,7 @@ function validate(str) {
 //   { command: 'write', text: 'World' }
 // ]
 //
-// The function would produce 'HelloWorld'. This because we first wrote "Hello", and then we wrote "World" (no spaces or newlines in between)
+// The function would produce 'HelloWorld'. This because we first wrote 'Hello', and then we wrote 'World' (no spaces or newlines in between)
 //
 // The undo command undoes the last write command. For example, given:
 //
@@ -130,30 +87,7 @@ function validate(str) {
 //   { command: 'undo' }
 // ]
 function finalText(commands) {
-  let textStack = new Stack();
 
-  for (let command of commands) {
-    if (command.command === 'write') {
-      textStack.push(command);
-    } else if (command.command === 'undo') {
-      if (textStack.length() === 0) {
-        throw new Error('Nothing to undo!');
-      }
-      textStack.pop();
-    }
-  }
-
-  if (textStack.length() === 0) {
-    return '';
-  }
-
-  let output = '';
-
-  while (textStack.length()) {
-    output = textStack.pop().text + output;
-  }
-
-  return output;
 }
 
 // Write a function called finalText2 that takes in an array of commands. A
@@ -193,38 +127,7 @@ function finalText(commands) {
 // ]
 // Should throw an error.
 function finalText2(commands) {
-  let textStack = new Stack();
-  let undoStack = new Stack();
 
-  for (let command of commands) {
-    if (command.command === 'write') {
-      textStack.push(command);
-    } else if (command.command === 'undo') {
-      if (textStack.length() === 0) {
-        throw new Error('Nothing to undo!');
-      } else {
-        undoStack.push(textStack.pop());
-      }
-    } else if (command.command === 'redo') {
-      if (undoStack.length() === 0) {
-        throw new Error('Nothing to redo!');
-      } else {
-        textStack.push(undoStack.pop());
-      }
-    }
-  }
-
-  if (textStack.length() === 0) {
-    return '';
-  }
-
-  let output = '';
-
-  while (textStack.length()) {
-    output = textStack.pop().text + output;
-  }
-
-  return output;
 }
 
 module.exports = {

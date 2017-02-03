@@ -1,6 +1,6 @@
 const FixedArray = require('./fixed_array');
 
-// When working with FixedArrays, do NOT edit the internal variable "_array".
+// When working with FixedArrays, do NOT edit the internal variable '_array'.
 
 // Write a function, named arrayPush that takes in the following as arguments
 //   * array - A Fixed Array
@@ -16,12 +16,6 @@ const FixedArray = require('./fixed_array');
 //     newFa.length === 4
 
 function arrayPush(array, item) {
-  let newFixed = new FixedArray(array.length + 1);
-  for (var i = 0; i < array.length; i++) {
-    newFixed.set(i,array.get(i));
-  }
-  newFixed.set(array.length, item);
-  return newFixed;
 
 }
 
@@ -40,17 +34,7 @@ function arrayPush(array, item) {
 //     newFa.length === 2
 
 function arrayDelete(array, index) {
-  let newFixed = new FixedArray(array.length - 1);
-  let counter = 0;
 
-  for (var i = 0; i < array.length; i++) {
-    if (i !== index) {
-      newFixed.set(counter, array.get(i));
-      counter++;
-    }
-  }
-
-  return newFixed;
 }
 
 module.exports = { arrayPush, arrayDelete };

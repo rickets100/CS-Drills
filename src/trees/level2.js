@@ -14,11 +14,7 @@
 //     / \
 //    *   7
 function toArray(tree) {
-  if (tree === null) {
-    return [];
-  }
 
-  return toArray(tree.left).concat([tree.value], toArray(tree.right));
 }
 
 // Write a function named findValueInTree that takes in the following:
@@ -31,19 +27,7 @@ function toArray(tree) {
 //   /|\       with value 1, produces true
 //  2 4 7      with value 3, produces false
 function findValueInTree(tree, value) {
-  if (tree.value === value) {
-    return true;
-  }
 
-  for (let child of tree.children) {
-    if (child.value === value) {
-      return true;
-    } else {
-      findValueInTree(child, value);
-    }
-  }
-
-  return false;
 }
 
 // Write a function named findValueInBinTree that takes in the following:
@@ -56,27 +40,7 @@ function findValueInTree(tree, value) {
 //   / \       with value 1, produces true
 //  1   7      with value 3, produces false
 function findValueInBinTree(tree, value) {
-  if (tree.value === value) {
-    return true;
-  }
 
-  if (tree.left !== null) {
-    if (tree.left.value === value) {
-      return true;
-    } else {
-      findValueInBinTree(tree.left, value);
-    }
-  }
-
-  if (tree.right !== null) {
-    if (tree.right.value === value) {
-      return true;
-    } else {
-      findValueInBinTree(tree.right, value);
-    }
-  }
-
-  return false;
 }
 
 // Write a function named findValueInBinSearchTree that takes in the following:
@@ -91,27 +55,7 @@ function findValueInBinTree(tree, value) {
 //   / \       with value 1, produces true
 //  1   7      with value 3, produces false
 function findValueInBinSearchTree(tree, value) {
-  if (tree.value === value) {
-    return true;
-  }
 
-  if (tree.left !== null) {
-    if (tree.left.value === value) {
-      return true;
-    } else {
-      findValueInBinTree(tree.left, value);
-    }
-  }
-
-  if (tree.right !== null) {
-    if (tree.right.value === value) {
-      return true;
-    } else {
-      findValueInBinTree(tree.right, value);
-    }
-  }
-
-  return false;
 }
 
 // Write a function named insertInBinSearchTree that takes in the following:
@@ -127,64 +71,7 @@ function findValueInBinSearchTree(tree, value) {
 //                                         / \
 //                                        5   *
 function insertValueInBinSearchTree(tree, value) {
-  if (tree === null) {
-    return {
-      value,
-      left: null,
-      right: null
-    };
-  }
 
-  let currentNode = tree;
-  let inserted = false;
-
-  while (inserted === false) {
-    if (!currentNode.left && !currentNode.right) {
-      if (value > currentNode.value) {
-        currentNode.right = {
-          value,
-          left: null,
-          right: null
-        };
-        inserted = true;
-      } else {
-        currentNode.left = {
-          value,
-          left: null,
-          right: null
-        };
-        inserted = true;
-      }
-    } else if (!currentNode.left) {
-      if (value > currentNode.value) {
-        currentNode = currentNode.right;
-      } else {
-        currentNode.left = {
-          value,
-          left: null,
-          right: null
-        };
-        inserted = true;
-      }
-    } else if (!currentNode.right) {
-      if (value > currentNode.value) {
-        currentNode.right = {
-          value,
-          left: null,
-          right: null
-        };
-        inserted = true;
-      } else {
-        currentNode = currentNode.left;
-      }
-    } else if (currentNode.left < value) {
-      currentNode = currentNode.right;
-    } else {
-      currentNode = currentNode.left;
-    }
-  }
-
-  return tree;
 }
 
 module.exports = {
@@ -193,4 +80,4 @@ module.exports = {
   findValueInBinTree,
   findValueInBinSearchTree,
   insertValueInBinSearchTree
-};
+}

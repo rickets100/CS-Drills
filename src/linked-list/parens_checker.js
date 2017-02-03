@@ -4,7 +4,7 @@
    Using only push and pop to add and remove things from the List
    will cause your code to behave like a Stack.
 */
-let Stack = require('./singly_linked_list');
+let Stack = require('./doubly_linked_list');
 
 /*
   Testing for matched parenthesis is part of linting as well as part of language design.

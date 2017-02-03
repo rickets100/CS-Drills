@@ -39,37 +39,28 @@ function Graph() {
 
   // Get the size of the graph by returning how many nodes are in the graph
   this.size = function() {
-    return this.nodes.length;
+    // TODO
+    return -1;
   };
 
   // Find the total number of edges in the graph
   this.numEdges = function() {
-    return this.edges.length;
+    // TODO
+    return -1;
   };
 
   // Find the total weight of the graph by adding up the weights of each edge
   this.weight = function() {
-    let weight = 0;
-    this.edges.forEach(function(el) {
-      weight += parseInt(el.weight);
-    });
-    return weight;
+    // TODO
+    return -1;
   };
 
   // Find all node values a node is connected to.
   // Return all node values at the other side of an edge of the target node
   // Remember that edges are not directional: A -> B also implies B -> A
   this.findNeighbors = function(value) {
-    var data = [];
-    this.edges.forEach(function(el, index) {
-      if (el.first.value === value) {
-        data.push(el.second.value);
-      }
-      if (el.second.value === value) {
-        data.push(el.first.value);
-      }
-    });
-    return data;
+    // TODO
+    return [];
   };
 
   // Stretch!
@@ -84,18 +75,8 @@ function Graph() {
   // Return a list of any nodes that are orphans.
   // An orphan is any node with no edges.
   this.findOrphans = function() {
-    let container = [];
-    for (let node of this.nodes) {
-      for (let edge of this.edges) {
-        if (
-          node.value !== edge.first.value &&
-          node.value !== edge.second.value
-        ) {
-          container.push(node.value);
-        }
-      }
-    }
-    return container;
+    // TODO
+    return [];
   };
 
   this.print = function() {

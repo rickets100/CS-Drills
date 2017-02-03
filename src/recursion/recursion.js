@@ -3,7 +3,7 @@ module.exports = {
     Recall that a recursive function is a function that calls itself (Eloquent JS).
     More formally, a recursive algorithm is an algorithm for which the solution to
     the problem is solved by solving progressive sub-problems, until a know, or
-    "base" case is reached.
+    'base' case is reached.
 
     The classical example of a recursive algorithm is computing the factorial. Recall
     from math class that the factorial of an Integer, n, is the product of all positive,
@@ -33,12 +33,5 @@ module.exports = {
   */
 
   factorial: function(n) {
-    // your code here:
-    if (n === 0) {
-      return 1;
-    } else {
-      return n * this.factorial(n - 1);
-    }
   }
-
 };

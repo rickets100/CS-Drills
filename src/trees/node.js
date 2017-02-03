@@ -6,7 +6,7 @@
     * a parent
     * an array of children
 
-  Implement this node using the "classical" inheritance, so that the following
+  Implement this node using the 'classical' inheritance, so that the following
   would work:
 
     var node = new Node('foo');
