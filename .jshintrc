@@ -4,6 +4,7 @@
     "jasmine": false,
     "spyOn": false,
     "it": false,
+    "xit": false,
     "console": false,
     "describe": false,
     "expect": false,

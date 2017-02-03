@@ -60,8 +60,16 @@ function Graph() {
   // Return all node values at the other side of an edge of the target node
   // Remember that edges are not directional: A -> B also implies B -> A
   this.findNeighbors = function(value) {
-    // TODO
-    return [];
+    var data = [];
+    this.edges.forEach(function(el, index) {
+      if (el.first.value === value) {
+        data.push(el.second.value);
+      }
+      if (el.second.value === value) {
+        data.push(el.first.value);
+      }
+    });
+    return data;
   };
 
   // Stretch!
@@ -76,8 +84,18 @@ function Graph() {
   // Return a list of any nodes that are orphans.
   // An orphan is any node with no edges.
   this.findOrphans = function() {
-    // TODO
-    return [];
+    let container = [];
+    for (let node of this.nodes) {
+      for (let edge of this.edges) {
+        if(
+          node.value !== edge.first.value &&
+          node.value !== edge.second.value
+        ) {
+           container.push(node.value);
+        }
+      }
+    }
+    return container;
   };
 
   this.print = function() {
