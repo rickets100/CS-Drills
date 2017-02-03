@@ -28,20 +28,49 @@ class DynamicArray {
   // adds the item to the end of the array, copying it to a new FixedArray if
   // necessary. There is no need to return anything.
   push(item) {
+    function doubleArray(array) {
+      let newFixed = new FixedArray(array.length * 2);
+      for (var i = 0; i < array.length; i++) {
+        newFixed.set(i,array.get(i));
+      }
+      return newFixed;
+    }
 
+    if (this.length < this.array.length) {
+      this.array.set(this.length, item);
+      this.length ++;
+    } else {
+      this.array = doubleArray(this.array);
+      this.array.set(this.length, item);
+      this.length ++;
+    }
   }
 
   // Implement a method pop that does not take in any arguments. It delete the
   // item at the end of the array.
   pop() {
-
+    this.array.set(this.length -1, undefined);
+    this.length --;
   }
 
   // Implement a method del that takes in one argument, index (a number), it
   // deletes the item at that index. There is no need to return anything.
   del(index) {
-
+    function arrayDelete(array, index) {
+      let newFixed = new FixedArray(array.length);
+      let counter = 0;
+      for (var i = 0; i < array.length; i++) {
+        if (i !== index) {
+          newFixed.set(counter, array.get(i));
+          counter++;
+        }
+      }
+      return newFixed;
+    }
+    this.array = arrayDelete(this.array, index);
+    this.length --;
   }
+
 }
 
 module.exports = DynamicArray;

@@ -41,7 +41,7 @@ function Graph() {
   this.size = function() {
     // TODO
     return -1;
-  }
+  };
 
   // Find the total number of edges in the graph
   this.numEdges = function() {
@@ -82,7 +82,7 @@ function Graph() {
   this.print = function() {
     for (let i = 0; i < this.edges.length; i++) {
       let edge = this.edges[i];
-      console.log(edge.first.value, '->', edge.second.value, edge.weight, 'mi');
+      // console.log(edge.first.value, '->', edge.second.value, edge.weight, 'mi');
     }
   };
 

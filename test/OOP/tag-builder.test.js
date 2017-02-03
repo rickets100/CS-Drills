@@ -50,7 +50,7 @@ describe('TagBuilder', function () {
     var builder = new TagBuilder('p');
     builder.addAttribute('class', 'card');
     builder.addClass('selected');
-    expect(builder.toString()).to.eq('<p class="card selcted"></p>');
+    expect(builder.toString()).to.eq('<p class="card selected"></p>');
   });
 
 });
