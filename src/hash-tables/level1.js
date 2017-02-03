@@ -57,7 +57,6 @@ const removeDupes = (numArr) => {
   return returnObj;
 };
 
-
 /*
 
 Create a function named onlyOdds.

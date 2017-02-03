@@ -21,19 +21,19 @@ describe('DMV', ()=> {
     dmv.enter('Speedy Spencer');
     dmv.enter('Talkin\' Tammy');
 
-    expect(dmv.currentCustomerFor('Surly Suneel')).to.deep.equal(null);
+    expect(dmv.currentCustomerfor ('Surly Suneel')).to.deep.equal(null);
 
     dmv.nextCustomer();
-    expect(dmv.currentCustomerFor('Surly Suneel')).to.deep.equal('Drivin\' Dave');
+    expect(dmv.currentCustomerfor ('Surly Suneel')).to.deep.equal('Drivin\' Dave');
     expect(dmv.customersInLine()).to.deep.equal(['Speedy Spencer', 'Talkin\' Tammy']);
 
     dmv.nextCustomer();
-    expect(dmv.currentCustomerFor('Surly Suneel')).to.deep.equal('Drivin\' Dave');
-    expect(dmv.currentCustomerFor('Angry Angelica')).to.deep.equal('Speedy Spencer');
+    expect(dmv.currentCustomerfor ('Surly Suneel')).to.deep.equal('Drivin\' Dave');
+    expect(dmv.currentCustomerfor ('Angry Angelica')).to.deep.equal('Speedy Spencer');
     expect(dmv.customersInLine()).to.deep.equal(['Talkin\' Tammy']);
 
     dmv.nextCustomer();
-    expect(dmv.currentCustomerFor('Peeved Petra')).to.deep.equal('Talkin\' Tammy');
+    expect(dmv.currentCustomerfor ('Peeved Petra')).to.deep.equal('Talkin\' Tammy');
     expect(dmv.customersInLine()).to.deep.equal([]);
   });
 
@@ -44,14 +44,14 @@ describe('DMV', ()=> {
     dmv.enter('Drivin\' Dave');
     dmv.nextCustomer();
     dmv.nextCustomer();
-    expect(dmv.currentCustomerFor('Angry Angelica')).to.deep.equal('Drivin\' Dave');
+    expect(dmv.currentCustomerfor ('Angry Angelica')).to.deep.equal('Drivin\' Dave');
 
     dmv.resolve('Drivin\' Dave');
-    expect(dmv.currentCustomerFor('Angry Angelica')).to.deep.equal(null);
+    expect(dmv.currentCustomerfor ('Angry Angelica')).to.deep.equal(null);
 
     dmv.enter('Texting Ty');
     dmv.nextCustomer();
-    expect(dmv.currentCustomerFor('Angry Angelica')).to.deep.equal('Texting Ty');
+    expect(dmv.currentCustomerfor ('Angry Angelica')).to.deep.equal('Texting Ty');
   });
 
 });

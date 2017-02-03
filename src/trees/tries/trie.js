@@ -1,8 +1,8 @@
-function Trie (){
+function Trie () {
   this.characters = {};
 }
 
-Trie.prototype.learn = function(word, index){
+Trie.prototype.learn = function(word, index) {
   // This function should add the given word,
   // starting from the given index,
   // to this Trie.
@@ -19,37 +19,37 @@ Trie.prototype.learn = function(word, index){
 
   index = index || 0;
 
-  if(index === word.length){
+  if (index === word.length) {
     this.isWord = true;
-  } else if(index < word.length){
+  } else if (index < word.length) {
     var char = word[index];
     var subTrie = this.characters[char] || new Trie();
-    subTrie.learn(word, index+1);
+    subTrie.learn(word, index + 1);
     this.characters[char] = subTrie;
   }
   return this;
 };
 
-Trie.prototype.getWords = function(words, currentWord){
+Trie.prototype.getWords = function(words, currentWord) {
   // This function will return all the words which are
   // contained in this Trie.
   // it will use currentWord as a prefix,
   // since a Trie doesn't know about its parents.
 
-  currentWord = currentWord || "";
+  currentWord = currentWord || '';
   words = words || [];
 
-  if(this.isWord){
+  if (this.isWord) {
     words.push(currentWord);
   }
-  for(var char in this.characters){
+  for (var char in this.characters) {
     var nextWord = currentWord + char;
     this.characters[char].getWords(words,nextWord);
   }
   return words;
 };
 
-Trie.prototype.find = function(word, index){
+Trie.prototype.find = function(word, index) {
   // This function will return the node in the trie
   // which corresponds to the end of the passed in word.
 
@@ -57,7 +57,7 @@ Trie.prototype.find = function(word, index){
 
   index = index || 0;
   var char = word[index];
-  if(index < word.length - 1 && this.characters[char]){
+  if (index < word.length - 1 && this.characters[char]) {
     index += 1;
     return this.characters[char].find(word, index);
   } else {
@@ -65,17 +65,17 @@ Trie.prototype.find = function(word, index){
   }
 };
 
-Trie.prototype.autoComplete = function(prefix){
+Trie.prototype.autoComplete = function(prefix) {
   // This function will return all completions
   // for a given prefix.
   // It should use find and getWords.
   var subTrie = this.find(prefix);
-  if(subTrie){
+  if (subTrie) {
     return subTrie.getWords([], prefix);
-  } else{
+  } else {
     return [];
   }
 
 };
 
-module.exports =Trie;
+module.exports = Trie;

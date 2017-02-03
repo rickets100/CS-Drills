@@ -25,7 +25,15 @@
 //   /|\       produces 4
 //  2 4 7
 function treeCount(tree) {
+  return 1 + tree.children.reduce((count, child) => count + treeCount(child), 0);
 
+  // For-loop version
+  // let count = 0;
+  // for (child of tree.children) {
+  //   count += treeCount(child);
+  // }
+  //
+  // return 1 + count;
 }
 
 // Write a function named binTreeCount that takes in the following:
@@ -35,8 +43,13 @@ function treeCount(tree) {
 //    1
 //   / \       produces 3
 //  2   7
-function binTreeCount(tree) {
 
+function binTreeCount(tree) {
+  if (tree === null) {
+    return 0;
+  }
+
+  return 1 + binTreeCount(tree.left) + binTreeCount(tree.right);
 }
 
 // Write a function named treeHeight that takes in the following:
@@ -53,7 +66,7 @@ function binTreeCount(tree) {
 //    |
 //    7
 function treeHeight(tree) {
-
+  return 1 + tree.children.reduce((count, child) => Math.max(count, treeHeight(child)), 0);
 }
 
 // Write a function named binTreeHeight that takes in the following:
@@ -70,7 +83,11 @@ function treeHeight(tree) {
 //     / \
 //    *   7
 function binTreeHeight(tree) {
+  if (tree === null) {
+    return 0;
+  }
 
+  return 1 + Math.max(binTreeHeight(tree.left), binTreeHeight(tree.right));
 }
 
 // Write a function named sumTree that takes in the following:
@@ -87,7 +104,7 @@ function binTreeHeight(tree) {
 //    |
 //    7
 function sumTree(tree) {
-
+  return tree.value + tree.children.reduce((value, child) => value + sumTree(child), 0);
 }
 
 // Write a function named sumBinTree that takes in the following:
@@ -98,7 +115,11 @@ function sumTree(tree) {
 //   / \       produces 10
 //  2   7
 function sumBinTree(tree) {
+  if (tree === null) {
+    return 0;
+  }
 
+  return tree.value + sumBinTree(tree.left) + sumBinTree(tree.right);
 }
 
 module.exports = {

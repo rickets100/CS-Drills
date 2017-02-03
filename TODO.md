@@ -7,9 +7,10 @@
 1. update README - DONE
 1. update solutions branch
   - add src folders - DONE
-  -  update solutions - WIP
-  - add solutions for cs-exercises - WIP
-  - lint
+  -  update solutions - DONE
+  - add solutions for cs-exercises - DONE
+  - lint - DONE
+  - merge PR
 1. standardize code
 1. add prototypal examples
 1. create pr

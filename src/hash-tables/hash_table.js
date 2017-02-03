@@ -10,26 +10,26 @@ function HashTable(size, prime) {
 HashTable.prototype.__hashFunction = function(key) {
   var size = this.arr.length;
 
-  if (typeof key === "function") key = key.toString();
+  if (typeof key === 'function') key = key.toString();
 
-  if (typeof key === "object" && Array.isArray(key)) {
-    key = key.reduce(function(acc, el) { return acc + String(el) + ',';}, "[]");
+  if (typeof key === 'object' && Array.isArray(key)) {
+    key = key.reduce(function(acc, el) { return acc + String(el) + ',';}, '[]');
   }
 
-  if (typeof key === "object" && !Array.isArray(key)) {
-    key = "{}" + Object.keys(key).join(",");
+  if (typeof key === 'object' && !Array.isArray(key)) {
+    key = '{}' + Object.keys(key).join(',');
   }
 
-  if (typeof key === "number" && isNaN(key)) key = "NaN";
-  if (typeof key === "number" && !isFinite(key)) key = "Infinity";
+  if (typeof key === 'number' && isNaN(key)) key = 'NaN';
+  if (typeof key === 'number' && !isFinite(key)) key = 'Infinity';
 
-  if (typeof key === "string") {
-    key = key.split("").reduce(function(acc, el) {
+  if (typeof key === 'string') {
+    key = key.split('').reduce(function(acc, el) {
       return acc + el.charCodeAt(0);
     }, 0);
   }
 
-  if (typeof key === "number") return (key * this.prime) % size;
+  if (typeof key === 'number') return (key * this.prime) % size;
 };
 
 HashTable.prototype.set = function(key, value) {

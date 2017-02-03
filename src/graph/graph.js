@@ -87,11 +87,11 @@ function Graph() {
     let container = [];
     for (let node of this.nodes) {
       for (let edge of this.edges) {
-        if(
+        if (
           node.value !== edge.first.value &&
           node.value !== edge.second.value
         ) {
-           container.push(node.value);
+          container.push(node.value);
         }
       }
     }

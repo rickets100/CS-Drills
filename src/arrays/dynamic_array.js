@@ -38,19 +38,19 @@ class DynamicArray {
 
     if (this.length < this.array.length) {
       this.array.set(this.length, item);
-      this.length ++;
+      this.length++;
     } else {
       this.array = doubleArray(this.array);
       this.array.set(this.length, item);
-      this.length ++;
+      this.length++;
     }
   }
 
   // Implement a method pop that does not take in any arguments. It delete the
   // item at the end of the array.
   pop() {
-    this.array.set(this.length -1, undefined);
-    this.length --;
+    this.array.set(this.length - 1, undefined);
+    this.length--;
   }
 
   // Implement a method del that takes in one argument, index (a number), it
@@ -68,7 +68,7 @@ class DynamicArray {
       return newFixed;
     }
     this.array = arrayDelete(this.array, index);
-    this.length --;
+    this.length--;
   }
 
 }

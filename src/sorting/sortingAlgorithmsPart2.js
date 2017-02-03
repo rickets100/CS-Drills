@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const swap = require('./sort-helpers').swap;
 const merge = require('./sort-helpers').merge;
@@ -14,12 +14,12 @@ function mergeSort(arr) {
   return merge(mergeSort(leftArr), mergeSort(rightArr));
 }
 
-function quickSort(arr, left=0, right=arr.length - 1){
+function quickSort(arr, left=0, right=arr.length - 1) {
 
-  if(left < right){
-   let partitionIndex = partition(arr, left, right);
-   quickSort(arr, left, partitionIndex - 1);
-   quickSort(arr, partitionIndex + 1, right);
+  if (left < right) {
+    let partitionIndex = partition(arr, left, right);
+    quickSort(arr, left, partitionIndex - 1);
+    quickSort(arr, partitionIndex + 1, right);
   }
 
   return arr;

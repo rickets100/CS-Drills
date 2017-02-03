@@ -16,7 +16,7 @@ SinglyLinkedList.prototype.__getNodeAt = function(index) {
 
   var i = 0;
   var curNode = this.head;
-  for ( ; curNode !== null && i < index; i++) {
+  for (;curNode !== null && i < index; i++) {
     curNode = curNode.next;
   }
 

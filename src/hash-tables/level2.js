@@ -45,9 +45,9 @@ const reverseMerge = (keyArr, valArr) => {
     for (let val of valArr) {
       if (counter >= keyArr.length) {
         if (returnObj.hasOwnProperty('foo')) {
-          returnObj['foo'].push(val);
+          returnObj.foo.push(val);
         } else {
-          returnObj['foo'] = [val];
+          returnObj.foo = [val];
         }
       } else {
         returnObj[keyArr[counter]] = val;
@@ -94,7 +94,6 @@ const mostUsedWord = (sentence) => {
   }
   return { [highestCountKey]: highestCount };
 };
-
 
 /*
 

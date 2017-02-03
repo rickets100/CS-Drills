@@ -15,7 +15,7 @@ class DMV {
     this.queue.push(person)
   }
 
-  currentCustomerFor(agent) {
+  currentCustomerfor (agent) {
     return this.attending[agent] || null
   }
 

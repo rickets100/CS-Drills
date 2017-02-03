@@ -4,23 +4,23 @@ largestElement(2, [3, 5, 6, 8]) // => 5
 largestElement(3, [3, 1, 2, 1, 4]) // => 2
  */
 
- function largestElement(k, arr) {
-   const hash  = {};
-   let count = 0;
+function largestElement(k, arr) {
+  const hash  = {};
+  let count = 0;
 
-   arr.forEach((num) => {
-     hash[num] = hash[num] + 1 || 1;
-   });
+  arr.forEach((num) => {
+    hash[num] = hash[num] + 1 || 1;
+  });
 
-   for (let i in hash) {
-     if (hash.hasOwnProperty(i)) {
-       if (k <= count + hash[i] && k > count) {
-         return +i;
-       }
-       count += hash[i];
-     }
-   }
-   return -1;
- }
+  for (let i in hash) {
+    if (hash.hasOwnProperty(i)) {
+      if (k <= count + hash[i] && k > count) {
+        return +i;
+      }
+      count += hash[i];
+    }
+  }
+  return -1;
+}
 
 module.exports = largestElement;

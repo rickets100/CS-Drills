@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function swap(arr, idx1, idx2) {
   let temp = arr[idx1];
@@ -20,12 +20,12 @@ function merge(arr1, arr2) {
 
 }
 
-function partition(arr, left, right){
+function partition(arr, left, right) {
   let pivotValue = arr[left];
   let partitionIndex = left;
 
-  for(let i = left+1; i <= right; i++){
-    if(arr[i] < pivotValue){
+  for (let i = left + 1; i <= right; i++) {
+    if (arr[i] < pivotValue) {
       partitionIndex++;
       swap(arr, i, partitionIndex);
     }
@@ -35,9 +35,8 @@ function partition(arr, left, right){
   return partitionIndex;
 }
 
-
 module.exports = {
   swap,
   merge,
   partition
-}
+};

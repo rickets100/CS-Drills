@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
 const swap = require('./sort-helpers').swap;
 
-function bubbleSort(arr){
+function bubbleSort(arr) {
 
   for (let i = arr.length; i > 0; i--) {
     for (let j = 0; j < i - 1; j++) {
@@ -35,9 +35,9 @@ function insertionSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     let currentValue = arr[i];
     for (var j = i - 1; j > -1 && arr[j] > currentValue; j--) {
-      arr[j+1] = arr[j];
+      arr[j + 1] = arr[j];
     }
-    arr[j+1] = currentValue;
+    arr[j + 1] = currentValue;
   }
 
   return arr;

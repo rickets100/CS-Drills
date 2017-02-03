@@ -16,7 +16,7 @@ exports.binarySearch = function binarySearch(array, value, min = 0, max = array.
 };
 
 // Iterative approach
-// exports.binarySearch = function(array, val){
+// exports.binarySearch = function(array, val) {
 //   let left = 0;
 //   let right = array.length - 1;
 //   let mid = Math.floor( (left + right + 1) / 2);

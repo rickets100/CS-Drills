@@ -76,7 +76,7 @@ describe('Trie', function() {
           ).to.deep.equal(['begin', 'beginner']);
       });
 
-      it('gets its own node if it is a word', function() {
+      xit('gets its own node if it is a word', function() {
         t.learn('a');
         expect(t.characters.a.getWords()).to.deep.equal(['a']);
       });

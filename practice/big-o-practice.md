@@ -14,12 +14,12 @@ We want you answer the following questions about a list of programs (provided se
 
 ```js
 function printValuesAndMultiples(arr) {
-  for(let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
   }
 
-  for(let i = 0; i < arr.length; i++) {
-    for(let j = 0; j < arr.length; j++) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
       console.log(arr[i]*arr[j]);
   }
 }
@@ -88,7 +88,7 @@ In practice these constants matter, and in practice the asymptotes also matter. 
 
   ```js
   function fibbonacciIterative(n) {
-  	if(n <= 1) {
+  	if (n <= 1) {
   		return 1;
   	}
 
@@ -96,7 +96,7 @@ In practice these constants matter, and in practice the asymptotes also matter. 
   	var numberOne = 1;
   	var numberTwo = 1;
 
-  	for(var i = 1; i < n; i++) {
+  	for (var i = 1; i < n; i++) {
   		fibNumber = numberOne + numberTwo;
   		numberOne = numberTwo;
   		numberTwo = fibNumber;
@@ -114,10 +114,10 @@ In practice these constants matter, and in practice the asymptotes also matter. 
 
   	var characterCounts = {};
 
-  	for(var i = 0; i < input.length; i++) {
+  	for (var i = 0; i < input.length; i++) {
   		var c = input[i];
 
-  		if(characterCounts[c] === undefined) {
+  		if (characterCounts[c] === undefined) {
   			characterCounts[c] = 1;
   		}
 
@@ -138,8 +138,8 @@ In practice these constants matter, and in practice the asymptotes also matter. 
   function allUnique(input) {
   	var characterCounts = countCharacters(input);
 
-  	for(character in characterCounts) {
-  		if(characterCounts[character] !== 1) {
+  	for (character in characterCounts) {
+  		if (characterCounts[character] !== 1) {
   			return false;
   		}
   	}
@@ -155,12 +155,12 @@ In practice these constants matter, and in practice the asymptotes also matter. 
   function longestPalindrome(str) {
     var longest = '';
 
-    if(typeof str !== 'string') return longest;
+    if (typeof str !== 'string') return longest;
 
-    for(var start = 0; start < str.length; start++) {
-        for(var end = start + 1; end < str.length + 1; end++) {
+    for (var start = 0; start < str.length; start++) {
+        for (var end = start + 1; end < str.length + 1; end++) {
             var curSubString = str.substring(start, end)
-            if(curSubString.length > longest.length && _isPalindrome(curSubString)) {
+            if (curSubString.length > longest.length && _isPalindrome(curSubString)) {
                 longest = curSubString;
             }
         }
@@ -187,7 +187,7 @@ How do you determine the big O for recursive algorithms? Try the same process fo
   ```js
   function fibbonacciRecursive(n) {
 
-  	if(n <= 1) {
+  	if (n <= 1) {
   		return 1;
   	}
 
