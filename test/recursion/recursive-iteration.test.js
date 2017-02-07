@@ -169,7 +169,7 @@ describe('Looping and recursion', () => {
   });
 
   describe('leftPad', () => {
-    it('returns a string padded by the given delimiter, the given number of times', () => {
+    it('returns a string padded by the given delimiter so that the final string length matches the given number', () => {
       expect(lib.leftPad('',      5, '-')).to.eq('-----');
       expect(lib.leftPad('a',     4, '|')).to.eq('|||a');
       expect(lib.leftPad('ab',    4, '|')).to.eq('||ab');
