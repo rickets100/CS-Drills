@@ -10,7 +10,7 @@ function Graph() {
   this.edges = [];
 
   // Helper function to find a node in nodes
-  this.findNode = function (value) {
+  this.findNode = function(value) {
     for (let i = 0; i < this.nodes.length; i++) {
       if (this.nodes[i].value === value) {
         return this.nodes[i];
@@ -86,13 +86,18 @@ function Graph() {
   this.findOrphans = function() {
     let container = [];
     for (let node of this.nodes) {
+      let nodeExists = false;
       for (let edge of this.edges) {
         if (
-          node.value !== edge.first.value &&
-          node.value !== edge.second.value
+          node.value === edge.first.value ||
+          node.value === edge.second.value
         ) {
-          container.push(node.value);
+          nodeExists = true;
+          break;
         }
+      }
+      if (!nodeExists) {
+        container.push(node.value);
       }
     }
     return container;

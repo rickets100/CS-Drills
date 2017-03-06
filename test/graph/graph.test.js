@@ -33,7 +33,7 @@ describe('Graph', function() {
     cityGraph.addEdge('Austin', 'Denver', 918);
   });
 
-  it('should print', function () {
+  it('should print', function() {
     cityGraph.print();
   });
 
@@ -45,11 +45,11 @@ describe('Graph', function() {
     expect(cityGraph.numEdges()).to.equal(10);
   });
 
-  it('should calculate the total weight', function () {
+  it('should calculate the total weight', function() {
     expect(cityGraph.weight()).to.equal(8750);
   });
 
-  it('should find node neighbors', function () {
+  it('should find node neighbors', function() {
     let neighbors = cityGraph.findNeighbors('Chicago');
 
     expect(neighbors.length).to.equal(3);
@@ -58,7 +58,7 @@ describe('Graph', function() {
     expect(neighbors).to.contain('Nashville');
   });
 
-  xit('should find the shortest path', function () {
+  xit('should find the shortest path', function() {
     let path = cityGraph.findPath('Seattle', 'Nashville');
     expect(path.length).to.equal(2);
     // Seattle -> Denver -> Nashville
@@ -69,16 +69,37 @@ describe('Graph', function() {
     expect(Graph.pathWeight(path)).to.equal(2474);
   });
 
-  it('should find orphans', function () {
+  it('should find orphans', function() {
     let graph = new Graph();
     // A <-> B   C
     graph.addNode('A');
     graph.addNode('B');
     graph.addNode('C');
+    graph.addNode('D');
+    graph.addNode('E');
     graph.addEdge('A', 'B', 10);
-
+    graph.addEdge('B', 'D', 20);
+    graph.addEdge('E', 'A', 15);
+    graph.addEdge('B', 'E', 25);
     let orphans = graph.findOrphans();
     expect(orphans.length).to.equal(1);
     expect(orphans.indexOf('C')).to.equal(0);
+
+    let graph2 = new Graph();
+    graph2.addNode('a');
+    graph2.addNode('b');
+    graph2.addNode('c');
+    graph2.addNode('d');
+    graph2.addNode('e');
+    graph2.addNode('f');
+    graph2.addEdge('a', 'b', 10);
+    graph2.addEdge('c', 'b', 10);
+    graph2.addEdge('a', 'f', 10);
+    graph2.addEdge('c', 'b', 10);
+
+    orphans = graph2.findOrphans();
+    expect(orphans.length).to.equal(2);
+    expect(orphans.indexOf('d')).to.equal(0);
+    expect(orphans.indexOf('e')).to.equal(1);
   });
 });
