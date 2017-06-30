@@ -2,7 +2,7 @@
 var SinglyLinkedList = require('../../src/linked-list/singly_linked_list');
 var expect = require('chai').expect;
 
-describe('Singly Linked List', function() {
+describe.only('Singly Linked List', function() {
   var list;
 
   beforeEach(function() {
@@ -159,7 +159,7 @@ describe('Singly Linked List', function() {
     });
   });
 
-  describe('unshift', function() {
+  xdescribe('unshift', function() {
     it('Updates length with each call', function() {
       list.unshift(2);
       expect(list.length).to.equal(1);
@@ -211,7 +211,7 @@ describe('Singly Linked List', function() {
     });
   });
 
-  describe.only('get', function() {
+  describe('get', function() {
     it('get a value from the list given an index', function() {
       list.push(0).push(1).push(2).push(3).push(4);
       expect(list.length).to.equal(5);
@@ -223,7 +223,7 @@ describe('Singly Linked List', function() {
     });
   });
 
-  describe('set', function() {
+  xdescribe('set', function() {
     it('set a value in the list given an index', function() {
       list.push(0).push(1).push(2).push(3).push(4);
       expect(list.length).to.equal(5);
@@ -236,7 +236,7 @@ describe('Singly Linked List', function() {
     });
   });
 
-  describe('remove', function() {
+  xdescribe('remove', function() {
     it('removes the first element in a list of size 1', function() {
       list.push(1);
       expect(list.length).to.equal(1);

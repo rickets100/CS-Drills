@@ -6,6 +6,7 @@ function Node(val, next=null) {
 }
 
 
+// ===== SINGLY LINKED LIST =====
 function SinglyLinkedList() {
   this.head = null
   this.tail = null
@@ -13,11 +14,13 @@ function SinglyLinkedList() {
 }
 
 
+// ===== GET NODE AT =====
 SinglyLinkedList.prototype.__getNodeAt = function(index) {
 
 }
 
 
+// ===== PUSH =====
 SinglyLinkedList.prototype.push = function(val) {
   // add the node to the list at the tail
   let node = new Node(val)
@@ -35,6 +38,7 @@ SinglyLinkedList.prototype.push = function(val) {
 } // push
 
 
+// ===== CLEAR =====
 SinglyLinkedList.prototype.clear = function() {
   this.head = null
   this.tail = null
@@ -42,6 +46,7 @@ SinglyLinkedList.prototype.clear = function() {
 }
 
 
+// ===== POP =====
 SinglyLinkedList.prototype.pop = function() {
   if (!this.length) {
     this.length = 0
@@ -64,17 +69,18 @@ SinglyLinkedList.prototype.pop = function() {
   }
 }
 
-
+// ===== UNSHIFT =====
 SinglyLinkedList.prototype.unshift = function(val) {
-  console.log('here');
+  // console.log('here');
   if (!this.length) {
-    console.log('in the if, length is ', this.length);
+    // console.log('in the if, length is ', this.length);
     this.length = 0
     return
   }
 } // unshift
 
 
+// ===== SHIFT =====
 SinglyLinkedList.prototype.shift = function() {
   if (!this.length) {
     this.length = 0
@@ -83,18 +89,43 @@ SinglyLinkedList.prototype.shift = function() {
     this.clear()
     return
   } else {
-    console.log('in final else, head is ', this.head)
+    // console.log('in final else, head is ', this.head)
     let temp = this.head
     this.head = this.head.next
-    console.log('now head is ', this.head)
+    // console.log('now head is ', this.head)
     this.length -= 1
-    console.log('length is now ', this.length)
+    // console.log('length is now ', this.length)
     return temp.value
   }
 } // shift
 
 
+// ===== GET =====
 SinglyLinkedList.prototype.get = function(index) {
+  if (!this.length) {
+    this.length = 0
+    return
+  } else {
+    let finder = this.head
+    let counter = -1
+
+    while (counter < this.length-1) {
+      counter++
+
+      if (counter === index) {
+        return finder.val
+      } else {
+        if (finder.next != null) {
+          finder = finder.next
+        }
+      }
+    } // while
+  }
+} // get
+
+
+// ===== SET =====
+SinglyLinkedList.prototype.set = function(index, val) {
   if (!this.length) {
     this.length = 0
     return
@@ -102,23 +133,26 @@ SinglyLinkedList.prototype.get = function(index) {
     let finder = this.head
     for (let i=0; i<this.length; i++) {
       if (i === index) {
-        return i
+        console.log('i === index ', i, '=', index)
+        console.log('finder.val is currently ', finder.val);
+        finder.val = val
+        console.log('finder.val is currently ', finder.val)
+
+        return val
       }
     } // for
   }
-} // get
+} // set
 
 
-SinglyLinkedList.prototype.set = function(index, val) {
 
-}
-
-
+// ===== REMOVE =====
 SinglyLinkedList.prototype.remove = function(index) {
 
 }
 
 
+// ===== REVERSE =====
 SinglyLinkedList.prototype.reverse = function () {
 
 }
