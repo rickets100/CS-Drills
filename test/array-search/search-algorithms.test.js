@@ -30,7 +30,7 @@ describe('#linearSearch', function() {
 
 });
 
-describe.only('binarySearch', () => {
+describe('binarySearch', () => {
 
   it('finds items in an array of positive numbers', function() {
     expect(lib.binarySearch(positiveArr,3)).to.equal(2);

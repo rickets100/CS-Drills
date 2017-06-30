@@ -159,7 +159,7 @@ describe('Singly Linked List', function() {
     });
   });
 
-  describe('unshift', function() {
+  describe.only('unshift', function() {
     it('Updates length with each call', function() {
       list.unshift(2);
       expect(list.length).to.equal(1);

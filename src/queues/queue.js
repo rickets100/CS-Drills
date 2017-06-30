@@ -58,5 +58,5 @@ module.exports = Queue
 
 let q = new Queue()
 
-q.peek()
-q.enqueue()
+// q.peek()
+// q.enqueue()

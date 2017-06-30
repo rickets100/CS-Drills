@@ -5,13 +5,14 @@ let num2 = 4
 let testArray1 = []
 
 
+// ===== SWAP HELPER ======
 function swap(arr, idx1, idx2) {
   arr = [idx2, idx1]
   return arr
 }
 
 
-
+// ===== MERGE HELPER ======
 function merge(arr1, arr2) {
   let result = []
 
@@ -28,6 +29,7 @@ function merge(arr1, arr2) {
 }
 
 
+// ===== PARTITION HELPER ======
 function partition(arr, left, right) {
 
 }
