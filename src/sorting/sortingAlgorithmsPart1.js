@@ -1,6 +1,8 @@
 'use strict';
 
 const swap = require('./sort-helpers').swap;
+let testArray1 = [7, 55, 12, 4, 88, 1001, 11, 6, 89999, 43]
+let testArray2 = [17, 5, 102, 994, 88, 1, 11, 6, 99, 43]
 
 // ===== BUBBLE SORT =====
 function bubbleSort(arr) {
@@ -39,12 +41,20 @@ function selectionSort(arr) {
 } // function
 
 
-let testArray1 = [7, 55, 12, 4, 88, 1001, 11, 6, 89999, 43]
 
 // ===== INSERTION SORT =====
 function insertionSort(arr) {
+  for (let i=0; i < arr.length; i++) {
+    let j = i-1 // don't want to enter the while loop on first iteration
+    let current = arr[i]
 
-}
+      while ((j>=0) && (arr[j] > current)) {
+        arr[j+1] = arr[j]
+        j = j-1
+      } // while
+      arr[j+1] = current
+  } // for
+} // function
 
 module.exports = {
   bubbleSort,
