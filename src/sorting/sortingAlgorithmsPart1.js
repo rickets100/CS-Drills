@@ -41,7 +41,6 @@ function selectionSort(arr) {
 } // function
 
 
-
 // ===== INSERTION SORT =====
 function insertionSort(arr) {
   for (let i=0; i < arr.length; i++) {
