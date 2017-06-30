@@ -2,6 +2,7 @@
 
 const swap = require('./sort-helpers').swap;
 
+// ===== BUBBLE SORT =====
 function bubbleSort(arr) {
   let unsorted = true
   let i = 0
@@ -17,42 +18,30 @@ function bubbleSort(arr) {
   } // while
 } // function
 
-let testArray1 = ['y', 'e', 's', 'w', 'b', 'c', 'd', 'p', 'h', 'l']
 
-bubbleSort(testArray1)
-
-
-
-
-
-
-// selection sort
+// ===== SELECTION SORT =====
 function selectionSort(arr) {
-  // let sorted = []
-  // let unsorted = arr
-  // let min = 0
-  // let returnArray = []
-  //
-  // if (arr.length) {
-  //   currentMin = arr[0]
-  // }
-  //
-  // while (unsorted) {
-  //   for (i=0; i<unsorted.length; i++) {
-  //     if (currentMin>unsorted[i]) {
-  //       let currentMin = arr[i]
-  //     }
-  //   }
-  //   // take the first element from incoming array, push it onto the return array
-  //   returnArray.push(unsorted.shift())
-  // }
-  //
-  // returnArray.push(arr.splice(arr.length-i))
-}
+  let returnArr = []
+
+  while (arr.length) {
+    let currentMin = arr[0]
+    let currentMinIndex = 0
+
+    for (let i = 0; i<arr.length; i++) {
+      if (arr[i] < currentMin) {
+        currentMin = arr[i]
+        currentMinIndex = i
+      } // if
+    } // for
+    [arr[0], arr[currentMinIndex]] = [arr[currentMinIndex], arr[0]]
+    returnArr.push(arr.shift(arr.length-1))
+  } // while
+} // function
 
 
+let testArray1 = [7, 55, 12, 4, 88, 1001, 11, 6, 89999, 43]
 
-
+// ===== INSERTION SORT =====
 function insertionSort(arr) {
 
 }
