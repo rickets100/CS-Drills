@@ -15,13 +15,13 @@
 
 var Node = function(name) {
   this.name = name;
-  this.children = [];
-  this.parent = null;
-};
+  this.children = []
+  this.parent = null
+}
 
 Node.prototype.addChild = function(childNode) {
-  childNode.parent = this;
-  this.children.push(childNode);
-};
+  childNode.parent = this
+  this.children.push(childNode)
+}
 
 module.exports = Node;
