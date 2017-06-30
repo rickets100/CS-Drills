@@ -5,7 +5,7 @@ const lib = require('../../src/array-search/search-algorithms');
 const positiveArr = [1,2,3,4,5,6];
 const negativeArr = [-5,-4,-3,-2,-1];
 const decimalArr = [1.1,2.4,5.5,5.6,5.7];
-
+// .only
 describe('#linearSearch', function() {
 
   it('does not use indexOf', function() {
@@ -30,7 +30,7 @@ describe('#linearSearch', function() {
 
 });
 
-describe('binarySearch', () => {
+describe.only('binarySearch', () => {
 
   it('finds items in an array of positive numbers', function() {
     expect(lib.binarySearch(positiveArr,3)).to.equal(2);

@@ -3,7 +3,7 @@
 const expect = require('chai').expect; // jshint ignore:line
 const FixedArray = require('../../src/arrays/fixed_array');
 const { arrayPush, arrayDelete } = require('../../src/arrays/static_array');
-
+// .only
 describe('#arrayPush', () => {
   it('Returns an array of instance FixedArray', () => {
     const fa = new FixedArray(3);
