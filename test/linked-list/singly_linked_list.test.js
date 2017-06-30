@@ -159,7 +159,7 @@ describe.only('Singly Linked List', function() {
     });
   });
 
-  xdescribe('unshift', function() {
+  describe('unshift', function() {
     it('Updates length with each call', function() {
       list.unshift(2);
       expect(list.length).to.equal(1);
@@ -223,7 +223,7 @@ describe.only('Singly Linked List', function() {
     });
   });
 
-  xdescribe('set', function() {
+  describe('set', function() {
     it('set a value in the list given an index', function() {
       list.push(0).push(1).push(2).push(3).push(4);
       expect(list.length).to.equal(5);
@@ -236,7 +236,7 @@ describe.only('Singly Linked List', function() {
     });
   });
 
-  xdescribe('remove', function() {
+  describe('remove', function() {
     it('removes the first element in a list of size 1', function() {
       list.push(1);
       expect(list.length).to.equal(1);
