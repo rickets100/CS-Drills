@@ -13,12 +13,19 @@ function swap(arr, idx1, idx2) {
 
 
 function merge(arr1, arr2) {
+  let result = []
 
+  while (arr1.length > 0 && arr2.length > 0) {
+    if (arr1[0] < arr2[0]) {
+      result.push(arr1.shift())
+    } else {
+      result.push(arr2.shift())
+    }
+  }
+  while (arr1.length) {result.push(arr1.shift())}
+  while (arr2.length) {result.push(arr2.shift())}
+  return result
 }
-
-
-
-
 
 
 function partition(arr, left, right) {
