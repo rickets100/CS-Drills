@@ -28,17 +28,17 @@ Example: insertInFront(1 -> 2 -> 3 -> ., 4) produces 4 -> 1 -> 2 -> 3 -> .
 function insertInFront(value, list) {
   let newNode = {
     value: value,
-    next: null
+    next: list
   }
 
   // empty
   if (!list) {
-    console.log('got here, newNode is ', newNode);
     return newNode
   }
 
   // list is not empty
-
+  newNode.next = list
+  return newNode
 } // function
 
 
@@ -59,7 +59,6 @@ function sum(list) {
     }
     sum += finder.value
   }
-  console.log(sum)
   return sum
 } // function
 
@@ -116,7 +115,6 @@ function toArray(list) {
     }
     array.push(finder.value)
   }
-  console.log(array)
   return array
 
 } // function

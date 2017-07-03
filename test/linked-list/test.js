@@ -65,7 +65,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe.only('#ToArray', () => {
+    describe('#ToArray', () => {
       it('Returns the an empty array for an empty linked list', () => {
         expect(level1.toArray(buildList(0))).to.be.eql([]);
       });
@@ -102,7 +102,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe('#RemoveNodeAtIndex', () => {
+    describe.only('#RemoveNodeAtIndex', () => {
       it('Removes a node at a certain index for an empty linked list', () => {
         expect(level2.removeNodeAtIndex(buildList(0), 1)).to.be.equal(null);
       });
