@@ -17,7 +17,7 @@ const buildList = function(num, fcn = (num) => num) {
 };
 describe('LinkedList', () => {
   describe('Level One', () => {
-    describe.only('#Count', () => {
+    describe('#Count', () => {
       it('Returns the count for an empty linked list', () => {
         expect(level1.count(buildList(0))).to.be.equal(0);
       });
@@ -27,7 +27,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe('#insertInFront', () => {
+    describe.only('#insertInFront', () => {
       it('Inserts a node on an empty linked list', () => {
         expect(level1.insertInFront(4, buildList(0))).to.be.eql({
           value: 4,
