@@ -2,8 +2,16 @@
 //  list - a Linked List
 // The function returns the number of elements in the list.
 function count(list) {
-
-}
+  let count = 0
+  if (list) {
+    let finder = list
+    while (finder.next != null) {
+      finder = finder.next
+      count++
+    } 
+  }
+  return count
+} // function
 
 // Write a function named insertInFront that takes in one argument:
 //   value (a number)

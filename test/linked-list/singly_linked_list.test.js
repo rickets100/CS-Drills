@@ -2,7 +2,7 @@
 var SinglyLinkedList = require('../../src/linked-list/singly_linked_list');
 var expect = require('chai').expect;
 
-describe.only('Singly Linked List', function() {
+describe('Singly Linked List', function() {
   var list;
 
   beforeEach(function() {

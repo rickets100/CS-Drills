@@ -22,6 +22,7 @@ SinglyLinkedList.prototype.__getNodeAt = function(index) {
 
 // ===== PUSH =====
 SinglyLinkedList.prototype.push = function(val) {
+  console.log('in push');
   // add the node to the list at the tail
   let node = new Node(val)
 
@@ -211,9 +212,8 @@ SinglyLinkedList.prototype.remove = function(index) {
 
 // ===== REVERSE =====
 SinglyLinkedList.prototype.reverse = function () {
-  console.log('in the reverse function')
+  console.log('in the reverse function, length is ', this.length)
 
-  
 } // reverse
 
 module.exports = SinglyLinkedList

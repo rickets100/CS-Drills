@@ -17,7 +17,7 @@ const buildList = function(num, fcn = (num) => num) {
 };
 describe('LinkedList', () => {
   describe('Level One', () => {
-    describe('#Count', () => {
+    describe.only('#Count', () => {
       it('Returns the count for an empty linked list', () => {
         expect(level1.count(buildList(0))).to.be.equal(0);
       });
