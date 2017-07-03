@@ -168,29 +168,44 @@ SinglyLinkedList.prototype.remove = function(index) {
   // single item
   } else if (this.length === 1) {
       let value = this.head.val
-      console.log('single item, value is ', value)
-
       this.clear()
       return value
 
   // at least two items
   } else {
-    let finder = this.head
+    let tracker = this.head
+    let finder = this.head.next
     let counter = -1
-    // need to handle two items?
+
     while (counter < this.length) {
       counter++
-      if (counter === index) {
-        return index
-      }
+
+      // is match at the very first item?
+      if ((counter === index) && (tracker === this.head)) {
+          console.log('match was first item')
+          this.head = finder
+          return counter
+        }
+
+      // match is not at the very first item
       if (counter+1 === index) {
         console.log('next item will be a Match!', counter+1, '=', index)
-        let temp = finder.next
-        finder.next = finder.next.next
-        return temp.val
+
+        // is match at the last item in the list?
+        if (finder.next === null) {
+          console.log('got here')
+          tracker.next = null
+          this.tail = tracker
+          this.length = this.length-1
+          return finder.val
+        }
+
+        // match is just a normal mid-list item
+
       }
       if (finder.next != null) {
         console.log('advancing the finder: ')
+        tracker = finder
         finder = finder.next
       }
 
