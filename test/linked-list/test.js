@@ -27,7 +27,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe.only('#insertInFront', () => {
+    describe('#insertInFront', () => {
       it('Inserts a node on an empty linked list', () => {
         expect(level1.insertInFront(4, buildList(0))).to.be.eql({
           value: 4,
@@ -53,7 +53,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe('#GetValueAtIndex', () => {
+    describe.only('#GetValueAtIndex', () => {
       it('Returns the value for a linked list at a certain index', () => {
         expect(level1.getValueAtIndex(buildList(3), 2)).to.be.equal(1);
         expect(level1.getValueAtIndex(buildList(3), 0)).to.be.equal(3);

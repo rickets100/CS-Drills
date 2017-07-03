@@ -13,7 +13,6 @@ function count(list) {
       finder = finder.next
     }
   }
-  console.log(count);
   return count
 } // function
 
@@ -42,10 +41,11 @@ function insertInFront(value, list) {
 } // function
 
 
-// ===== SUM THE VALUES =====
 // Write a function named sum that takes in one argument:
 //  list - a Linked List
 // The function returns the sum of all of the elements in the list.
+
+// ===== SUM THE VALUES =====
 function sum(list) {
   let sum = 0
   if (list) {
@@ -58,7 +58,7 @@ function sum(list) {
   }
   console.log(sum)
   return sum
-}
+} // function
 
 // Write a function named getValueAtIndex that takes in the following:
 //   list (a linked list)
@@ -69,15 +69,41 @@ function sum(list) {
 //  getValueAtIndex(1 -> 2 -> 3 -> ., 2) produces 3
 //  getValueAtIndex(1 -> 2 -> 3 -> ., 0) produces 1
 //  getValueAtIndex(1 -> 2 -> 3 -> ., 4) throws an error
+// ===== GET VALUE AT INDEX =====
 function getValueAtIndex(list, index) {
+  console.log('index is ', index)
+  console.log('list is ', list)
+  let count = 0
+  if (list && (index >-1)) {
 
-}
+    // is the first item a match?
+    let finder = list
+    if (count === index) {
+      return finder.value
+    }
+
+    // not the first item
+    while (finder.next != null) {
+      console.log('was not the first item')
+      count++
+      finder = finder.next
+      if (count === index) {
+        console.log(count, ' = ', index)
+        console.log('finder.value ', finder.value);
+        return finder.value
+      }
+    } // while
+  }
+  console.log('error: index not found')
+  return error
+} // function
 
 // Write a function toArray that takes in one argument:
 //   list (a linked list)
 // The function returns an array of the values in the linked list.
 // Example:
 //   1 -> 2 -> 3 -> .  would produce [1, 2, 3]
+// ===== LIST TO ARRAY =====
 function toArray(list) {
 
 }
