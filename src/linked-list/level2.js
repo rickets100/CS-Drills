@@ -1,3 +1,6 @@
+const toArray = require('./level1').toArray
+const count = require('./level1').count
+
 /* Write a function named insertInBack that takes in the following:
 - value (a number)
 - list (a linked list)
@@ -90,7 +93,22 @@ Example: 1 -> 2 -> 3 -> . would produce 3 -> 2 -> 1 -> .
 */
 // ===== REVERSE =====
 function reverse(list) {
+  // empty
+  if (!list) {
+    return null
+  }
+  let tempArray = toArray(list)
+  let counter = count(list) -1
+  let tracker = list
 
+  // not empty
+  while (tracker.next != null) {
+    tracker.value = tempArray[counter]
+    counter--
+    tracker = tracker.next
+  }
+  tracker.value = tempArray[counter]
+  return list
 } // function
 
 module.exports = {
