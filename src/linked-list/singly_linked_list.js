@@ -151,24 +151,53 @@ SinglyLinkedList.prototype.set = function(index, val) {
         finder = finder.next
       }
     }
-  }
-} // set
+  } // else
+} // function
 
 
 
 // ===== REMOVE =====
 SinglyLinkedList.prototype.remove = function(index) {
   // console.log('TOP OF FUNCTION, INDEX IS ', index)
+
+  // empty
   if (!this.length) {
     this.length = 0
     return
-  } else if (this.length === 1) {
-     this.clear
-  } else {
-    this.head = this.head.next
-  }
 
-} // remove
+  // single item
+  } else if (this.length === 1) {
+      let value = this.head.val
+      console.log('single item, value is ', value)
+
+      this.clear()
+      return value
+
+  // at least two items
+  } else {
+    let finder = this.head
+    let counter = -1
+    // need to handle two items?
+    while (counter < this.length) {
+      counter++
+      if (counter === index) {
+        return index
+      }
+      if (counter+1 === index) {
+        console.log('next item will be a Match!', counter+1, '=', index)
+        let temp = finder.next
+        finder.next = finder.next.next
+        return temp.val
+      }
+      if (finder.next != null) {
+        console.log('advancing the finder: ')
+        finder = finder.next
+      }
+
+    } // while
+
+  }
+} // function
 
 
 // ===== REVERSE =====

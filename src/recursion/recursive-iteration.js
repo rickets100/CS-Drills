@@ -13,6 +13,8 @@ exports.reject = function reject(array, fn) {
 };
 
 exports.every = function every(array, fn) {
+
+  
 };
 
 exports.some = function some(array, fn) {

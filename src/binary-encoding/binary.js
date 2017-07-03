@@ -47,7 +47,6 @@ module.exports = function(str) {
 // ===== BINARY TO DECIMAL =====
 function binaryToDecimal(str) {
   let returnNum = 0
-  let currentDigit = 0
   let temp = 0
   let length = str.length
 
