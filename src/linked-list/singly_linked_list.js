@@ -158,8 +158,6 @@ SinglyLinkedList.prototype.set = function(index, val) {
 
 // ===== REMOVE =====
 SinglyLinkedList.prototype.remove = function(index) {
-  // console.log('TOP OF FUNCTION, INDEX IS ', index)
-
   // empty
   if (!this.length) {
     this.length = 0
@@ -182,18 +180,13 @@ SinglyLinkedList.prototype.remove = function(index) {
 
       // is match at the very first item?
       if ((counter === index) && (tracker === this.head)) {
-          console.log('match was first item')
           this.head = finder
           return counter
         }
 
-      // match is not at the very first item
       if (counter+1 === index) {
-        console.log('next item will be a Match!', counter+1, '=', index)
-
-        // is match at the last item in the list?
+        // is match the last item?
         if (finder.next === null) {
-          console.log('got here')
           tracker.next = null
           this.tail = tracker
           this.length = this.length-1
@@ -201,23 +194,26 @@ SinglyLinkedList.prototype.remove = function(index) {
         }
 
         // match is just a normal mid-list item
-
+        tracker.next = finder.next
+        this.length = this.length-1
+        return finder.val
       }
+
+      // advance the tracker and finder and keep looking
       if (finder.next != null) {
-        console.log('advancing the finder: ')
         tracker = finder
         finder = finder.next
       }
-
     } // while
-
-  }
+  } // else
 } // function
 
 
 // ===== REVERSE =====
 SinglyLinkedList.prototype.reverse = function () {
+  console.log('in the reverse function')
 
+  
 } // reverse
 
 module.exports = SinglyLinkedList
