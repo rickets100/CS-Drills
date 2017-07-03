@@ -4,12 +4,14 @@
 function count(list) {
   let count = 0
   if (list) {
+    count++
     let finder = list
     while (finder.next != null) {
-      finder = finder.next
       count++
-    } 
+      finder = finder.next
+    }
   }
+  console.log(count);
   return count
 } // function
 
