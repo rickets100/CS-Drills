@@ -118,7 +118,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe.only('#Reverse', () => {
+    describe('#Reverse', () => {
       it('Returns the reverse of an empty linked list', () => {
         expect(level2.reverse(buildList(0))).to.be.equal(null);
       });
@@ -139,7 +139,7 @@ describe('LinkedList', () => {
   });
 
   describe('Level Three', () => {
-    describe('#Merge', () => {
+    describe.only('#Merge', () => {
       it('Merges two empty linked lists', () => {
         expect(level3.merge(null, null)).to.be.equal(null);
       });
