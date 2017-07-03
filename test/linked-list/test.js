@@ -53,7 +53,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe.only('#GetValueAtIndex', () => {
+    describe('#GetValueAtIndex', () => {
       it('Returns the value for a linked list at a certain index', () => {
         expect(level1.getValueAtIndex(buildList(3), 2)).to.be.equal(1);
         expect(level1.getValueAtIndex(buildList(3), 0)).to.be.equal(3);
@@ -65,7 +65,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe('#ToArray', () => {
+    describe.only('#ToArray', () => {
       it('Returns the an empty array for an empty linked list', () => {
         expect(level1.toArray(buildList(0))).to.be.eql([]);
       });

@@ -1,6 +1,7 @@
-// Write a function named count that takes in one argument:
-//  list - a Linked List
-// The function returns the number of elements in the list.
+/* Write a function named count that takes in one argument: list - a Linked List
+
+The function returns the number of elements in the list.
+*/
 
 // ===== COUNT NODES =====
 function count(list) {
@@ -16,12 +17,12 @@ function count(list) {
   return count
 } // function
 
-// Write a function named insertInFront that takes in one argument:
-//   value (a number)
-//   list  (a linked list)
-// The function returns the same linked list with the value inserted in front.
-// Example:
-//    insertInFront(1 -> 2 -> 3 -> ., 4) produces 4 -> 1 -> 2 -> 3 -> .
+/* Write a function named insertInFront that takes in one argument:
+- value (a number)
+- list  (a linked list)
+The function returns the same linked list with the value inserted in front.
+Example: insertInFront(1 -> 2 -> 3 -> ., 4) produces 4 -> 1 -> 2 -> 3 -> .
+*/
 
 // ===== INSERT IN FRONT =====
 function insertInFront(value, list) {
@@ -41,9 +42,11 @@ function insertInFront(value, list) {
 } // function
 
 
-// Write a function named sum that takes in one argument:
-//  list - a Linked List
-// The function returns the sum of all of the elements in the list.
+/* Write a function named sum that takes in one argument:
+- list - a Linked List
+
+The function returns the sum of all of the elements in the list.
+*/
 
 // ===== SUM THE VALUES =====
 function sum(list) {
@@ -60,19 +63,19 @@ function sum(list) {
   return sum
 } // function
 
-// Write a function named getValueAtIndex that takes in the following:
-//   list (a linked list)
-//   index (a number)
-// The function returns the value of the item at the index. If an invalid index
-// is used, it will throw an error.
-// Example:
-//  getValueAtIndex(1 -> 2 -> 3 -> ., 2) produces 3
-//  getValueAtIndex(1 -> 2 -> 3 -> ., 0) produces 1
-//  getValueAtIndex(1 -> 2 -> 3 -> ., 4) throws an error
+/* Write a function named getValueAtIndex that takes in the following:
+- list (a linked list)
+- index (a number)
+The function returns the value of the item at the index. If an invalid index is used, it will throw an error.
+
+Example:
+getValueAtIndex(1 -> 2 -> 3 -> ., 2) produces 3
+getValueAtIndex(1 -> 2 -> 3 -> ., 0) produces 1
+getValueAtIndex(1 -> 2 -> 3 -> ., 4) throws an error
+*/
+
 // ===== GET VALUE AT INDEX =====
 function getValueAtIndex(list, index) {
-  console.log('index is ', index)
-  console.log('list is ', list)
   let count = 0
   if (list && (index >-1)) {
 
@@ -84,29 +87,39 @@ function getValueAtIndex(list, index) {
 
     // not the first item
     while (finder.next != null) {
-      console.log('was not the first item')
       count++
       finder = finder.next
       if (count === index) {
-        console.log(count, ' = ', index)
-        console.log('finder.value ', finder.value);
         return finder.value
       }
-    } // while
+    }
   }
-  console.log('error: index not found')
   return error
 } // function
 
-// Write a function toArray that takes in one argument:
-//   list (a linked list)
-// The function returns an array of the values in the linked list.
-// Example:
-//   1 -> 2 -> 3 -> .  would produce [1, 2, 3]
+
+/* Write a function toArray that takes in one argument: list (a linked list)
+
+The function returns an array of the values in the linked list.
+Example: 1 -> 2 -> 3 -> .  would produce [1, 2, 3]
+*/
+
 // ===== LIST TO ARRAY =====
 function toArray(list) {
+  let array = []
 
-}
+  if (list) {
+    let finder = list
+    while (finder.next != null) {
+      array.push(finder.value)
+      finder = finder.next
+    }
+    array.push(finder.value)
+  }
+  console.log(array)
+  return array
+
+} // function
 
 module.exports = {
   count,
