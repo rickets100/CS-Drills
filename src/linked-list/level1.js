@@ -1,8 +1,3 @@
-/* Write a function named count that takes in one argument: list - a Linked List
-
-The function returns the number of elements in the list.
-*/
-
 // ===== COUNT NODES =====
 function count(list) {
   let count = 0
@@ -17,12 +12,6 @@ function count(list) {
   return count
 } // function
 
-/* Write a function named insertInFront that takes in one argument:
-- value (a number)
-- list  (a linked list)
-The function returns the same linked list with the value inserted in front.
-Example: insertInFront(1 -> 2 -> 3 -> ., 4) produces 4 -> 1 -> 2 -> 3 -> .
-*/
 
 // ===== INSERT IN FRONT =====
 function insertInFront(value, list) {
@@ -42,12 +31,6 @@ function insertInFront(value, list) {
 } // function
 
 
-/* Write a function named sum that takes in one argument:
-- list - a Linked List
-
-The function returns the sum of all of the elements in the list.
-*/
-
 // ===== SUM THE VALUES =====
 function sum(list) {
   let sum = 0
@@ -62,16 +45,6 @@ function sum(list) {
   return sum
 } // function
 
-/* Write a function named getValueAtIndex that takes in the following:
-- list (a linked list)
-- index (a number)
-The function returns the value of the item at the index. If an invalid index is used, it will throw an error.
-
-Example:
-getValueAtIndex(1 -> 2 -> 3 -> ., 2) produces 3
-getValueAtIndex(1 -> 2 -> 3 -> ., 0) produces 1
-getValueAtIndex(1 -> 2 -> 3 -> ., 4) throws an error
-*/
 
 // ===== GET VALUE AT INDEX =====
 function getValueAtIndex(list, index) {
@@ -97,26 +70,20 @@ function getValueAtIndex(list, index) {
 } // function
 
 
-/* Write a function toArray that takes in one argument: list (a linked list)
-
-The function returns an array of the values in the linked list.
-Example: 1 -> 2 -> 3 -> .  would produce [1, 2, 3]
-*/
-
 // ===== LIST TO ARRAY =====
 function toArray(list) {
   let array = []
-
+  let length = count(list.head)
+  let index = 0
   if (list) {
-    let finder = list
-    while (finder.next != null) {
-      array.push(finder.value)
+    let finder = list.head
+    while (index < length) {
+      array.push(finder.val)
+      index++
       finder = finder.next
     }
-    array.push(finder.value)
   }
   return array
-
 } // function
 
 module.exports = {
@@ -126,3 +93,38 @@ module.exports = {
   getValueAtIndex,
   toArray
 };
+
+/* Write a function named count that takes in one argument: list - a Linked List
+
+The function returns the number of elements in the list.
+*/
+
+/* Write a function named insertInFront that takes in one argument:
+- value (a number)
+- list  (a linked list)
+The function returns the same linked list with the value inserted in front.
+Example: insertInFront(1 -> 2 -> 3 -> ., 4) produces 4 -> 1 -> 2 -> 3 -> .
+*/
+
+/* Write a function named sum that takes in one argument:
+- list - a Linked List
+
+The function returns the sum of all of the elements in the list.
+*/
+
+/* Write a function named getValueAtIndex that takes in the following:
+- list (a linked list)
+- index (a number)
+The function returns the value of the item at the index. If an invalid index is used, it will throw an error.
+
+Example:
+getValueAtIndex(1 -> 2 -> 3 -> ., 2) produces 3
+getValueAtIndex(1 -> 2 -> 3 -> ., 0) produces 1
+getValueAtIndex(1 -> 2 -> 3 -> ., 4) throws an error
+*/
+
+/* Write a function toArray that takes in one argument: list (a linked list)
+
+The function returns an array of the values in the linked list.
+Example: 1 -> 2 -> 3 -> .  would produce [1, 2, 3]
+*/

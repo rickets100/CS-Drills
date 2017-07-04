@@ -59,7 +59,6 @@ DoublyLinkedList.prototype.clear = function() {
   this.head = undefined
   this.tail = undefined
   this.length = 0
-  console.log('clear: this is ', this);
   return this
 }
 
@@ -217,7 +216,6 @@ DoublyLinkedList.prototype.insert = function(index, val) {
 } // function
 
 DoublyLinkedList.prototype.remove = function(index) {
-  console.log('this: ', this)
 
   // empty
   if (!this) {

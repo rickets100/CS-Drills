@@ -1,3 +1,6 @@
+const toArray = require('./level1').toArray
+const count = require('./level1').count
+
 'use strict'
 
 function Node(val, next=null) {
@@ -37,7 +40,6 @@ SinglyLinkedList.prototype.__getNodeAt = function(index) {
 
 // ===== PUSH =====
 SinglyLinkedList.prototype.push = function(val) {
-  console.log('in push');
   // add the node to the list at the tail
   let node = new Node(val)
 
@@ -224,8 +226,33 @@ SinglyLinkedList.prototype.remove = function(index) {
 
 // ===== REVERSE =====
 SinglyLinkedList.prototype.reverse = function () {
-  console.log('in the reverse function, length is ', this.length)
 
-} // reverse
+  // empty
+  if (!this) {
+    return undefined
+  }
+
+  // single item
+  if (this.length === 1) {
+    return this
+  }
+
+  // multiple items
+  let arr = toArray(this)
+  let tracker = arr.length-1
+  let index = 0
+  let finder = this.head
+
+  while (index <= tracker) {
+    [arr[index], arr[tracker]] = [arr[tracker], arr[index]]
+    index++
+    tracker--
+  }
+
+  for (i=0; i<arr.length; i++) {
+    finder.val = arr[i]
+    finder = finder.next
+  }
+ } // reverse
 
 module.exports = SinglyLinkedList
