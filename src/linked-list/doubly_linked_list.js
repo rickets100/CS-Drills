@@ -53,6 +53,8 @@ DoublyLinkedList.prototype.push = function(val) {
   return this
 } // function
 
+
+// ===== CLEAR =====
 DoublyLinkedList.prototype.clear = function() {
   this.head = null
   this.tail = null
@@ -178,11 +180,43 @@ DoublyLinkedList.prototype.set = function(index, val) {
 } // function
 
 DoublyLinkedList.prototype.insert = function(index, val) {
-  console.log('this: ', this);
+  let newNode = new Node(val, undefined, undefined)
 
+  // empty
+  if (this.length === 0) {
+    this.head = newNode
+    this.tail = newNode
+    this.length +=1
+    return this
+  }
+
+  // not empty: item to be inserted at end of list
+  if (index === this.length) {
+    newNode.prev = this.tail
+    this.tail.next = newNode
+    this.length +=1
+    return this
+  }
+
+  // not empty: item to be inserted mid-list
+  let tracker = this.head
+  let counter = 0
+  while (counter < this.length) {
+    if (counter === index) {
+      newNode.prev = tracker.prev
+      newNode.next = tracker
+      tracker.prev.next = newNode
+      tracker.prev = newNode
+      this.length +=1
+      return this
+    }
+    counter++
+    tracker = tracker.next
+  }
 } // function
 
 DoublyLinkedList.prototype.remove = function(index) {
+  console.log('this: ', this);
 
 } // function
 
