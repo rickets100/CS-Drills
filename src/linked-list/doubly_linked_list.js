@@ -56,10 +56,11 @@ DoublyLinkedList.prototype.push = function(val) {
 
 // ===== CLEAR =====
 DoublyLinkedList.prototype.clear = function() {
-  this.head = null
-  this.tail = null
+  this.head = undefined
+  this.tail = undefined
   this.length = 0
-  return
+  console.log('clear: this is ', this);
+  return this
 }
 
 
@@ -216,8 +217,49 @@ DoublyLinkedList.prototype.insert = function(index, val) {
 } // function
 
 DoublyLinkedList.prototype.remove = function(index) {
-  console.log('this: ', this);
+  console.log('this: ', this)
 
+  // empty
+  if (!this) {
+    return undefined
+  }
+
+  // single item list
+  if (this.length === 1) {
+    let tracker = this.head
+    this.clear()
+    return tracker.val
+  }
+
+  // multi-item list
+  let counter = 0
+  let finder = this.head
+
+  while (counter < this.length) {
+    if (counter === index) {
+      if (finder === this.head) {
+        this.head = this.head.next
+        this.head.prev = undefined
+        this.length -= 1
+        return this
+      }
+
+      if (finder === this.tail) {
+        this.tail = finder.prev
+        this.tail.next = undefined
+        this.length -=1
+        return finder.val
+      }
+
+      // it's some place mid-list
+      finder.next.prev = finder.prev
+      finder.prev.next = finder.next
+      this.length -= 1
+      return finder.val
+    }
+    counter++
+    finder = finder.next
+  } // while
 } // function
 
 module.exports = DoublyLinkedList
