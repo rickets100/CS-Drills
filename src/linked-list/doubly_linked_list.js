@@ -63,20 +63,24 @@ DoublyLinkedList.prototype.clear = function() {
 
 // ===== POP =====
 DoublyLinkedList.prototype.pop = function() {
+  console.log('THIS: ', this)
   // empty
   if (this.length === 0) {
     return undefined
+  }
 
   // single item
-  } else if (this.length === 1) {
+   else if (this.length === 1) {
     let tempValue = this.tail.val
     this.clear()
     return tempValue
+  }
 
   // multiple items
-  } else {
+   else {
     let tempValue = this.tail.val
-    this.tail.prev.next = undefined
+    this.tail = this.tail.prev
+    this.tail.next = undefined
     this.length -= 1
     return tempValue
   }
@@ -85,7 +89,22 @@ DoublyLinkedList.prototype.pop = function() {
 
 // ===== UNSHIFT =====
 DoublyLinkedList.prototype.unshift = function(val) {
-}
+
+  // empty
+  if (!this.length) {
+    push(val)
+    return this
+  }
+
+  // not empty
+  let newNode = new Node(val)
+  newNode.next = this.head
+  this.head.prev = newNode
+
+  this.head = newNode
+  this.length += 1
+  return this
+} // function
 
 
 // ===== SHIFT =====
