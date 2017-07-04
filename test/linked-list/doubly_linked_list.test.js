@@ -4,7 +4,7 @@ var DoublyLinkedList = require('../../src/linked-list/doubly_linked_list');
 var expect = require('chai').expect;
 var list;
 
-describe('DoublyLinkedList', function() {
+describe.only('DoublyLinkedList', function() {
 
   beforeEach(function() {
     list = new DoublyLinkedList();
@@ -44,7 +44,7 @@ describe('DoublyLinkedList', function() {
     });
   });
 
-  describe.only('unshift', function() {
+  describe('unshift', function() {
     it('adds a value to the front of the list', function() {
       list.push(4);
       list.unshift(1);

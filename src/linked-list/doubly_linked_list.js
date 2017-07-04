@@ -63,7 +63,6 @@ DoublyLinkedList.prototype.clear = function() {
 
 // ===== POP =====
 DoublyLinkedList.prototype.pop = function() {
-  console.log('THIS: ', this)
   // empty
   if (this.length === 0) {
     return undefined
@@ -133,9 +132,26 @@ DoublyLinkedList.prototype.shift = function() {
 
 // ===== GET =====
 DoublyLinkedList.prototype.get = function(index) {
-  console.log('this: ', this)
+  if (!this.length) {
+    this.length = 0
+    return undefined
+  } else {
+    let finder = this.head
+    let counter = -1
 
-}
+    while (counter < this.length-1) {
+      counter++
+
+      if (counter === index) {
+        return finder.val
+      } else {
+        if (finder.next != null) {
+          finder = finder.next
+        }
+      }
+    } // while
+  }
+} // function
 
 
 // ===== SET =====
