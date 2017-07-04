@@ -173,7 +173,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe.only('#Map', () => {
+    describe('#Map', () => {
       it('Maps over an empty linked lists (double)', () => {
         expect(level3.map(null, (num) => num * 2)).to.be.equal(null);
       });

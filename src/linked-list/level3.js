@@ -89,22 +89,36 @@ function map(list, fcn) {
 
 
 /* Write a function named filter, that takes in the following as arguments:
-//   list - A linked list
-//   fcn - a function that takes in the value of each node as an argument and
-//         returns a boolean.
-// The function returns a NEW linked list, where each node's value is the same
-// as the function applied on the original linked list.
-// Example:
-//    filter(1 -> 2 -> 3 -> 4 -> ., (num) => num % 2 === 0) produces
-//        2 -> 4 -> 6 -> .
+- list - A linked list
+- fcn - a function that takes in the value of each node as an argument and returns a boolean.
+
+The function returns a NEW linked list, where each node's value is the same as the function applied on the original linked list.
+
+Example:
+filter(1 -> 2 -> 3 -> 4 -> ., (num) => num % 2 === 0) produces 2 -> 4 -> 6 -> .
 */
 // ===== FILTER =====
 function filter(list, fcn) {
+  let tracker = list
+  let newList = null
 
+  // empty
+  if (!list) {
+    return null
+  }
+
+  // not empty
+  while (tracker) {
+    if (fcn(tracker.value)) {
+      newList = insertInBack(tracker.value, newList)
+    }
+    tracker = tracker.next
+  }
+  return newList
 }
 
 module.exports = {
   merge,
   map,
   filter
-};
+}
