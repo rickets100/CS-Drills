@@ -139,7 +139,7 @@ describe('LinkedList', () => {
   });
 
   describe('Level Three', () => {
-    describe.only('#Merge', () => {
+    describe('#Merge', () => {
       it('Merges two empty linked lists', () => {
         expect(level3.merge(null, null)).to.be.equal(null);
       });
@@ -173,7 +173,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe('#Map', () => {
+    describe.only('#Map', () => {
       it('Maps over an empty linked lists (double)', () => {
         expect(level3.map(null, (num) => num * 2)).to.be.equal(null);
       });

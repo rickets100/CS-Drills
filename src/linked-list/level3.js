@@ -39,7 +39,7 @@ function merge(list1, list2) {
       newList = insertInBack(tracker2.value, newList)
       tracker2 = tracker2.next
     }
-  } 
+  }
 
   // still some items remaining in list2
   if (tracker1 === null) {
@@ -71,8 +71,22 @@ map(1 -> 2 -> 3 -> ., (num) => num * 2) produces 2 -> 4 -> 6 -> .
 */
 // ===== MAP =====
 function map(list, fcn) {
+  let tracker = list
+  let newList = null
 
-}
+  // empty
+  if (!list) {
+    return null
+  }
+
+  // not empty
+  while (tracker) {
+    newList = insertInBack(fcn(tracker.value), newList)
+    tracker = tracker.next
+  }
+  return newList
+} // function
+
 
 /* Write a function named filter, that takes in the following as arguments:
 //   list - A linked list
