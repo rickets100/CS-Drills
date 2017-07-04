@@ -156,15 +156,34 @@ DoublyLinkedList.prototype.get = function(index) {
 
 // ===== SET =====
 DoublyLinkedList.prototype.set = function(index, val) {
+  if (!this.length) {
+    this.length = 0
+    return
+  } else {
+    let finder = this.head
+    let counter = -1
 
-}
+    while (counter < this.length) {
+      counter++
+
+      if (counter === index) {
+        finder.val = val
+        return
+      }
+      if (finder.next != null) {
+        finder = finder.next
+      }
+    }
+  }
+} // function
 
 DoublyLinkedList.prototype.insert = function(index, val) {
+  console.log('this: ', this);
 
-}
+} // function
 
 DoublyLinkedList.prototype.remove = function(index) {
 
-}
+} // function
 
 module.exports = DoublyLinkedList

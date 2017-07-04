@@ -146,7 +146,6 @@ SinglyLinkedList.prototype.get = function(index) {
 
 // ===== SET =====
 SinglyLinkedList.prototype.set = function(index, val) {
-  // console.log('TOP OF FUNCTION, INDEX IS ',index, 'val is ', val)
   if (!this.length) {
     this.length = 0
     return
@@ -158,16 +157,14 @@ SinglyLinkedList.prototype.set = function(index, val) {
       counter++
 
       if (counter === index) {
-        // console.log('Match!', counter, '=', index)
         finder.val = val
-        // console.log('finder.val is ', val);
         return
       }
       if (finder.next != null) {
         finder = finder.next
       }
     }
-  } // else
+  }
 } // function
 
 
