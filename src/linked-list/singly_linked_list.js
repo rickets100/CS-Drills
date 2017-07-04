@@ -16,8 +16,23 @@ function SinglyLinkedList() {
 
 // ===== GET NODE AT =====
 SinglyLinkedList.prototype.__getNodeAt = function(index) {
+  let counter = 0
+  let finder = this.head
 
-}
+  // empty
+  if (!this) {
+    return null
+  }
+
+  // not empty
+  while (finder) {
+    if (counter === index) {
+      return finder.value
+    }
+    counter++
+    finder = finder.next
+  }
+} // function
 
 
 // ===== PUSH =====
@@ -36,7 +51,7 @@ SinglyLinkedList.prototype.push = function(val) {
   }
   this.length += 1
   return this
-} // push
+} // function
 
 
 // ===== CLEAR =====

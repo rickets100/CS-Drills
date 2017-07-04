@@ -10,7 +10,7 @@ describe('DoublyLinkedList', function() {
     list = new DoublyLinkedList();
   });
 
-  describe('push', function() {
+  describe.only('push', function() {
     it('adds a value to the end of the list', function() {
       expect(list.length).to.equal(0);
       list.push(5);

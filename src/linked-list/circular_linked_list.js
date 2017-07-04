@@ -11,18 +11,19 @@ function Node(val, next, prev) {
 }
 
 function CircularLinkedList() {
+  
 }
 
 /*
   Add an item to the list -- the new node becomes the tail of the list.
 */
 CircularLinkedList.prototype.add = function(val) {
-};
+}
 
 /*
   Remove and return the val of the current tail.
 */
 CircularLinkedList.prototype.removeLast = function() {
-};
+}
 
 module.exports = CircularLinkedList;
