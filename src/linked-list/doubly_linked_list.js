@@ -13,6 +13,7 @@ function DoublyLinkedList() {
   this.length = 0
 }
 
+
 // ===== GET NODE AT =====
 DoublyLinkedList.prototype.__getNodeAt = function(index) {
   let counter = 0
@@ -32,6 +33,7 @@ DoublyLinkedList.prototype.__getNodeAt = function(index) {
     finder = finder.next
   }
 } // function
+
 
 // ===== PUSH =====
 DoublyLinkedList.prototype.push = function(val) {
@@ -55,8 +57,11 @@ DoublyLinkedList.prototype.clear = function() {
   this.head = null
   this.tail = null
   this.length = 0
+  return
 }
 
+
+// ===== POP =====
 DoublyLinkedList.prototype.pop = function() {
   // empty
   if (this.length === 0) {
@@ -77,18 +82,44 @@ DoublyLinkedList.prototype.pop = function() {
   }
 } // function
 
-DoublyLinkedList.prototype.unshift = function(val) {
 
+// ===== UNSHIFT =====
+DoublyLinkedList.prototype.unshift = function(val) {
 }
 
+
+// ===== SHIFT =====
 DoublyLinkedList.prototype.shift = function() {
 
+  // empty
+  if (!this.length) {
+    return undefined
+  }
+
+  // single item
+  if (this.length === 1) {
+    let tempValue = this.head.val
+    this.clear()
+    return tempValue
+  }
+
+  // at least two items
+  let tempValue = this.head.val
+  this.head = this.head.next
+  this.head.prev = undefined
+  this.length -= 1
+  return tempValue
 }
 
+
+// ===== GET =====
 DoublyLinkedList.prototype.get = function(index) {
+  console.log('this: ', this)
 
 }
 
+
+// ===== SET =====
 DoublyLinkedList.prototype.set = function(index, val) {
 
 }

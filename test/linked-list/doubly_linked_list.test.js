@@ -31,7 +31,7 @@ describe('DoublyLinkedList', function() {
     });
   });
 
-  describe.only('pop', function() {
+  describe('pop', function() {
     it('returns undefined when called on an empty list', function() {
       expect(list.pop()).to.equal(undefined);
     });
@@ -44,7 +44,7 @@ describe('DoublyLinkedList', function() {
     });
   });
 
-  describe('unshift', function() {
+  describe.only('unshift', function() {
     it('adds a value to the front of the list', function() {
       list.push(4);
       list.unshift(1);
