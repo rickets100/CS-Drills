@@ -26,7 +26,7 @@ DoublyLinkedList.prototype.__getNodeAt = function(index) {
   // not empty
   while (finder) {
     if (counter === index) {
-      return finder.value
+      return finder.val
     }
     counter++
     finder = finder.next
@@ -48,17 +48,34 @@ DoublyLinkedList.prototype.push = function(val) {
     node.prev = temp
   }
   this.length += 1
-  console.log('this: ', this)
   return this
 } // function
 
 DoublyLinkedList.prototype.clear = function() {
-
+  this.head = null
+  this.tail = null
+  this.length = 0
 }
 
 DoublyLinkedList.prototype.pop = function() {
+  // empty
+  if (this.length === 0) {
+    return undefined
 
-}
+  // single item
+  } else if (this.length === 1) {
+    let tempValue = this.tail.val
+    this.clear()
+    return tempValue
+
+  // multiple items
+  } else {
+    let tempValue = this.tail.val
+    this.tail.prev.next = undefined
+    this.length -= 1
+    return tempValue
+  }
+} // function
 
 DoublyLinkedList.prototype.unshift = function(val) {
 

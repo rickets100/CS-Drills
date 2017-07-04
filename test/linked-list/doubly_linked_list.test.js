@@ -10,7 +10,7 @@ describe('DoublyLinkedList', function() {
     list = new DoublyLinkedList();
   });
 
-  describe.only('push', function() {
+  describe('push', function() {
     it('adds a value to the end of the list', function() {
       expect(list.length).to.equal(0);
       list.push(5);
@@ -31,7 +31,7 @@ describe('DoublyLinkedList', function() {
     });
   });
 
-  describe('pop', function() {
+  describe.only('pop', function() {
     it('returns undefined when called on an empty list', function() {
       expect(list.pop()).to.equal(undefined);
     });
