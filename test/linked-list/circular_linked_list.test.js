@@ -8,7 +8,7 @@ describe('circular linked list', function() {
     linkedList = new CircularLinkedList();
   });
 
-  describe.only('add', function() {
+  describe('add', function() {
     it ('should update the length', function() {
       expect(linkedList.length).to.equal(0);
       linkedList.add('First!');
@@ -65,7 +65,7 @@ describe('circular linked list', function() {
       expect(linkedList.tail).to.equal(null);
     });
 
-    xit ('should set the next value on the last remaining node to itself', function() {
+    it ('should set the next value on the last remaining node to itself', function() {
       linkedList.add('Last!');
       expect(node.next.value).to.equal('Last!');
       linkedList.removeLast();

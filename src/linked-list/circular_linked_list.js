@@ -23,7 +23,6 @@ function CircularLinkedList() {
 */
 // ===== ADD =====
 CircularLinkedList.prototype.add = function(val) {
-  console.log('incoming: ', val)
   let newNode = new Node(val, null, null)
 
   if (this.length === 0) {
@@ -31,15 +30,15 @@ CircularLinkedList.prototype.add = function(val) {
     this.tail = newNode
     this.tail.next = this.head
     this.length += 1
-    console.log('length=0: ', this.head.value)
     return this
   }
-
   newNode.prev = this.tail
   newNode.next = this.head
   this.head.prev = newNode
   this.tail.next = newNode
-  console.log('length>0: ', this);
+  this.tail = newNode
+  this.length += 1
+  return this
 
 }
 
@@ -53,9 +52,32 @@ CircularLinkedList.prototype.removeLast = function() {
     return null
   }
 
+  // single item
+  if (this.length === 1) {
+    let temp = this.head.value
+    this.head = null
+    this.tail = null
+    this.length = 0
+    return temp
+  }
+
+  // 2 items
+
+  if (this.length === 2) {
+    let temp = this.tail.value
+    this.head.next = this.head
+    this.head.prev = this.head
+    this.tail = this.head
+    this.length -= 1
+    return temp
+  }
+
+  // at least 2 items
   let temp = this.tail.val
   this.head.prev = this.tail.prev
   this.tail.prev.next = this.head
+  this.tail = this.tail.prev
+  this.length -= 1
   return temp
 }
 
