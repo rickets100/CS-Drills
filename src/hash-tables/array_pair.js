@@ -7,8 +7,19 @@ arrayPairSum(10, [3, 5, 6, 8]) // => []
 
  */
 
-function arrayPairSum() {
-
+// ===== ARRAYPAIRSUM - UNREFACTORED =====
+function arrayPairSum(val, arr) {
+  let returnArr = []
+  for (let i=0; i<arr.length; i++) {
+    for (let j=i+1; j<arr.length; j++) {
+      if (arr[i]+arr[j] === val) {
+        returnArr.push([arr[i], arr[j]])
+      }
+    }
+  }
+  // it's expecting the answer in a different order, for some reason, so reversing it here:
+  returnArr.reverse()
+  return returnArr
 }
 
-module.exports = arrayPairSum;
+module.exports = arrayPairSum
