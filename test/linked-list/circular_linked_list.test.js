@@ -8,7 +8,7 @@ describe('circular linked list', function() {
     linkedList = new CircularLinkedList();
   });
 
-  describe('add', function() {
+  describe.only('add', function() {
     it ('should update the length', function() {
       expect(linkedList.length).to.equal(0);
       linkedList.add('First!');
