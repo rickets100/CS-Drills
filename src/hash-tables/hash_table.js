@@ -24,6 +24,7 @@ function strToCharCode (str) {
 */
 
 HashTable.prototype.__hashFunction = function(key) {
+  console.log('hey');
   if (typeof key === 'string') {
     key = strToCharCode(key)
     let numKey = (key * this.prime) % this.arr.length
@@ -35,16 +36,13 @@ HashTable.prototype.__hashFunction = function(key) {
     let numKey = (key * this.prime) % this.arr.length
     return numKey
   }
-  console.log('incoming type : ', typeof key)
-  console.log('incoming key ', key);
+  // console.log('incoming type : ', typeof key)
+  // console.log('incoming key ', key);
 
   if (typeof key === 'object') {
       key = JSON.stringify(key)
-      console.log('key: ', key);
       key = strToCharCode(key)
-      console.log('key: ', key);
       let numKey = (key * this.prime) % this.arr.length
-      console.log('numkey ', numKey);
       return numKey
   }
 
@@ -57,10 +55,10 @@ HashTable.prototype.__hashFunction = function(key) {
     let numKey = (key * this.prime) % this.arr.length
     return numKey
   } else if ((typeof key === 'number') && !(isNaN(key)) && (key != Infinity)) {
+    console.log('should get here');
     let numKey = (key * this.prime) % this.arr.length
     return numKey
   }
-console.log('other');
   return (((numKey * this.prime) % this.arr.length))
 } // function
 
@@ -75,11 +73,13 @@ console.log('other');
   @returns undefined
 */
 HashTable.prototype.set = function(key, value) {
-  console.log('----\n in set function, value = ', value)
-  key = key._hashFunction()
-  console.log('......', key);
-  this.key = value
-  console.log('this.key ', this.key);
+  console.log('In SET function, value = ', value)
+  console.log('...and key is ', key)
+  key = this.__hashFunction(key)
+  this[key] = value
+  console.log('hashed key = ', key)
+  console.log('this[key] ', this[key]);
+  console.log('this: ', this);
 }
 
 /*
@@ -91,6 +91,7 @@ HashTable.prototype.set = function(key, value) {
   @returns - the value associated with key, or undefined.
 */
 HashTable.prototype.get = function(key) {
+  console.log('In GET function, key = ', key)
 
 };
 

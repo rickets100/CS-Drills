@@ -60,7 +60,6 @@ describe.only('Hash Table', function() {
 
     it('hashes an object', function() {
       var hash = strToCharCode('{}') % size;
-      console.log('TEST: hash is ', hash)
       expect(table.__hashFunction({})).to.deep.equal(hash);
       expect(table.__hashFunction({a: 5}) !== hash).to.be.true; // jshint ignore:line
     });
@@ -72,7 +71,7 @@ describe.only('Hash Table', function() {
     });
   });
 
-  xdescribe('get, set and exists', function() {
+  describe('get, set and exists', function() {
     it('sets and gets a simple key', function() {
       var key = 1, value = 'value';
       expect(table.set(key, value)).to.be.undefined; // jshint ignore:line
@@ -113,7 +112,7 @@ describe.only('Hash Table', function() {
     });
   });
 
-  describe('remove', function() {
+  xdescribe('remove', function() {
     xit('should have some tests', function() {
       expect('Rewrite this section to have some real tests').to.equal(0);
     });
