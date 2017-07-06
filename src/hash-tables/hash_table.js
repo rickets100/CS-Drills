@@ -24,41 +24,30 @@ function strToCharCode (str) {
 */
 
 HashTable.prototype.__hashFunction = function(key) {
+  let size = this.arr.length
   if (typeof key === 'string') {
     key = strToCharCode(key)
-    let numKey = (key * this.prime) % this.arr.length
-    return numKey
   }
 
   if (typeof key === 'function') {
     key = strToCharCode(key.toString())
-    let numKey = (key * this.prime) % this.arr.length
-    return numKey
   }
-  // console.log('incoming type : ', typeof key)
-  // console.log('incoming key ', key);
 
   if (typeof key === 'object') {
       key = JSON.stringify(key)
       key = strToCharCode(key)
-      let numKey = (key * this.prime) % this.arr.length
-      return numKey
   }
 
   if ((isNaN(key))) {
     key = strToCharCode('NaN')
-    let numKey = (key * this.prime) % this.arr.length
-    return numKey
-  } else if (key === Infinity) {
-    key = strToCharCode('Infinity')
-    let numKey = (key * this.prime) % this.arr.length
-    return numKey
-  } else if ((typeof key === 'number') && !(isNaN(key)) && (key != Infinity)) {
-    let numKey = (key * this.prime) % this.arr.length
-    // console.log('hashing: ' + key + ' became ' + numKey);
-    return numKey
   }
-  return (((numKey * this.prime) % this.arr.length))
+
+  if (key === Infinity) {
+    key = strToCharCode('Infinity')
+  }
+
+  let numKey = (key * this.prime) % size
+  return numKey
 } // function
 
 
