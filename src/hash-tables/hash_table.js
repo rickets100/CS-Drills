@@ -69,7 +69,7 @@ HashTable.prototype.set = function(key, value) {
     key++
     }
     this[key] = value
-    console.log('SET: finally hit not exists. Now we have ' + key + ': ' + this[key] + '\n');
+    console.log('SET: hit not exists. Now we have ' + key + ': ' + this[key] + '\n');
 }
 
 /*
@@ -103,11 +103,7 @@ HashTable.prototype.get = function(key) {
   @returns true if the key has a value in our HashTable, false otherwise.
 */
 HashTable.prototype.exists = function(key) {
-  if (this[key]) {
-    return true
-  } else {
-    return false
-  }
+  return (this[key] != undefined)
 }
 
 /*
