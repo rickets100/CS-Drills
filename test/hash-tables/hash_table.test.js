@@ -3,7 +3,7 @@
 var expect = require('chai').expect;
 var HashTable = require('../../src/hash-tables/hash_table');
 
-describe('Hash Table', function() {
+describe.only('Hash Table', function() {
   var table;
   var size;
   var prime;
@@ -60,6 +60,7 @@ describe('Hash Table', function() {
 
     it('hashes an object', function() {
       var hash = strToCharCode('{}') % size;
+      console.log('TEST: hash is ', hash)
       expect(table.__hashFunction({})).to.deep.equal(hash);
       expect(table.__hashFunction({a: 5}) !== hash).to.be.true; // jshint ignore:line
     });
@@ -71,7 +72,7 @@ describe('Hash Table', function() {
     });
   });
 
-  describe('get, set and exists', function() {
+  xdescribe('get, set and exists', function() {
     it('sets and gets a simple key', function() {
       var key = 1, value = 'value';
       expect(table.set(key, value)).to.be.undefined; // jshint ignore:line
