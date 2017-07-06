@@ -24,7 +24,6 @@ function strToCharCode (str) {
 */
 
 HashTable.prototype.__hashFunction = function(key) {
-  console.log('hey');
   if (typeof key === 'string') {
     key = strToCharCode(key)
     let numKey = (key * this.prime) % this.arr.length
@@ -55,8 +54,8 @@ HashTable.prototype.__hashFunction = function(key) {
     let numKey = (key * this.prime) % this.arr.length
     return numKey
   } else if ((typeof key === 'number') && !(isNaN(key)) && (key != Infinity)) {
-    console.log('should get here');
     let numKey = (key * this.prime) % this.arr.length
+    // console.log('hashing: ' + key + ' became ' + numKey);
     return numKey
   }
   return (((numKey * this.prime) % this.arr.length))
@@ -73,13 +72,15 @@ HashTable.prototype.__hashFunction = function(key) {
   @returns undefined
 */
 HashTable.prototype.set = function(key, value) {
-  console.log('In SET function, value = ', value)
-  console.log('...and key is ', key)
+  console.log('In SET function. incoming = ' + key + ': ' + value)
   key = this.__hashFunction(key)
-  this[key] = value
-  console.log('hashed key = ', key)
-  console.log('this[key] ', this[key]);
-  console.log('this: ', this);
+  console.log('Hashed...' + key)
+  while (this.exists(key)) {
+    console.log('already exists')
+    key++
+    }
+    this[key] = value
+    console.log('finally hit not exists. Now we have ' + key + ': ' + this[key]);
 }
 
 /*
@@ -92,7 +93,13 @@ HashTable.prototype.set = function(key, value) {
 */
 HashTable.prototype.get = function(key) {
   console.log('In GET function, key = ', key)
-
+  if (this[key] != undefined) {
+    console.log('GET returning ' + this[key] + '\n');
+    return this[key]
+  } else {
+    console.log('GET returning undefined \n');
+    return undefined
+  }
 };
 
 /*
@@ -104,8 +111,7 @@ HashTable.prototype.get = function(key) {
   @returns true if the key has a value in our HashTable, false otherwise.
 */
 HashTable.prototype.exists = function(key) {
-  console.log('-----\n in the exists function');
-  if (key) {
+  if (this[key]) {
     return true
   } else {
     return false
