@@ -72,15 +72,15 @@ HashTable.prototype.__hashFunction = function(key) {
   @returns undefined
 */
 HashTable.prototype.set = function(key, value) {
-  console.log('In SET function. incoming = ' + key + ': ' + value)
+  console.log('SET: incoming = ' + key + ': ' + value)
   key = this.__hashFunction(key)
-  console.log('Hashed...' + key)
+  console.log('SET: Hashed...' + key)
   while (this.exists(key)) {
-    console.log('already exists')
+    console.log('SET: already exists')
     key++
     }
     this[key] = value
-    console.log('finally hit not exists. Now we have ' + key + ': ' + this[key]);
+    console.log('SET: finally hit not exists. Now we have ' + key + ': ' + this[key] + '\n');
 }
 
 /*
@@ -92,12 +92,15 @@ HashTable.prototype.set = function(key, value) {
   @returns - the value associated with key, or undefined.
 */
 HashTable.prototype.get = function(key) {
-  console.log('In GET function, key = ', key)
+  console.log('GET: function, key = ', key)
+  key = this.__hashFunction(key)
+  console.log('GET: Hashed...' + key)
+
   if (this[key] != undefined) {
-    console.log('GET returning ' + this[key] + '\n');
+    console.log('GET: returning ' + this[key] + '\n')
     return this[key]
   } else {
-    console.log('GET returning undefined \n');
+    console.log('GET: returning undefined \n');
     return undefined
   }
 };
