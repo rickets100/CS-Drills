@@ -7,7 +7,7 @@ const level1 = require('../../src/hash-tables/level1.js');
 const level2 = require('../../src/hash-tables/level2.js');
 
 describe('Hash Table', () => {
-  describe.only('Level One', () => {
+  describe('Level One', () => {
     suite('#greet', () => {
       it('should greet user in English if the provided lang is \'English\'', () => {
         level1.greet('english').should.equal('Welcome a Miami.');
@@ -69,7 +69,7 @@ describe('Hash Table', () => {
     });
   });
 
-  describe('Level Two', () => {
+  xdescribe('Level Two', () => {
     suite('#reverseMerge', () => {
       it('should return an empty array if both input arrays are empty', () => {
         level2.reverseMerge([], []).should.eql({});

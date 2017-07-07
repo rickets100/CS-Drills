@@ -24,15 +24,6 @@ const greet = (language) => {
   return LANG_LIST.english + ' a Miami.'
 }
 
-/*
-Create a function named removeDupes.
-It takes a single argument 'numArr' of type Array.
-It will return a hash who's keys are the value of the item in the array.
-The hash's value will be the item value's index in the array.
-If there are more than one occurance, the index set to the hash should be of the last occurance.
-
-i.e. [1, 'z', 'bob', true, 42, 'bob'] => { '1': 0, 'z': 1, 'bob': '5', 'true': 3, '42': 4 }
-*/
 
 // ===== REMOVEDUPES =====
 const removeDupes = (numArr) => {
@@ -47,36 +38,52 @@ const removeDupes = (numArr) => {
   return {}
 }
 
-/*
-
-Create a function named onlyOdds.
-It takes a single argument mixedHash of type Object.
-It will return a copy of mixedHash without key-value pairs values that are even numbers.
-
-i.e. { 'foo': 6, 'bar': 3, 'baz': 'bob', 13: 13 } => { 'bar': 3, '13': 13 }
-
-*/
 
 // ===== ONLYODDS =====
 const onlyOdds = (mixedHash) => {
+  let filteredObj = {}
 
+  // empty
+  if (Object.keys(mixedHash).length === 0) {
+    return {}
+  }
+
+  // not empty
+  for (var key in mixedHash) {
+    if ((mixedHash[key] % 2 != 0) && (typeof mixedHash[key] === 'number')) {
+      filteredObj[key] = mixedHash[key]
+    }
+  }
+  return filteredObj
 }
 
 /*
-
 Create a function named charCount.
 It takes a single argument 'word' of type String.
 It will return a hash who's keys represent the characters in the word
 and values represent the occurances of that character.
-
 i.e. 'hello' => { h: 1, e: 1, l: 2, o: 1 }
 */
 
+// ===== CHARCOUNT =====
 const charCount = (word) => {
+  // empty
+  if  (word.length === 0) {
+    return {}
+  }
 
-};
+  // not empty
+  let countObj = {}
+  let arr = (word.toLowerCase()).split('')
 
-module.exports = { greet, removeDupes, onlyOdds, charCount };
+  for (let i=0; i<word.length; i++) {
+    let element = arr[i]
+    countObj[element] = (countObj[element] +1 ) || 1
+  }
+  return countObj
+}
+
+module.exports = { greet, removeDupes, onlyOdds, charCount }
 
 /*
 
@@ -84,10 +91,27 @@ Will Smith is back in the music game and his PR team is telling him he should ma
 hit, 'Miami', multi-lingual. Below is a list of languages his team want him to include. Will is a busy
 guy so he has asked you to help him out.
 
-Create a funtion named greet()
+Create a function named greet()
 It takes a single argument 'language'
 It will return 'Welcome to Miami.' where 'Welcome' will be in the language specified.
 
 i.e  when the language is latvian, the fn will return 'Gaidits to Miami.'
+*/
 
+/*
+Create a function named removeDupes.
+It takes a single argument 'numArr' of type Array.
+It will return a hash who's keys are the value of the item in the array.
+The hash's value will be the item value's index in the array.
+If there are more than one occurance, the index set to the hash should be of the last occurance.
+
+i.e. [1, 'z', 'bob', true, 42, 'bob'] => { '1': 0, 'z': 1, 'bob': '5', 'true': 3, '42': 4 }
+*/
+
+/*
+Create a function named onlyOdds.
+It takes a single argument mixedHash of type Object.
+It will return a copy of mixedHash without key-value pairs values that are even numbers.
+
+i.e. { 'foo': 6, 'bar': 3, 'baz': 'bob', 13: 13 } => { 'bar': 3, '13': 13 }
 */
