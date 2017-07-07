@@ -7,7 +7,7 @@ const level1 = require('../../src/hash-tables/level1.js');
 const level2 = require('../../src/hash-tables/level2.js');
 
 describe('Hash Table', () => {
-  describe('Level One', () => {
+  describe.only('Level One', () => {
     suite('#greet', () => {
       it('should greet user in English if the provided lang is \'English\'', () => {
         level1.greet('english').should.equal('Welcome a Miami.');

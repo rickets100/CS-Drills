@@ -3,7 +3,7 @@
 var expect = require('chai').expect;
 var HashTable = require('../../src/hash-tables/hash_table');
 
-describe.only('Hash Table', function() {
+describe('Hash Table', function() {
   var table;
   var size;
   var prime;

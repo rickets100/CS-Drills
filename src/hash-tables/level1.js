@@ -2,7 +2,7 @@
 
 /*
 
-Will Smith is back in the music game and his PR team is telling him he should  is make his former pop
+Will Smith is back in the music game and his PR team is telling him he should make his former pop
 hit, 'Miami', multi-lingual. Below is a list of languages his team want him to include. Will is a busy
 guy so he has asked you to help him out.
 
@@ -29,12 +29,16 @@ const LANG_LIST = {
   welsh: 'Croeso'
 };
 
+// ===== GREET =====
 const greet = (language) => {
-
-};
+  language = language.toLowerCase()
+  if (LANG_LIST[language] != undefined) {
+    return LANG_LIST[language] + ' a Miami.'
+  }
+  return LANG_LIST.english + ' a Miami.'
+}
 
 /*
-
 Create a function named removeDupes.
 It takes a single argument 'numArr' of type Array.
 It will return a hash who's keys are value of the item in the array.

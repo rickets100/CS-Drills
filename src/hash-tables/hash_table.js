@@ -23,6 +23,7 @@ function strToCharCode (str) {
   @returns {number} - an integer value to be used as an index value for this.arr
 */
 
+// ===== HASHFUNCTION =====
 HashTable.prototype.__hashFunction = function(key) {
   let size = this.arr.length
   if (typeof key === 'string') {
@@ -34,8 +35,7 @@ HashTable.prototype.__hashFunction = function(key) {
   }
 
   if (typeof key === 'object') {
-      key = JSON.stringify(key)
-      key = strToCharCode(key)
+      key = strToCharCode(JSON.stringify(key))
   }
 
   if ((isNaN(key))) {
@@ -60,6 +60,8 @@ HashTable.prototype.__hashFunction = function(key) {
 
   @returns undefined
 */
+
+// ===== SET =====
 HashTable.prototype.set = function(key, value) {
   console.log('SET: incoming = ' + key + ': ' + value)
   key = this.__hashFunction(key)
@@ -80,6 +82,8 @@ HashTable.prototype.set = function(key, value) {
 
   @returns - the value associated with key, or undefined.
 */
+
+// ===== GET =====
 HashTable.prototype.get = function(key) {
   console.log('GET: function, key = ', key)
   key = this.__hashFunction(key)
@@ -102,6 +106,8 @@ HashTable.prototype.get = function(key) {
 
   @returns true if the key has a value in our HashTable, false otherwise.
 */
+
+// ===== EXISTS =====
 HashTable.prototype.exists = function(key) {
   return (this[key] != undefined)
 }
@@ -115,6 +121,8 @@ HashTable.prototype.exists = function(key) {
 
   @returns true if a value was removed, false otherwise.
 */
+
+// ===== REMOVE =====
 HashTable.prototype.remove = function(key) {
 
 }
